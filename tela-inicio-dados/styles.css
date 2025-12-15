@@ -1,0 +1,508 @@
+/* ===========================
+   RESET E VARIÁVEIS GLOBAIS
+   (Configurações iniciais para todo o site)
+   =========================== */
+
+* {
+    /* Tira as margens e preenchimentos padrão do navegador */
+    margin: 0;
+    padding: 0;
+    /* Faz com que o padding e a borda não aumentem o tamanho do elemento */
+    box-sizing: border-box;
+}
+
+:root {
+    /* Variáveis para cores e sombras, para facilitar a mudança de tema */
+    --primary-color: #6366f1; /* Cor principal (azul/roxo) */
+    --primary-dark: #4f46e5;
+    --primary-light: #818cf8;
+    --secondary-color: #ec4899; /* Cor secundária (rosa) */
+    --success-color: #10b981;
+    --warning-color: #f59e0b;
+    --danger-color: #ef4444;
+    --dark-bg: #1f2937; /* Fundo escuro */
+    --light-bg: #f9fafb; /* Fundo claro */
+    --border-color: #e5e7eb; /* Cor da borda */
+    --text-dark: #111827; /* Texto escuro */
+    --text-light: #6b7280; /* Texto mais claro */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease; /* Transições suaves */
+}
+
+/* ===========================
+   TIPOGRAFIA E CORPO
+   (Estilos básicos para o texto e o fundo da página)
+   =========================== */
+
+html {
+    /* Rolagem suave quando clica em links internos */
+    scroll-behavior: smooth;
+}
+
+body {
+    /* Fonte e cores padrão */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--light-bg);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    /* Estilo para todos os títulos */
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 1.875rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+p {
+    color: var(--text-light);
+}
+
+/* ===========================
+   CONTAINER E LAYOUT
+   (Estrutura principal da página)
+   =========================== */
+
+.container {
+    /* Limita a largura máxima e centraliza o conteúdo */
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    /* Configura o layout para ocupar a altura mínima da tela */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* ===========================
+   HEADER
+   (Estilo do cabeçalho lá em cima)
+   =========================== */
+
+.header {
+    /* Fundo com gradiente bonitão */
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: white;
+    padding: 3rem 1rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    /* Bordas arredondadas só embaixo */
+    border-radius: 0 0 1rem 1rem;
+    box-shadow: var(--shadow-md);
+}
+
+.header-content h1 {
+    margin-bottom: 0.5rem;
+    font-size: 2.5rem;
+}
+
+.header-content p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.1rem;
+}
+
+/* ===========================
+   MAIN CONTENT
+   (Estilo da área principal, onde fica o formulário)
+   =========================== */
+
+.main-content {
+    /* Faz com que o conteúdo principal ocupe o espaço restante */
+    flex: 1;
+    /* Layout de grade: 1 coluna para o formulário */
+    display: grid;
+    grid-template-columns: 1fr; /* Apenas o formulário */
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+/* ===========================
+   FORM SECTION
+   (Estilo da caixa que envolve o formulário)
+   =========================== */
+
+.form-section {
+    background: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: var(--shadow-md);
+}
+
+.form-section h2 {
+    margin-bottom: 1.5rem;
+    color: var(--text-dark);
+}
+
+.form-group {
+    /* Separa os blocos de campos (fieldset) */
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.form-group:last-child {
+    /* Tira a borda do último bloco */
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.form-group legend {
+    /* Estilo do título do bloco de campos */
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.form-row {
+    /* Coloca dois campos lado a lado (em telas grandes) */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.form-field {
+    /* Organiza o rótulo e o campo de entrada verticalmente */
+    display: flex;
+    flex-direction: column;
+}
+
+.form-field label {
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: var(--text-dark);
+    font-size: 0.95rem;
+}
+
+.form-field input,
+.form-field textarea,
+.form-field select {
+    /* Estilo padrão para todos os campos de entrada */
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: var(--transition);
+    background-color: white;
+}
+
+.form-field input:focus,
+.form-field textarea:focus,
+.form-field select:focus {
+    /* Efeito quando o campo está selecionado (foco) */
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+.form-field textarea {
+    /* Permite redimensionar a área de texto só na vertical */
+    resize: vertical;
+    min-height: 80px;
+}
+
+.form-field input::placeholder,
+.form-field textarea::placeholder {
+    color: var(--text-light);
+}
+
+.form-actions {
+    /* Alinha os botões de ação do formulário */
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+    justify-content: flex-end; /* Joga os botões para a direita */
+}
+
+/* ===========================
+   BOTÕES
+   (Estilo dos botões)
+   =========================== */
+
+.btn {
+    /* Estilo base para todos os botões */
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+}
+
+.btn-primary {
+    /* Botão principal (azul/roxo) */
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.btn-primary:hover {
+    /* Efeito ao passar o mouse */
+    background-color: var(--primary-dark);
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-2px); /* Sobe um pouquinho */
+}
+
+.btn-primary:active {
+    /* Efeito ao clicar */
+    transform: translateY(0);
+}
+
+.btn-secondary {
+    /* Botão secundário (cinza claro) */
+    background-color: var(--border-color);
+    color: var(--text-dark);
+}
+
+.btn-secondary:hover {
+    background-color: #d1d5db;
+    box-shadow: var(--shadow-md);
+}
+
+.btn:disabled {
+    /* Estilo para botões desabilitados */
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* ===========================
+   FOOTER
+   (Estilo do rodapé)
+   =========================== */
+
+.footer {
+    /* Fundo escuro e texto claro */
+    background-color: var(--dark-bg);
+    color: white;
+    text-align: center;
+    padding: 2rem 1rem;
+    margin-top: auto; /* Garante que fique no final da página */
+    border-radius: 1rem 1rem 0 0;
+}
+
+.footer p {
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0;
+}
+
+/* ===========================
+   RESPONSIVIDADE
+   (Ajustes para telas menores)
+   =========================== */
+
+/* Tablets (768px) */
+@media (max-width: 1024px) {
+    .main-content {
+        /* Em telas menores, o formulário ocupa a largura toda (1 coluna) */
+        grid-template-columns: 1fr;
+    }
+
+    .form-row {
+        /* Os campos que estavam lado a lado (2 colunas) ficam um embaixo do outro (1 coluna) */
+        grid-template-columns: 1fr;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .header-content h1 {
+        font-size: 2rem;
+    }
+}
+
+/* Celulares (480px) */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 0.75rem;
+    }
+
+    .header {
+        padding: 2rem 1rem;
+        margin-bottom: 1.5rem;
+        border-radius: 0.5rem;
+    }
+
+    .header-content h1 {
+        font-size: 1.75rem;
+    }
+
+    .header-content p {
+        font-size: 1rem;
+    }
+
+    .form-section {
+        padding: 1.5rem;
+        border-radius: 0.75rem;
+    }
+
+    .form-group {
+        padding-bottom: 1rem;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .form-actions {
+        /* Botões ficam um embaixo do outro */
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .btn {
+        /* Botões ocupam a largura toda */
+        width: 100%;
+        justify-content: center;
+    }
+
+    .footer {
+        padding: 1.5rem 1rem;
+        margin-top: 1.5rem;
+    }
+
+    h1 {
+        font-size: 1.75rem;
+    }
+
+    h2 {
+        font-size: 1.25rem;
+    }
+
+    h3 {
+        font-size: 1.1rem;
+    }
+}
+
+/* Celulares Pequenos (320px) */
+@media (max-width: 480px) {
+    .container {
+        padding: 0 0.5rem;
+    }
+
+    .header {
+        padding: 1.5rem 0.75rem;
+        margin-bottom: 1rem;
+    }
+
+    .header-content h1 {
+        font-size: 1.5rem;
+    }
+
+    .header-content p {
+        font-size: 0.9rem;
+    }
+
+    .form-section {
+        padding: 1rem;
+    }
+
+    .form-field label {
+        font-size: 0.9rem;
+    }
+
+    .form-field input,
+    .form-field textarea,
+    .form-field select {
+        padding: 0.6rem;
+        font-size: 16px; /* Para evitar zoom automático em iOS */
+    }
+
+    .btn {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.1rem;
+    }
+
+    h3 {
+        font-size: 1rem;
+    }
+}
+
+/* ===========================
+   ACESSIBILIDADE
+   (Para quem tem preferência por menos movimento)
+   =========================== */
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        /* Desliga as animações e transições */
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* ===========================
+   MODO ESCURO (OPCIONAL)
+   (Ajustes de cores para quem usa o modo escuro no sistema)
+   =========================== */
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #111827;
+        color: #f3f4f6;
+    }
+
+    .form-section {
+        background-color: #1f2937;
+        box-shadow: var(--shadow-lg);
+    }
+
+    .form-field input,
+    .form-field textarea,
+    .form-field select {
+        background-color: #374151;
+        color: #f3f4f6;
+        border-color: #4b5563;
+    }
+
+    .form-field input::placeholder,
+    .form-field textarea::placeholder {
+        color: #9ca3af;
+    }
+
+    .btn-secondary {
+        background-color: #374151;
+        color: #f3f4f6;
+    }
+
+    .btn-secondary:hover {
+        background-color: #4b5563;
+    }
+}
