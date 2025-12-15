@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Convites QR Code - Formulário</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- O container principal -->
+    <div class="container">
+        
+        
+        <!-- Cabeçalho -->
+        <header class="header">
+            <div class="header-content">
+
+                <!-- O título principal da página -->
+                <h1>nome de empresa generica</h1>
+            </div>
+        </header>
+
+        <!-- Conteúdo Principal -->
+        <main class="main-content">
+
+            <!-- Formulário Inicial -->
+            <div class="form-section">
+                <h2>Preencha os dados do convite</h2>
+                <form id="inviteForm" class="form">
+                    <fieldset class="form-group">
+                        <legend>Informações do Evento</legend>
+
+                        <div class="form-row">
+                            <div class="form-field">
+                                <label for="eventName">Nome do Evento *</label>
+                                <input type="text" id="eventName" name="eventName" placeholder="" required>
+                            </div>
+
+                            <div class="form-field">
+                                <label for="eventDate">Data *</label>
+                                <input type="date" id="eventDate" name="eventDate" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-field">
+                                <label for="eventTime">Horário *</label>
+                                <input type="time" id="eventTime" name="eventTime" required>
+                            </div>
+
+                            <div class="form-field">
+                                <label for="eventLocation">Local *</label>
+                                <input type="text" id="eventLocation" name="eventLocation" placeholder="" required>
+                            </div>
+                        </div>
+
+                        <div class="form-field">
+                            <label for="eventDescription">Descrição</label>
+                            <textarea id="eventDescription" name="eventDescription" placeholder="Adicione detalhes sobre o evento" rows="3"></textarea>
+                        </div>
+                    </fieldset>
+
+                    <!-- Campo Convidado -->
+                    <fieldset class="form-group">
+                        <legend>Informações do Convidado</legend>
+                        
+                        <div class="form-row">
+                            <div class="form-field">
+                                <label for="guestName">Nome do Convidado *</label>
+                                <input type="text" id="guestName" name="guestName" placeholder="" required>
+                            </div>
+                            <div class="form-field">
+                                <label for="guestEmail">Email</label>
+                                <input type="email" id="guestEmail" name="guestEmail" placeholder="">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-field">
+                                <label for="guestPhone">Telefone</label>
+                                <input type="tel" id="guestPhone" name="guestPhone" placeholder="">
+                            </div>
+                            <div class="form-field">
+                                <label for="guestCount">Número de Acompanhantes</label>
+                                <!-- Numero de convidados/ limete - 10/ atualizar dps -->
+                                <input type="number" id="guestCount" name="guestCount" min="0" max="10" value="0">
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <!-- Informações Adicionais -->
+                    <fieldset class="form-group">
+                        <legend>Informações Adicionais</legend>
+                        
+                        <div class="form-field">
+                            <label for="dressCode">Código de Vestimenta</label>
+                            <!-- Campo de seleção  -->
+                            <select id="dressCode" name="dressCode">
+                                <option value="">Selecione...</option>
+                                <option value="casual">Casual</option>
+                                <option value="smart-casual">Smart Casual</option>
+                                <option value="formal">Formal</option>
+                                <option value="black-tie">Black Tie</option>
+                            </select>
+                        </div>
+
+                        <div class="form-field">
+                            <label for="rsvpDeadline">Prazo para Confirmação</label>
+                            <input type="date" id="rsvpDeadline" name="rsvpDeadline">
+                        </div>
+
+                        <div class="form-field">
+                            <label for="organizerName">Organizador</label>
+                            <input type="text" id="organizerName" name="organizerName" placeholder="">
+                        </div>
+                    </fieldset>
+
+                    <!-- botões de enviar e limpar -->
+                    <div class="form-actions">
+                        <button type="reset" class="btn btn-secondary">Limpar</button>
+                        <button type="submit" class="btn btn-primary">Gerar Convite</button>
+                    </div>
+                </form>
+            </div>
+            
+            
+            
+        </main>
+
+        <!-- Rodapé  -->
+        <footer class="footer">
+            <p>&copy;nome de empresa generica</p>
+        </footer>
+    </div>
+
+</body>
+</html>
