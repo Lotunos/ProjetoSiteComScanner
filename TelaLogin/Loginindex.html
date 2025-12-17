@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de login</title>
+    <link rel="stylesheet" href="Loginstyle.css">
+</head>
+<body>
+    
+    <form action="" method="post">
+        <h1>Faça o seu login</h1>
+        <div class="barraHorizontal"></div>
+
+        <div class="campoInput">
+            <label for="email">Seu e-mail:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+
+        <div class="campoInput">
+            <label for="password">Sua senha:</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+
+        <div class="exibirSenha">
+            <input type="checkbox" id="showPassword">
+            <label for="showPassword">Exibir senha</label>
+        </div>
+
+        <button type="submit">Entrar</button>
+
+        <p>Esqueceu sua senha?
+            <a href="https://www.alterar_depois.com">Clique aqui!</a>
+        </p>
+    </form>
+
+    <script src="Loginscript.js"></script>
+</body>
+</html>
