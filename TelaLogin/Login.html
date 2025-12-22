@@ -33,7 +33,16 @@
             <a href="https://www.alterar_depois.com">Clique aqui!</a>
         </p>
     </form>
-
+    <script src="../DAO/ClienteDAO.js"></script>
     <script src="Loginscript.js"></script>
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+        event.preventDefault(); // evita recarregar a página
+        // Pega os valores dos campos
+        const usuario = document.getElementById("email").value;
+        const senha = document.getElementById("password").value;
+        buscarCliente(usuario,senha);
+    });
+    </script>
 </body>
 </html>
