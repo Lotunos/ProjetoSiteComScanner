@@ -13,7 +13,7 @@
 
 :root {
     /* Variáveis para cores e sombras, para facilitar a mudança de tema */
-    --primary-color: #6366f1; /* Cor principal (azul/roxo) */
+    --primary-color: #6392f1; /* Cor principal (azul/roxo) */
     --primary-dark: #4f46e5;
     --primary-light: #818cf8;
     --secondary-color: #ec4899; /* Cor secundária (rosa) */
@@ -25,7 +25,7 @@
     --border-color: #e5e7eb; /* Cor da borda */
     --text-dark: #111827; /* Texto escuro */
     --text-light: #6b7280; /* Texto mais claro */
-    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-sm: 0 1px 2px 0  rgba(247, 17, 17, 0.05);
     --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
     --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
     --transition: all 0.3s ease; /* Transições suaves */
@@ -474,12 +474,13 @@ p {
    =========================== */
 
 @media (prefers-color-scheme: dark) {
+    /* Define a cor do fundo do corpo html*/
     body {
-        background-color: #111827;
+        background-color: #1c59dc;
         color: #f3f4f6;
     }
 
-    .form-section {
+    /*Defne a cor ods cards*/.form-section {
         background-color: #1f2937;
         box-shadow: var(--shadow-lg);
     }

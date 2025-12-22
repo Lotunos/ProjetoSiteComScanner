@@ -71,15 +71,16 @@
                                 <input type="text" id="guestName" name="guestName" placeholder="" required>
                             </div>
                             <div class="form-field">
-                                <label for="guestEmail">Email</label>
-                                <input type="email" id="guestEmail" name="guestEmail" placeholder="">
+                                <label for="guestPhone">Telefone</label>
+                                <input type="tel" id="guestPhone" name="guestPhone" placeholder="">
                             </div>
                         </div>
 
                         <div class="form-row">
                             <div class="form-field">
-                                <label for="guestPhone">Telefone</label>
-                                <input type="tel" id="guestPhone" name="guestPhone" placeholder="">
+                                <label for="guestCount">Número de Mesas</label>
+                                <!-- Numero de Mesas/ limete - 10/ atualizar dps -->
+                                <input type="number" id="guestCount" name="guestCount" min="0" max="10" value="0">
                             </div>
                             <div class="form-field">
                                 <label for="guestCount">Número de Acompanhantes</label>
@@ -119,7 +120,8 @@
                     <!-- botões de enviar e limpar -->
                     <div class="form-actions">
                         <button type="reset" class="btn btn-secondary">Limpar</button>
-                        <button type="submit" class="btn btn-primary">Gerar Convite</button>
+                       <a href="Informaçãoes adicionais.html" class="btn btn-primary">Proximo</a>
+
                     </div>
                 </form>
             </div>

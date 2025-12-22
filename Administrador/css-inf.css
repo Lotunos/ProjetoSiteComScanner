@@ -1,0 +1,153 @@
+*{
+  box-sizing:border-box;
+}
+
+/* Variáveis globais (cores, raios, etc.) */
+:root{
+  --bg1:#0b1322;
+  --bg2:#101b2e;
+  --panel:#1b263a;
+  --panel2:#1a2436;
+
+  --border: rgba(255,255,255,.65);
+  --label: rgba(255,255,255,.18);
+  --text: #eaf0ff;
+
+  --field: rgba(75, 88, 110, .55);
+  --field-border: rgba(255,255,255,.10);
+
+  --accent: #3973e7;
+
+  --radius: 12px;
+}
+
+/* Body da página */
+body{
+  margin:0;
+  min-height:100vh;
+  font-family: Arial, Helvetica, sans-serif;
+  color:var(--text);
+
+  /* Fundo agora é uma cor sólida #1c59dc,
+     removendo os gradientes anteriores */
+  background: #1c59dc;
+}
+
+/* Container principal do formulário */
+.container{
+  width: min(1500px, 96vw);
+  margin: 36px auto;
+  padding: 26px 24px 34px;
+  background: linear-gradient(180deg, rgba(27,38,58,.85), rgba(20,30,48,.72));
+  border-radius: 18px;
+}
+
+/* Grupo de campos (fieldset) */
+.form-group{
+  border: 2px solid var(--border);
+  border-radius: 2px;
+  padding: 22px 22px 26px;
+  background: transparent;
+}
+
+/* Título do grupo (legend) */
+.form-group > legend{
+  padding: 0 10px;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+/* Wrapper de cada campo */
+.form-field{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  margin-top: 18px;
+}
+
+/* Rótulos dos campos */
+label{
+  font-size: 14px;
+  color: var(--label);
+}
+
+/* Campos de entrada, select e textarea */
+input, select, textarea{
+  width: 100%;
+  height: 58px;
+  padding: 0 18px;
+  border-radius: var(--radius);
+  border: 1px solid var(--field-border);
+  background: var(--field);
+  color: var(--text);
+  outline: none;
+}
+
+/* Placeholder dos campos */
+input::placeholder, textarea::placeholder{
+  color: rgba(255,255,255,.65);
+}
+
+/* Foco nos campos (borda e sombra) */
+input:focus, select:focus, textarea:focus{
+  border-color: rgba(111,99,255,.55);
+  box-shadow: 0 0 0 4px rgba(111,99,255,.12);
+}
+
+/* Select com setinha personalizada */
+select{
+  appearance:none;
+  background-image:
+    linear-gradient(45deg, transparent 50%, rgba(255,255,255,.85) 50%),
+    linear-gradient(135deg, rgba(255,255,255,.85) 50%, transparent 50%);
+  background-position:
+    calc(100% - 20px) 26px,
+    calc(100% - 14px) 26px;
+  background-size: 6px 6px, 6px 6px;
+  background-repeat:no-repeat;
+  padding-right: 44px;
+}
+
+/* Textarea com altura mínima e resize vertical */
+textarea{
+  min-height: 110px;
+  padding: 14px 18px;
+  resize: vertical;
+}
+
+/* Área dos botões do formulário */
+.form-actions{
+  margin-top: 26px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 18px;
+}
+
+/* Estilo base dos botões */
+.btn{
+  height: 46px;
+  padding: 0 28px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,.10);
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Botão secundário */
+.btn-secondary{
+  background: rgba(70, 82, 103, .35);
+  color: rgba(255,255,255,.92);
+}
+
+/* Botão primário */
+.btn-primary{
+  background: #6f63ff;
+  color: #ffffff;
+  border-color: rgba(255,255,255,.08);
+}
+
+/* Hover dos botões */
+.btn-secondary:hover{ background: rgba(70, 82, 103, .50); }
+.btn-primary:hover{ filter: brightness(1.06); }
