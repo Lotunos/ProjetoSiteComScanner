@@ -20,7 +20,7 @@ async function buscarCliente(nome,senha) {
         return null;
     }
     alert("Login bem-sucedido")
-    window.location.href = "./Administrador/PaginaAdministrador.html";
+    window.location.href = "../Administrador/PaginaAdministrador.html";
 }
 async function criarCliente(nome,cpf,senha){
     const {data,error} = await supaBase.from("Cliente")
@@ -30,5 +30,5 @@ async function criarCliente(nome,cpf,senha){
         return null;
     }
     alert("Dados inseridos com sucesso")
-    window.location.href = "./TelaLogin/Login.html";
+    window.location.href = "../TelaLogin/Login.html";
 }
