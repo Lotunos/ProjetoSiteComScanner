@@ -9,7 +9,7 @@ body {
     color: var(--text-dark);
     display: flex; /* Utilizado para facilitar o alinhamento dos elementos */
     height: 100vh;
-    background-color: rgba(80, 79, 79, 0.389);
+    background-color: #504f4f63;
     justify-content: center; /* Centraliza o container */
     align-items: center; /* Centraliza o container */
 }
