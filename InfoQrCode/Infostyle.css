@@ -1,0 +1,93 @@
+* {
+    margin: 0; /* Margem externa*/
+    padding: 0; /* Margem interna */
+    box-sizing: border-box; /* Modifica o tamanho dos elementos dentro da "caixa" */
+}
+
+body{
+    font-family: "Segoe UI"; /* Fonte da tela */
+    color: var(--text-dark);
+    display: flex; /* Utilizado para facilitar o alinhamento dos elementos */
+    height: 100vh;
+    background-color: #504f4f63;
+    justify-content: center; /* Centraliza o container */
+    align-items: center; /* Centraliza o container */
+}
+
+form{
+    background-color: white;
+    padding: 50px;
+    border-radius: 30px; /* Ajusta a curvatura da borda */
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+    
+}
+
+h1 {
+    /* Ajusta o título */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    height: 25px;
+}
+
+button{
+    padding: 10px;
+    align-self: center;
+    width: 110px;
+    border-radius: 50px;
+
+    /* Cor do botão */
+    background-image: linear-gradient(#0407aa);
+    border: solid 1px #0407aa;
+
+    /* Fonte do botão */
+    font-family: "Segoe UI";
+    font-weight: 700;
+    color: white;
+
+}
+
+.Titulo{
+
+    /* Ajusta os tópicos "Nome" e "Mesa" */
+    display: flex;
+    flex-direction: column; /* Ajusta as posições em colunas*/
+    align-items: center;
+    gap: 10px; /* Distância dos elementos*/
+}
+
+.info{
+    /* Ajusta as cores, letras dos tópicos "Nome" e "Mesa" */
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.caixaTexto{
+    /* Ajusta as caixas de textos que mostrarão as informações dos usuários */
+    width: 235px;
+    padding: 5px 5px;
+    border-radius: 5px;
+    border: none;
+    background-color: rgba(80, 79, 79, 0.389);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.barraHorizontal {
+    background-color: #0407aa;
+    height: 5px;
+    width: 235px; 
+
+}
