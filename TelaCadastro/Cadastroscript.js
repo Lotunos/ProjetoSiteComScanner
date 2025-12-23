@@ -1,6 +1,6 @@
-const password = document.getElementById("password");
-const confPassword = document.getElementById("ConfPassword");
-const showPassword = document.getElementById("showPassword");
+const password = document.getElementById("senha");
+const confPassword = document.getElementById("ConfSenha");
+const showPassword = document.getElementById("mostrarSenha");
 const form = document.querySelector("form");
 
 // Exibir/ocultar senha
