@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página de login</title>
-    <link rel="stylesheet" href="Loginstyle.css" />
+    <link rel="stylesheet" href="LoginStyle.css">
 </head>
 <body>
     
-    <form id="Formulario" action="" method="get">
+    <form action="" method="post">
         <h1>Faça o seu login</h1>
         <div class="barraHorizontal"></div>
 
@@ -18,13 +18,13 @@
         </div>
 
         <div class="campoInput">
-            <label for="password">Sua senha:</label>
-            <input type="password" id="password" name="password" required>
+            <label for="senha">Sua senha:</label>
+            <input type="password" id="senha" name="senha" required>
         </div>
 
         <div class="exibirSenha">
-            <input type="checkbox" id="showPassword">
-            <label for="showPassword">Exibir senha</label>
+            <input type="checkbox" id="mostrarSenha">
+            <label for="mostrarSenha">Exibir senha</label>
         </div>
 
         <button type="submit">Entrar</button>
@@ -33,14 +33,16 @@
             <a href="https://www.alterar_depois.com">Clique aqui!</a>
         </p>
     </form>
-    <script type="module">
-        import { buscarCliente } from '../DAO/ClienteDAO.js';
-        const form = document.getElementById('Formulario');
-        form.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            await buscarCliente(email, password);
-        });    
+    <script src="../DAO/ClienteDAO.js"></script>
+    <script src="LoginScript.js"></script>
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+        event.preventDefault(); // evita recarregar a página
+        // Pega os valores dos campos
+        const usuario = document.getElementById("email").value;
+        const senha = document.getElementById("senha").value;
+        buscarCliente(usuario,senha);
+    });
     </script>
-    <script src="Loginscript.js"></script>
 </body>
 </html>
