@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página de login</title>
-    <link rel="stylesheet" href="Loginstyle.css">
+    <link rel="stylesheet" href="Loginstyle.css" />
 </head>
 <body>
     
-    <form action="" method="post">
+    <form id="Formulario" action="" method="get">
         <h1>Faça o seu login</h1>
         <div class="barraHorizontal"></div>
 
@@ -33,16 +33,14 @@
             <a href="https://www.alterar_depois.com">Clique aqui!</a>
         </p>
     </form>
-    <script src="../DAO/ClienteDAO.js"></script>
-    <script src="Loginscript.js"></script>
-    <script>
-        document.getElementById("loginForm").addEventListener("submit", function(event) {
-        event.preventDefault(); // evita recarregar a página
-        // Pega os valores dos campos
-        const usuario = document.getElementById("email").value;
-        const senha = document.getElementById("password").value;
-        buscarCliente(usuario,senha);
-    });
+    <script type="module">
+        import { buscarCliente } from '../DAO/ClienteDAO.js';
+        const form = document.getElementById('Formulario');
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            await buscarCliente(email, password);
+        });    
     </script>
+    <script src="Loginscript.js"></script>
 </body>
 </html>
