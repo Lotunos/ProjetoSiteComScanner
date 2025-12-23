@@ -1,0 +1,100 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: #333;
+  display: flex;
+  height: 100vh;
+  background-color: #504f4f63;
+  justify-content: center; /* centraliza em telas pequenas */
+  align-items: center;
+  padding: 20px;
+}
+
+/* Formulário */
+form {
+  background-color: white;
+  padding: 40px;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+  max-width: 600px;
+  min-height: 600px;
+}
+
+/* Título */
+h1 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #0407aa;
+}
+
+/* Botão */
+button {
+  padding: 10px;
+  align-self: center;
+  width: 100%;
+  max-width: 210px;
+  border-radius: 50px;
+  background-color: #0407aa;
+  border: solid 1px #0407aa;
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-weight: 700;
+  color: white;
+  cursor: pointer;
+}
+
+/* Inputs */
+input {
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+  background-color: rgba(80, 79, 79, 0.389);
+}
+
+/* Barra decorativa */
+.barraHorizontal {
+  background-color: #0407aa;
+  height: 5px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Agrupamento de campos */
+.campoInput {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* 📱 Responsividade para telas menores */
+@media (max-width: 600px) {
+  body {
+    justify-content: center;
+    padding: 10px;
+  }
+
+  form {
+    padding: 30px 20px;
+    border-radius: 20px;
+    min-height: auto;
+  }
+
+  h1 {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  button {
+    width: 100%;
+  }
+}
