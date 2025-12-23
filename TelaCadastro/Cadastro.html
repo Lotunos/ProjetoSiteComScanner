@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de login</title>
+    <link rel="stylesheet" href="Cadastrostyle.css">
+</head>
+<body>
+    
+    <form action="" method="post">
+        <h1>Faça o seu cadastro</h1>
+        <div class="barraHorizontal"></div>
+
+        <div class="campoInput">
+            <label for="nome">Nome: </label>
+            <input type="text" id="nome" name="nome" required>
+        </div>
+
+        <div class="campoInput">
+            <label for="">CPF: </label>
+            <input type="text" id="cpf" name="cpf" required>
+        </div>
+
+        <div class="campoInput">
+            <label for="">Telefone: </label>
+            <input type="text" id="telefone" name="telefone">
+        </div>
+
+        <div class="campoInput">
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+
+        <div class="campoInput">
+            <label for="password">Senha:</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+
+        <div class="campoInput">
+            <label for="ConfPassword">Confirmar senha:</label>
+            <input type="password" id="ConfPassword" name="ConfPassword" required>
+        </div>
+
+        <div class="exibirSenha">
+            <input type="checkbox" id="showPassword">
+            <label for="showPassword">Exibir senha</label>
+        </div>
+
+        <button type="submit">Cadastrar usuário</button>
+
+    </form>
+    <script src="Cadastroscript.js"></script>
+</body>
+</html>
