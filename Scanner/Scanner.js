@@ -4,22 +4,32 @@
   qrbox que define o tamanho da moldura de foco na tela, 
   e, por fim, a verbosidade, que, caso fosse true, mostraria logs 
   detalhados de depuração no console. */
+import {mostarDados} from '../DAO/ClienteDAO.js';
 const SCANNER = new Html5QrcodeScanner("leitor",{fps: 10, qrbox: { width: 250, height: 250 }},false);
-
 /*Caso a leitura do QR Code tenha sido bem-sucedida, a seguinte função 
   irá substituir o conteúdo presente na div "resultado" pelo valor 
   vinculado ao QR Code.*/
-function teveSucesso(resultado){
-    document.getElementById('resultado').innerHTML = `Resultado: ${resultado}`;
-
-    SCANNER.clear(); //Para o funcionamento do scanner e limpa a interface.
+async function teveSucesso(resultado){
+    while(resultado == null){
+      document.getElementById('resultado').innerHTML = 'Aguardando resultado ...';
+    }
+    document.getElementById('resultado').innerHTML = 'QRcode lido, verifique as informações';
+    SCANNER.clear();
+    document.getElementById('scanner').addEventListener('submit', async function(event) {
+      event.preventDefault();
+      const cpf = String(resultado);//Isto esta errado, devemos verificar como criar e o json
+      const senha = String(resultado)////Isto esta errado, devemos verificar como criar e o json
+      const modulo = await mostarDados(senha,cpf);
+      const cliente = modulo[0];
+      document.getElementById("nome").innerText = cliente.nome;
+      document.getElementById("mesa").innerText = cliente.senha;
+    });
 }
-
 //Função que exibe uma mensagem de erro em caso de mau funcionamento durante a leitura.
-function exibirMensagemDeErro(erro){
-    console.error(erro);
+async function exibirMensagemDeErro(erro){
+    return erro;
 }
-
-/*Inicia efetivamente o processo de renderização e leitura.
-  Passamos as duas funções criadas acima como callbacks.*/
-SCANNER.render(teveSucesso, exibirMensagemDeErro);
+/*Inicia efetivamente o processo de renderização e leitura. Passamos as duas funções criadas acima como callbacks.*/
+export async function scanner(){
+SCANNER.render(teveSucesso,exibirMensagemDeErro);
+}

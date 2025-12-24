@@ -5,7 +5,7 @@
     box-sizing: border-box; /* Modifica o tamanho dos elementos dentro da "caixa" */
 }
 
-body{
+body {
     font-family: "Segoe UI"; /* Fonte da tela */
     color: var(--text-dark);
     display: flex; /* Utilizado para facilitar o alinhamento dos elementos */
@@ -22,25 +22,21 @@ form{
 
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 20px;
-
-    
+    gap: 10px;
 }
 
 h1 {
-    /* Ajusta o título */
+
     display: flex;
-    justify-content: center;
+    justify-content: left;
     align-items: center;
     font-size: 24px;
-    height: 25px;
 }
 
 button{
     padding: 10px;
     align-self: center;
-    width: 110px;
+    width: 210px;
     border-radius: 50px;
 
     /* Cor do botão */
@@ -54,41 +50,34 @@ button{
 
 }
 
-.Titulo{
-
-    /* Ajusta os tópicos "Nome" e "Mesa" */
-    display: flex;
-    flex-direction: column; /* Ajusta as posições em colunas*/
-    align-items: center;
-    gap: 10px; /* Distância dos elementos*/
-}
-
-.info{
-    /* Ajusta as cores, letras dos tópicos "Nome" e "Mesa" */
-    color: black;
-    font-size: 20px;
-    font-weight: bold;
-    display: flex;
-    justify-content: center;
-    
-}
-
-.caixaTexto{
-    /* Ajusta as caixas de textos que mostrarão as informações dos usuários */
-    width: 235px;
+input{
     padding: 5px 5px;
     border-radius: 5px;
     border: none;
     background-color: rgba(80, 79, 79, 0.389);
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .barraHorizontal {
     background-color: #0407aa;
     height: 5px;
-    width: 235px; 
+    width: 235px;
+}
 
+.campoInput{
+
+    display: flex;
+    flex-direction: column; /* Ajusta as posições em colunas*/
+    gap: 10px; /* Distância dos elementos*/
+    height: "auto";
+    word-wrap: break-word;
+}
+
+.exibirSenha{
+    display: flex;
+    gap: 5px;
+}
+
+.lembrarUsuario{
+    display: flex;
+    gap: 5px;
 }
