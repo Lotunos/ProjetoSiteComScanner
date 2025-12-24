@@ -8,13 +8,13 @@
 </head>
 <body>
     
-    <form action="" method="post">
+    <form id="formulario" action="" method="get">
         <h1>Faça o seu login</h1>
         <div class="barraHorizontal"></div>
 
         <div class="campoInput">
-            <label for="email">Seu e-mail:</label>
-            <input type="email" id="email" name="email" required>
+            <label for="cpf">Seu CPF:</label>
+            <input id="cpf" name="cpf" required>
         </div>
 
         <div class="campoInput">
@@ -33,15 +33,14 @@
             <a href="https://www.alterar_depois.com">Clique aqui!</a>
         </p>
     </form>
-    <script src="../DAO/ClienteDAO.js"></script>
     <script src="LoginScript.js"></script>
-    <script>
-        document.getElementById("loginForm").addEventListener("submit", function(event) {
-        event.preventDefault(); // evita recarregar a página
-        // Pega os valores dos campos
-        const usuario = document.getElementById("email").value;
-        const senha = document.getElementById("senha").value;
-        buscarCliente(usuario,senha);
+    <script type="module">
+    import { buscarCliente } from '../DAO/ClienteDAO.js';
+    document.getElementById('formulario').addEventListener('submit', function(event) {
+        event.preventDefault();
+        const senha = document.getElementById('senha').value;
+        const cpf = document.getElementById('cpf').value;
+        buscarCliente(cpf, senha);
     });
     </script>
 </body>
