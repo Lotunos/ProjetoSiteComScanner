@@ -18,22 +18,38 @@ export async function buscarCliente(cpf,senha) {
     }
     const cliente = data[0];
     if(cliente.senha != senhaString){
-        alert("Erro: Senha inválida")
+        alert("Erro: Senha inválida");
         return null;
     }
-    alert("Login bem-sucedido")
+    alert("Login bem-sucedido");
     window.location.href = "../Administrador/PaginaAdministrador.html";
 }
 export async function criarCliente(nome,cpf,senha){
     const nomeString = String(nome);
     const cpfString= String(cpf).replace(/[.-]/g,'');
-    const senhaString=String(senha)
+    const senhaString=String(senha);
     const {data,error} = await supaBase.from("Cliente")
                                        .insert([{cpf:cpfString,nome:nomeString,senha:senhaString}])
     if(error){
-        alert("Dados não inseridos, verifique com o administrador")
+        alert("Dados não inseridos, verifique com o administrador");
         return null;
     }
     alert("Dados inseridos com sucesso")
     window.location.href = "../TelaLogin/Login.html";
+}
+export async function mostarDados(nome, cpf){
+    nome = String(nome);
+    cpf = String(cpf);
+    const {data,error} = await supaBase.from("Cliente")
+                                       .select("*")
+                                       .eq("cpf",cpf);
+    if(error){
+        alert("Erro :"+error.message);
+        return null;
+    }
+    if(data[0] == null){
+        alert("Erro : dados não encontrados");
+        return null;
+    }
+    return data;
 }
