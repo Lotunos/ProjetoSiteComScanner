@@ -8,10 +8,30 @@
     <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
 </head>
 <body>
-
-    <div id="leitor"></div> 
-    <div id="resultado">Resultado: Aguardando leitura...</div>
-    
-    <script src="Scanner.js"></script>
+    <form id="scanner" action="" method="get"> 
+        <div id="leitor"></div> 
+        <div id="resultado">Aguardando resultado ... </div>
+        <div class="campoInput">
+            <button onclick="document.getElementById('formulario')
+            .scrollIntoView({behavior: 'smooth'})">Verificar</button>
+        </div>
+    </form> 
+    <form id="formulario" action="" method="">       
+        <h1>Informações</h1>
+        <div class="barraHorizontal"></div>
+        <div class="campoInput">
+            <label for="nome" class="info">Convidado principal:</label>
+            <b><p id="nome"></p></b> 
+        </div>
+        <div class="campoInput">
+            <label for="mesa" class="info">Mesa: </label>
+            <b><p id="mesa"></p></b>          
+            <button onclick="location.reload()">Voltar</button>
+        </div>
+    </form>
+    <script type = "module">
+        import {scanner} from '../Scanner/Scanner.js'
+        const modulo = await scanner();
+    </script>
 </body>
 </html>
