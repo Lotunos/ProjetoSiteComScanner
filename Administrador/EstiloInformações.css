@@ -43,7 +43,7 @@ body{
 }
 
 /* Grupo de campos (fieldset) */
-.form-group{
+.grupo-formulario{
   border: 2px solid var(--border);
   border-radius: 2px;
   padding: 22px 22px 26px;
@@ -51,7 +51,7 @@ body{
 }
 
 /* Título do grupo (legend) */
-.form-group > legend{
+.grupo-formulario > legend{
   padding: 0 10px;
   font-size: 22px;
   font-weight: 700;
@@ -59,7 +59,7 @@ body{
 }
 
 /* Wrapper de cada campo */
-.form-field{
+.campo-formulario{
   display:flex;
   flex-direction:column;
   gap:10px;
@@ -117,7 +117,7 @@ textarea{
 }
 
 /* Área dos botões do formulário */
-.form-actions{
+.acoes-formulario{
   margin-top: 26px;
   display: flex;
   justify-content: flex-end;
@@ -125,7 +125,7 @@ textarea{
 }
 
 /* Estilo base dos botões */
-.btn{
+.botao{
   height: 46px;
   padding: 0 28px;
   border-radius: 10px;
@@ -136,18 +136,18 @@ textarea{
 }
 
 /* Botão secundário */
-.btn-secondary{
+.botao-secundario{
   background: rgba(70, 82, 103, .35);
   color: rgba(255,255,255,.92);
 }
 
 /* Botão primário */
-.btn-primary{
+.botao-primario{
   background: #6f63ff;
   color: #ffffff;
   border-color: rgba(255,255,255,.08);
 }
 
 /* Hover dos botões */
-.btn-secondary:hover{ background: rgba(70, 82, 103, .50); }
-.btn-primary:hover{ filter: brightness(1.06); }
+.botao-secundario:hover{ background: rgba(70, 82, 103, .50); }
+.botao-primario:hover{ filter: brightness(1.06); }
