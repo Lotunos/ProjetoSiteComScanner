@@ -3,35 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Scanner-qr-code</title>
+    <title>Scanner QR Code</title>
+
     <link rel="stylesheet" href="stylescanner.css">
+
+    <!-- Biblioteca do QR Code -->
     <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
 </head>
 <body>
-    <form id="scanner" action="" method="get"> 
-        <div id="leitor"></div> 
-        <div id="resultado">Aguardando resultado ... </div>
-        <div class="campoInput">
-            <button onclick="document.getElementById('formulario')
-            .scrollIntoView({behavior: 'smooth'})">Verificar</button>
-        </div>
-    </form> 
-    <form id="formulario" action="" method="">       
+    <form id="scanner">
+        <div id="leitor"></div>
+        <div id="resultado">Aguardando resultado...</div>
+    </form>
+    <form id="formulario">
         <h1>Informações</h1>
         <div class="barraHorizontal"></div>
+
         <div class="campoInput">
-            <label for="nome" class="info">Convidado principal:</label>
-            <b><p id="nome"></p></b> 
+            <label class="info">Convidado principal:</label>
+            <b><p id="nome"></p></b>
         </div>
+
         <div class="campoInput">
-            <label for="mesa" class="info">Mesa: </label>
-            <b><p id="mesa"></p></b>          
-            <button onclick="location.reload()">Voltar</button>
+            <label class="info">Mesa:</label>
+            <b><p id="mesa"></p></b>
+
+            <button type="button" onclick="location.reload()">Voltar</button>
         </div>
     </form>
-    <script type = "module">
-        import {scanner} from '../Scanner/Scanner.js'
-        const modulo = await scanner();
+
+    <!-- JS -->
+    <script type="module">
+        import { scanner } from '../Scanner/Scanner.js';
+        await scanner();
     </script>
+
 </body>
 </html>
