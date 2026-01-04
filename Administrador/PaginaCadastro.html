@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gerador de Convites QR Code - Formulário</title>
+  <link rel="stylesheet" href="EstiloAdministrador.css">
+</head>
+<body>
+
+  <!-- O container principal -->
+  <div class="container">
+
+    <!-- Cabeçalho -->
+    <header class="cabecalho">
+      <div class="conteudo-cabecalho">
+        <!-- O título principal da página -->
+        <h1>nome de empresa generica</h1>
+      </div>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main class="conteudo-principal">
+
+      <!-- Formulário Inicial -->
+      <div class="secao-formulario">
+        <h2>Preencha os dados do convite</h2>
+
+        <form id="formularioConvite" class="formulario">
+          <fieldset class="grupo-formulario">
+            <legend>Informações do Evento</legend>
+
+            <div class="linha-formulario">
+              <div class="campo-formulario">
+                <label for="nomeEvento">Nome do Evento *</label>
+                <input type="text" id="nomeEvento" name="nomeEvento" placeholder="" required>
+              </div>
+
+              <div class="campo-formulario">
+                <label for="dataEvento">Data *</label>
+                <input type="date" id="dataEvento" name="dataEvento" required>
+              </div>
+            </div>
+
+            <div class="linha-formulario">
+              <div class="campo-formulario">
+                <label for="horaEvento">Horário *</label>
+                <input type="time" id="horaEvento" name="horaEvento" required>
+              </div>
+
+              <div class="campo-formulario">
+                <label for="localEvento">Local *</label>
+                <input type="text" id="localEvento" name="localEvento" placeholder="" required>
+              </div>
+            </div>
+
+            <div class="campo-formulario">
+              <label for="descricaoEvento">Descrição</label>
+              <textarea id="descricaoEvento" name="descricaoEvento" placeholder="Adicione detalhes sobre o evento" rows="3"></textarea>
+            </div>
+          </fieldset>
+
+          <!-- Campo Convidado -->
+          <fieldset class="grupo-formulario">
+            <legend>Informações do Convidado</legend>
+
+            <div class="linha-formulario">
+              <div class="campo-formulario">
+                <label for="nomeConvidado">Nome do Convidado *</label>
+                <input type="text" id="nomeConvidado" name="nomeConvidado" placeholder="" required>
+              </div>
+
+              <div class="campo-formulario">
+                <label for="telefoneConvidado">Telefone</label>
+                <input type="tel" id="telefoneConvidado" name="telefoneConvidado" placeholder="">
+              </div>
+            </div>
+
+            <div class="linha-formulario">
+              <div class="campo-formulario">
+                <label for="numeroMesas">Número de Mesas</label>
+                <input type="number" id="numeroMesas" name="numeroMesas" min="0" max="10" value="0">
+              </div>
+
+              <div class="campo-formulario">
+                <label for="numeroAcompanhantes">Número de Acompanhantes</label>
+                <input type="number" id="numeroAcompanhantes" name="numeroAcompanhantes" min="0" max="10" value="0">
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- botões de enviar e limpar -->
+          <div class="acoes-formulario">
+            <button type="reset" class="botao botao-secundario">Limpar</button>
+            <a href="InformaçõesAdicionais.html" class="botao botao-primario">Proximo</a>
+          </div>
+        </form>
+      </div>
+
+    </main>
+
+    <!-- Rodapé  -->
+    <footer class="rodape">
+      <p>&copy;nome de empresa generica</p>
+    </footer>
+
+  </div>
+
+</body>
+</html>

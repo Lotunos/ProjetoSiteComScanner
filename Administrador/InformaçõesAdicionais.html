@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gerador de Convites QR Code - Formulário</title>
+  <link rel="stylesheet" href="EstiloInformações.css">
+</head>
+
+<body>
+  <div class="container">
+    <fieldset class="grupo-formulario">
+      <legend>Informações Adicionais</legend>
+
+      <div class="campo-formulario">
+        <label for="codigoVestimenta">Código de Vestimenta</label>
+        <select id="codigoVestimenta" name="codigoVestimenta">
+          <option value="">Selecione...</option>
+          <option value="casual">Casual</option>
+          <option value="smart-casual">Smart Casual</option>
+          <option value="formal">Formal</option>
+          <option value="black-tie">Black Tie</option>
+        </select>
+      </div>
+
+      <div class="campo-formulario">
+        <label for="prazoConfirmacao">Prazo para Confirmação</label>
+        <input type="date" id="prazoConfirmacao" name="prazoConfirmacao">
+      </div>
+
+      <div class="campo-formulario">
+        <label for="nomeOrganizador">Organizador</label>
+        <input type="text" id="nomeOrganizador" name="nomeOrganizador">
+      </div>
+    </fieldset>
+
+    <div class="acoes-formulario">
+      <button type="reset" class="botao botao-secundario">Limpar</button>
+      <button type="button" class="botao botao-primario">Gerar Convite</button>
+    </div>
+  </div>
+</body>
+</html>
