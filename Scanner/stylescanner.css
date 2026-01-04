@@ -1,96 +1,126 @@
 @charset "UTF-8";
+
+/* ===== RESET BÁSICO ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ===== BODY ===== */
 body {
     font-family: Arial, sans-serif;
+    background-color: #504f4f63;
+    background:linear-gradient(135deg, #fdfdfd, #f7f7f7, #f5e6e0, #b87c2d);
+
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    overflow: hidden;
     align-items: center;
     justify-content: center;
-    height: 100vh;
-    margin: 0;
-    background-color: #504f4f63;
 }
-#leitor {
-    margin-top: 50%;
+
+/* ===== SCANNER ===== */
+#scanner {
+    background-color: white;
+    padding: 50px;
+    border-radius: 30px;
+    border: 1px solid #e0c097;
+
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Container da câmera */
+#leitor {
     width: 500px;
     background: white;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
-#resultado { 
-    margin-top: 20px;
-    font-size: 1.2rem;
+
+/* Texto de status */
+#resultado {
+    margin-top: 10px;
+    font-size: 1.1rem;
     font-weight: bold;
-    vertical-align:auto;
-    color: #000000;
+    color: #000;
 }
-form{
+
+/* ===== FORMULÁRIO (OCULTO NO INÍCIO) ===== */
+#formulario {
+    display: none;
+
     background-color: white;
     padding: 50px;
-    border-radius: 30px; /* Ajusta a curvatura da borda */
-    margin-top: 25%;
+    border-radius: 30px;
+
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+/* ===== TÍTULO ===== */
+h1 {
+    width: 100%;
+    font-size: 24px;
+    text-align: left;
+}
+
+/* ===== BARRA ===== */
+.barraHorizontal {
+    width: 100%;
+    height: 5px;
+    background-color: #b48a60;
+    border-radius: 5px;
+}
+
+/* ===== CAMPOS ===== */
+.campoInput {
+    width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 8px;
 }
 
-h1 {
-
-    display: flex;
-    justify-content: left;
-    align-items: center;
-    font-size: 24px;
+/* ===== TEXTO ===== */
+.info {
+    font-weight: bold;
 }
 
-button{
-    padding: 10px;
-    align-self: center;
-    width: 210px;
-    border-radius: 50px;
-
-    /* Cor do botão */
-    background-image: linear-gradient(#0407aa);
-    border: solid 1px #0407aa;
-
-    /* Fonte do botão */
-    font-family: "Segoe UI";
-    font-weight: 700;
-    color: white;
+/* ===== BOTÕES ===== */
+button {
+    
+    margin-top: 15px;
+    background-color: #b48a60; /* Cor dourada */
+    color: #ffffff; /* Texto branco */
+    border: none; /* Sem borda */
+    padding: 12px; /* Espaçamento interno */
+    border-radius: 8px; /* Bordas arredondadas */
+    font-size: 15px; /* Tamanho da fonte */
+    cursor: pointer; /* Cursor de clique */
+    transition: background 0.3s ease; /* Transição suave ao passar o mouse */
+    font-family: 'Quicksand', sans-serif;
 
 }
 
-input{
-    padding: 5px 5px;
-    border-radius: 5px;
-    border: none;
-    background-color: rgba(80, 79, 79, 0.389);
+button:hover {
+    opacity: 0.9;
 }
 
-.barraHorizontal {
-    background-color: #0407aa;
-    height: 5px;
-    width: 235px;
-}
+/* ===== RESPONSIVO ===== */
+@media (max-width: 600px) {
+    #leitor {
+        width: 100%;
+    }
 
-.campoInput{
-
-    display: flex;
-    flex-direction: column; /* Ajusta as posições em colunas*/
-    gap: 10px; /* Distância dos elementos*/
-    height: "auto";
-    word-wrap: break-word;
-}
-
-.exibirSenha{
-    display: flex;
-    gap: 5px;
-}
-
-.lembrarUsuario{
-    display: flex;
-    gap: 5px;
+    #scanner,
+    #formulario {
+        padding: 30px;
+        width: 90%;
+    }
 }

@@ -10,7 +10,7 @@ body {
     color: var(--text-dark);
     display: flex; /* Utilizado para facilitar o alinhamento dos elementos */
     height: 100vh;
-    background-color: #504f4f63;
+    background:linear-gradient(135deg, #fdfdfd, #f7f7f7, #f5e6e0, #b87c2d);
     justify-content: center; /* Centraliza o container */
     align-items: center; /* Centraliza o container */
 }
@@ -18,7 +18,9 @@ body {
 form{
     background-color: white;
     padding: 50px;
+    border: 1px solid #e0c097;
     border-radius: 30px; /* Ajusta a curvatura da borda */
+    
 
     display: flex;
     flex-direction: column;
@@ -27,40 +29,47 @@ form{
 
 h1 {
 
+    color: #b48a60;
+
     display: flex;
-    justify-content: left;
+    justify-content: center;
     align-items: center;
-    font-size: 24px;
+    font-size: 50px;
 }
 
 button{
-    padding: 10px;
-    align-self: center;
-    width: 210px;
-    border-radius: 50px;
 
-    /* Cor do botão */
-    background-image: linear-gradient(#0407aa);
-    border: solid 1px #0407aa;
-
-    /* Fonte do botão */
-    font-family: "Segoe UI";
-    font-weight: 700;
-    color: white;
+    background-color: #b48a60; /* Cor dourada */
+    color: #ffffff; /* Texto branco */
+    border: none; /* Sem borda */
+    padding: 12px; /* Espaçamento interno */
+    width: 100%; /* Ocupa toda a largura */
+    border-radius: 8px; /* Bordas arredondadas */
+    font-size: 15px; /* Tamanho da fonte */
+    cursor: pointer; /* Cursor de clique */
+    transition: background 0.3s ease; /* Transição suave ao passar o mouse */
+    font-family: 'Quicksand', sans-serif;
 
 }
 
 input{
     padding: 5px 5px;
     border-radius: 5px;
-    border: none;
-    background-color: rgba(80, 79, 79, 0.389);
+    background-color: #f9f9f9; /* Fundo claro */
+    border: 1px solid #dddddd;
+}
+
+a {
+  color: #b48a60; /* Link em dourado */
+  text-decoration: none; /* Remove sublinhado */
+  font-family: 'Quicksand', sans-serif;
 }
 
 .barraHorizontal {
-    background-color: #0407aa;
+    
+    background-color: #b48a60;
     height: 5px;
-    width: 235px;
+    width: 100%;
 }
 
 .campoInput{
@@ -70,11 +79,16 @@ input{
     gap: 10px; /* Distância dos elementos*/
     height: "auto";
     word-wrap: break-word;
+
+    margin-top: 10px; /* Espaço acima do texto */
+    font-size: 12px; /* Fonte menor */
+    color: #4b4949e5;
 }
 
 .exibirSenha{
     display: flex;
     gap: 5px;
+    color:#4b4949e5 ;
 }
 
 .lembrarUsuario{
