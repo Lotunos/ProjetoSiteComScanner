@@ -10,23 +10,55 @@
 }
 
 :root {
-  --primary-color: #6392f1;
-  --primary-dark: #4f46e5;
-  --primary-light: #818cf8;
-  --secondary-color: #ec4899;
-  --success-color: #10b981;
-  --warning-color: #f59e0b;
-  --danger-color: #ef4444;
-  --dark-bg: #1f2937;
-  --light-bg: #f9fafb;
-  --border-color: #e5e7eb;
-  --text-dark: #111827;
-  --text-light: #6b7280;
-  --shadow-sm: 0 1px 2px 0 rgba(247, 17, 17, 0.05);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+
+  /* Cor principal do botão e títulos (Marrom Bronze) */
+  --primary-color: #B58D64;
+
+  /* Versão mais escura para :hover (Calculada baseada no marrom) */
+  --primary-dark: #967553;
+
+  /* Versão clara para detalhes/fundos (Bege Areia) */
+  --primary-light: #E7D0B7;
+
+  /* Cor secundária (Bege Suave - substituindo o rosa) */
+  --secondary-color: #EFDDCF;
+
+  /* Mantive a função, mas suavizei para não brigar com o marrom */
+  --success-color: #4b9c7b;
+  /* Verde mais orgânico */
+  --warning-color: #d9a046;
+  /* Amarelo mostarda */
+  --danger-color: #cc5e5e;
+  /* Vermelho terracota */
+
+  /* --- Fundos e Superfícies --- */
+  --dark-bg: #4A3B2A;
+
+  /* Fundo da tela  */
+  --light-bg: #F4E9E4;
+
+  /* Fundo de cartões/inputs  */
+  --surface-white: #FEFEFE;
+
+  /* --- Bordas e Texto --- */
+  /* Cinza quente/Bege para bordas sutis */
+  --border-color: #E6DCD3;
+
+  /* Texto principal: Marrom muito escuro */
+  --text-dark: #3E3225;
+
+  /* Texto secundário: Cinza quente */
+  --text-light: #8C8276;
+
+  /* --- Sombras --- */
+  /* Sombra levemente marrom em vez de preta/vermelha para naturalidade */
+  --shadow-sm: 0 1px 2px 0 rgba(74, 59, 42, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(74, 59, 42, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(74, 59, 42, 0.1);
+
   --transition: all 0.3s ease;
 }
+
 
 /* ===========================
    TIPOGRAFIA E CORPO
@@ -36,22 +68,9 @@ html {
   scroll-behavior: smooth;
 }
 
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: var(--light-bg);
-  color: var(--text-dark);
-  line-height: 1.6;
-}
 
-h1, h2, h3, h4, h5, h6 {
-  font-weight: 600;
-  line-height: 1.2;
-  margin-bottom: 0.5rem;
-}
 
-h1 { font-size: 2.5rem; }
-h2 { font-size: 1.875rem; }
-h3 { font-size: 1.5rem; }
+
 
 p {
   color: var(--text-light);
@@ -201,24 +220,28 @@ p {
 /* ===========================
    BOTÕES
    =========================== */
+button {
+  padding: 10px;
+  align-self: center;
+  width: 150px;
+  border-radius: 50px;
 
-.botao {
-  padding: 0.75rem 1.5rem;
-  border: none;
-  border-radius: 0.5rem;
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: var(--transition);
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  text-decoration: none;
-}
+  /* Cor do botão */
+  background-image: linear-gradient(to bottom, #B58D64, #8c6b4a);
 
-.botao-primario {
-  background-color: var(--primary-color);
+  /* Borda um pouco mais escura para definir bem o limite do botão */
+  border: solid 1px #8c6b4a;
+
+  /* E garanta que o texto dentro seja BRANCO para leitura perfeita */
+  color: #FEFEFE;
+
+
+
+  /* Fonte do botão */
+  font-family: "Segoe UI";
+  font-weight: 700;
   color: white;
+
 }
 
 .botao-primario:hover {
@@ -227,24 +250,9 @@ p {
   transform: translateY(-2px);
 }
 
-.botao-primario:active {
-  transform: translateY(0);
-}
-
-.botao-secundario {
-  background-color: var(--border-color);
-  color: var(--text-dark);
-}
-
 .botao-secundario:hover {
-  background-color: #d1d5db;
+  background-color: #B58D64;
   box-shadow: var(--shadow-md);
-}
-
-.botao:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-  transform: none;
 }
 
 /* ===========================
@@ -279,8 +287,13 @@ p {
     grid-template-columns: 1fr;
   }
 
-  h1 { font-size: 2rem; }
-  h2 { font-size: 1.5rem; }
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
 
   .conteudo-cabecalho h1 {
     font-size: 2rem;
@@ -337,9 +350,17 @@ p {
     margin-top: 1.5rem;
   }
 
-  h1 { font-size: 1.75rem; }
-  h2 { font-size: 1.25rem; }
-  h3 { font-size: 1.1rem; }
+  h1 {
+    font-size: 1.75rem;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+  }
+
+  h3 {
+    font-size: 1.1rem;
+  }
 }
 
 /* Celulares Pequenos (320px) */
@@ -381,9 +402,17 @@ p {
     font-size: 0.9rem;
   }
 
-  h1 { font-size: 1.5rem; }
-  h2 { font-size: 1.1rem; }
-  h3 { font-size: 1rem; }
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.1rem;
+  }
+
+  h3 {
+    font-size: 1rem;
+  }
 }
 
 /* ===========================
@@ -404,19 +433,21 @@ p {
 
 @media (prefers-color-scheme: dark) {
   body {
-    background-color: #1c59dc;
+    background: linear-gradient(135deg, #FEFEFE 0%, #E7D0B7 100%);
+
     color: #f3f4f6;
   }
 
   .secao-formulario {
-    background-color: #1f2937;
+    background-color: #B58D64;
+
     box-shadow: var(--shadow-lg);
   }
 
   .campo-formulario input,
   .campo-formulario textarea,
   .campo-formulario select {
-    background-color: #374151;
+    background-color: #F7F6F5;
     color: #f3f4f6;
     border-color: #4b5563;
   }

@@ -4,7 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Painel Administrativo | Gerador de Convites QR Code</title>
+  <link rel="stylesheet" href="StylePadrao.css">
   <link rel="stylesheet" href="EstiloAdministrador.css">
+
 </head>
 <body>
 
@@ -62,34 +64,7 @@
             </div>
           </fieldset>
 
-          <!-- Informações do Convidado -->
-          <fieldset class="grupo-formulario">
-            <legend>Informações do Convidado</legend>
-
-            <div class="linha-formulario">
-              <div class="campo-formulario">
-                <label for="nomeConvidado">Nome do Convidado *</label>
-                <input type="text" id="nomeConvidado" name="nomeConvidado" required>
-              </div>
-
-              <div class="campo-formulario">
-                <label for="telefoneConvidado">Telefone</label>
-                <input type="tel" id="telefoneConvidado" name="telefoneConvidado">
-              </div>
-            </div>
-
-            <div class="linha-formulario">
-              <div class="campo-formulario">
-                <label for="numeroMesas">Número de Mesas</label>
-                <input type="number" id="numeroMesas" name="numeroMesas" min="0" max="10">
-              </div>
-
-              <div class="campo-formulario">
-                <label for="numeroAcompanhantes">Número de Acompanhantes</label>
-                <input type="number" id="numeroAcompanhantes" name="numeroAcompanhantes" min="0" max="10">
-              </div>
-            </div>
-          </fieldset>
+      
 
           <!-- Informações Adicionais -->
           <fieldset class="grupo-formulario">
@@ -116,9 +91,37 @@
               <input type="text" id="nomeOrganizador" name="nomeOrganizador">
             </div>
           </fieldset>
+           <!-- Informações do Formando -->
+          <fieldset class="grupo-formulario">
+            <legend>Informações do Formando</legend>
+
+            <div class="linha-formulario">
+              <div class="campo-formulario">
+                <label for="nomeConvidado">Nome do Formando </label>
+                <input type="text" id="nomeConvidado" name="nomeConvidado" required>
+              </div>
+
+              <div class="campo-formulario">
+                <label for="telefoneConvidado">Telefone</label>
+                <input type="tel" id="telefoneConvidado" name="telefoneConvidado">
+              </div>
+            </div>
+
+            <div class="linha-formulario">
+              <div class="campo-formulario">
+                <label for="numeroMesas">Número da Mesa</label>
+                <input type="number" id="numeroMesas" name="numeroMesas" min="0" max="10">
+              </div>
+
+              <div class="campo-formulario">
+                <label for="numeroAcompanhantes">Número de Acompanhantes</label>
+                <input type="number" id="numeroAcompanhantes" name="numeroAcompanhantes" min="0" max="10">
+              </div>
+            </div>
+          </fieldset>
 
           <!-- Ações do formulário -->
-          <div class="acoes-formulario">
+          <div class="acoes-formulario" id="button">
             <button type="reset" class="botao botao-secundario">Limpar</button>
             <button type="submit" class="botao botao-primario">Gerar Convite</button>
           </div>
