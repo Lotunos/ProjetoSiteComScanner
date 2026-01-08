@@ -2,25 +2,34 @@
 <html>
 <head>
   <title>Gerar QR Code</title>
-  <!-- Importando a biblioteca via CDN -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 </head>
 <body>
   <div id="qrcode"></div>
+  <button onclick="enviarWhatsApp()">Enviar via WhatsApp</button>
 
   <script>
-    // Texto que você quer transformar em QR Code
     var texto = "https://meusite.com";
-
-    // Criando o QR Code dentro da div
     var qrcode = new QRCode(document.getElementById("qrcode"), {
-      text: texto+"texto",
+      text: texto,
       width: 200,
       height: 200,
       colorDark : "#000000",
       colorLight : "#ffffff",
       correctLevel : QRCode.CorrectLevel.H
     });
+
+    function enviarWhatsApp() {
+      // Captura o canvas gerado pelo QRCodeJS
+      var canvas = document.querySelector("#qrcode canvas");
+      var imgData = canvas.toDataURL("image/png"); // transforma em base64
+
+      // Para enviar pelo WhatsApp Web (texto + link da imagem)
+      var mensagem = "Aqui está o QR Code: " + imgData;
+      var url = "https://wa.me/5582988866657?text=" + encodeURIComponent(mensagem);
+
+      window.open(url, "_blank");
+    }
   </script>
 </body>
 </html>
