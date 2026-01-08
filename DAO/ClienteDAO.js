@@ -1,55 +1,39 @@
-import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm";
-const supaBaseUrl = "https://cjfcbxoxgndyyvuqahkx.supabase.co";
-const supaBaseKey = "sb_publishable_M4LoTOR8Fi4h9zV7_ACDNw_qXDYOOi7";
-const supaBase = createClient(supaBaseUrl,supaBaseKey);
+import * as supaBase from "./DAO.js"
+function conexao(){
+    const conexao = await supaBase.criarConexao();
+}
 export async function buscarCliente(cpf,senha) {
     const cpfString = String(cpf).replace(/[.-]/g,'');
     const senhaString = String(senha);
-    const {data, error} = await supaBase.from("Cliente")
-                                        .select("*")    
-                                        .eq("cpf",cpfString);
+    const {data, error} = await conexao.from("Cliente")
+                                        .select("cpf,senha")    
+                                        .eq("cpf",cpfString)
+                                        .eq("senha",senhaString);
     if(error){
-        alert("Erro: "+error.message);
-        return null;
+        return error;
     }
-    if(data.length == 0){
-        alert("Nome de usuário inválido");
-        return null;
-    }
-    const cliente = data[0];
-    if(cliente.senha != senhaString){
-        alert("Erro: Senha inválida");
-        return null;
-    }
-    alert("Login bem-sucedido");
-    window.location.href = "../Administrador/PaginaAdministrador.html";
+    return data;
 }
 export async function criarCliente(nome,cpf,senha){
     const nomeString = String(nome);
     const cpfString= String(cpf).replace(/[.-]/g,'');
     const senhaString=String(senha);
-    const {data,error} = await supaBase.from("Cliente")
+    const {data,error} = await conexao.from("Cliente")
                                        .insert([{cpf:cpfString,nome:nomeString,senha:senhaString}])
-    if(error){
-        alert("Dados não inseridos, verifique com o administrador");
-        return null;
+    if(error){       
+        return error;
     }
-    alert("Dados inseridos com sucesso")
-    window.location.href = "../TelaLogin/Login.html";
+    return data;
+    
 }
 export async function mostarDados(nome, cpf){
     nome = String(nome);
     cpf = String(cpf);
-    const {data,error} = await supaBase.from("Cliente")
-                                       .select("*")
+    const {data,error} = await conexao.from("Cliente")
+                                       .select("cpf")
                                        .eq("cpf",cpf);
     if(error){
-        alert("Erro :"+error.message);
-        return null;
-    }
-    if(data[0] == null){
-        alert("Erro : dados não encontrados");
-        return null;
+        return error;
     }
     return data;
 }

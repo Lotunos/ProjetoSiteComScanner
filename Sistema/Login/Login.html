@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página de login</title>
-    <link rel="stylesheet" href="../StylePadrao.css">
+    <link rel="stylesheet" href="../../StylePadrao.css">
 </head>
 <body>
     
@@ -35,7 +35,7 @@
     </form>
     <script src="LoginScript.js"></script>
     <script type="module">
-    import { buscarCliente } from '../DAO/ClienteDAO.js';
+    import { buscarCliente } from '../../Controle/ClienteControle.js';
     document.getElementById('formulario').addEventListener('submit', function(event) {
         event.preventDefault();
         const senha = document.getElementById('senha').value;
