@@ -4,21 +4,30 @@ export async function criarConvidado(nome,telefone,mesa){
     const telefoneString = String(telefone);
     const mesaInt = parseInt(mesa, 10);
     const maxInt = 0;
-    await supaBase.from("Convidado").insert({nome:nomeString,telefone:telefoneString,mesa:mesaInt,maxInt});
+    await validarConvidado(telefoneString,nomeString);
+    await supaBase.from("Convidado").neq("telefone",telefone).insert({nome:nomeString,telefone:telefoneString,mesa:mesaInt,maxInt});
     //TODO: verificar formas de validação                               
 }
-export async function buscarConvidado(){
-
-}
-async function validarConvidado(telefone){
+export async function buscarConvidado(telefone,nome){
     const {data,error} = await supaBase.from("Convidado")
                                        .select("telefone")
-                                       .eq("telefone",telefone);
+                                       .eq("telefone",telefone)
+                                       .eq("nome",nome);
+    const convidado = data[0];
+    return convidado;
+
+}
+async function validarConvidado(telefone,nome){
+    const {data,error} = await supaBase.from("Convidado")
+                                       .select("telefone")
+                                       .eq("telefone",telefone)
+                                       .eq("nome",nome);
     if(error){
         return null; //Verificar uma forma de retorno
     }
-    if(!data){
-        alert("Erro, dados não encontrados");
+    if(data){
+        alert("Erro, dados já inseridos no servidor");
         return null;
     }
+    return false;
 }
