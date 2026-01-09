@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seu Convite | Walmira Encantos Festas</title>
+    <link rel="stylesheet" href="ConviteStyle.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <style>
+        .convite-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            max-width: 400px;
+            margin: 2rem auto;
+        }
+        #qrcode {
+            display: flex;
+            justify-content: center;
+            margin: 1.5rem 0;
+        }
+        #qrcode img {
+            border: 10px solid white;
+        }
+        .info-convite {
+            margin-bottom: 1.5rem;
+            color: #333;
+        }
+        .info-convite h2 {
+            color: #d4af37;
+            margin-bottom: 0.5rem;
+        }
+        .botao-download {
+            background-color: #25d366;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="cabecalho">
+            <div class="conteudo-cabecalho">
+                <h1>Walmira Encantos Festas</h1>
+            </div>
+        </header>
+
+        <main class="conteudo-principal">
+            <div class="convite-card" id="area-convite">
+                <div class="info-convite">
+                    <h2 id="display-evento">Evento</h2>
+                    <p><strong>Para:</strong> <span id="display-nome">Convidado</span></p>
+                    <p><strong>Data:</strong> <span id="display-data">--/--/----</span> às <span id="display-hora">--:--</span></p>
+                    <p><strong>Local:</strong> <span id="display-local">Local do Evento</span></p>
+                    <p id="display-mesa-container"><strong>Mesa:</strong> <span id="display-mesa">--</span></p>
+                </div>
+                
+                <div id="qrcode"></div>
+                
+                <button onclick="baixarConvite()" class="botao-download">Baixar QR Code</button>
+            </div>
+        </main>
+
+        <footer class="rodape">
+            <p>&copy; 2026 – Walmira Encantos Festas. Todos os direitos reservados.</p>
+        </footer>
+    </div>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const dados = {
+            nome: urlParams.get('nome') || 'Convidado',
+            evento: urlParams.get('evento') || 'Evento Especial',
+            data: urlParams.get('data') || '',
+            hora: urlParams.get('hora') || '',
+            local: urlParams.get('local') || '',
+            mesa: urlParams.get('mesa') || ''
+        };
+
+        document.getElementById('display-nome').textContent = dados.nome;
+        document.getElementById('display-evento').textContent = dados.evento;
+        document.getElementById('display-data').textContent = dados.data;
+        document.getElementById('display-hora').textContent = dados.hora;
+        document.getElementById('display-local').textContent = dados.local;
+        
+        if (dados.mesa) {
+            document.getElementById('display-mesa').textContent = dados.mesa;
+        } else {
+            document.getElementById('display-mesa-container').style.display = 'none';
+        }
+
+        const qrData = JSON.stringify({
+            n: dados.nome,
+            e: dados.evento,
+            m: dados.mesa
+        });
+
+        const qrcode = new QRCode(document.getElementById("qrcode"), {
+            text: qrData,
+            width: 200,
+            height: 200,
+            colorDark : "#000000",
+            colorLight : "#ffffff",
+            correctLevel : QRCode.CorrectLevel.H
+        });
+
+        function baixarConvite() {
+            const img = document.querySelector('#qrcode img');
+            if (img) {
+                const link = document.createElement('a');
+                link.download = `Convite_${dados.nome}.png`;
+                link.href = img.src;
+                link.click();
+            } else {
+                const canvas = document.querySelector('#qrcode canvas');
+                const link = document.createElement('a');
+                link.download = `Convite_${dados.nome}.png`;
+                link.href = canvas.toDataURL("image/png");
+                link.click();
+            }
+        }
+    </script>
+</body>
+</html>

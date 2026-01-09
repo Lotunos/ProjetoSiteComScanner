@@ -1,0 +1,30 @@
+document.getElementById('formulario').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const nomeEvento = document.getElementById('nomeEvento').value;
+    const dataEvento = document.getElementById('dataEvento').value;
+    const horaEvento = document.getElementById('horaEvento').value;
+    const localEvento = document.getElementById('localEvento').value;
+    const nomeConvidado = document.getElementById('nomeConvidado').value;
+    const telefoneConvidado = document.getElementById('telefoneConvidado').value;
+    const numeroMesas = document.getElementById('numeroMesas').value;
+
+    //mudar o link conforme o local do projeto -> const urlBaseSite = "https://seu-site-aqui.com/Sistema/Convite/VisualizarConvite.html";
+    const baseUrl = window.location.origin + window.location.pathname.replace('Convite.html', 'VisualizarConvite.html');
+    
+    const params = new URLSearchParams({
+        nome: nomeConvidado,
+        evento: nomeEvento,
+        data: dataEvento,
+        hora: horaEvento,
+        local: localEvento,
+        mesa: numeroMesas
+    });
+
+    const linkConvite = `${baseUrl}?${params.toString()}`;
+    
+    const mensagem = `Olá ${nomeConvidado}! Aqui está o seu convite para o evento ${nomeEvento}: ${linkConvite}`;
+    const whatsappUrl = `https://api.whatsapp.com/send?phone=55${telefoneConvidado.replace(/\D/g, '')}&text=${encodeURIComponent(mensagem)}`;
+
+    window.open(whatsappUrl, '_blank');
+});

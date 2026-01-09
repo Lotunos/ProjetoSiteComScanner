@@ -138,13 +138,5 @@
   </div>
 
 </body>
-    <script type="module">
-    import { buscarCliente } from '../../Controle/ClienteControle.js';
-    document.getElementById('formulario').addEventListener('submit', function(event) {
-        event.preventDefault();
-        const senha = document.getElementById('senha').value;
-        const cpf = document.getElementById('cpf').value;
-        buscarCliente(cpf, senha);
-    });
-    </script>
+    <script src="ConviteScript.js"></script>
 </html>
