@@ -18,27 +18,22 @@ export async function criarCliente(nome,cpf,senha){
     const senhaString=String(senha);
     await supaBase.from("Cliente").insert([{cpf:cpfString,nome:nomeString,senha:senhaString}]);
 }
-//TODO: tabela de qrcode, criar outra classe
-export async function mostarDados(nome, mesa){
-    nome = String(nome);
-    cpf = String(cpf);
-    const {data,error} = await supaBase.from("qrcode")
-                                       .select("nome,mesa")
-                                       .eq("nome",nome)
-                                       .eq("mesa",mesa);
-    if(error){
-        return error;
-    }
-    const cliente = data[0];
-    return cliente;
+export async function atualizarDados(cpf,senha){
+    const cpfString = String(cpf).replace(/[.-]/g,'');
+    const senhaString = String(senha);
+    const verificar = await verificarCPF(cpfString);
+    const {data,error} = await supaBase.from("Cliente").update({senha:senhaString}).eq("cpf",cpfString);
+    return verificar;
 }
-async function verificarCPF(cpf) {
-    const cpfString = String(cpf);
+
+export async function verificarCPF(cpf) {
+    const cpfString = String(cpf).replace(/[.-]/g,'');
     const {data,error} = await supaBase.from("Cliente")
                                        .select("cpf")   
                                        .eq("cpf",cpfString);
     if(error){
-        return error;
+        alert("Erro: "+error);
+        return error;       
     }
     if(data != null){
         return null;

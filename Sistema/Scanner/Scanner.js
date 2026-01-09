@@ -1,4 +1,4 @@
-import { mostarDados } from '../DAO/ClienteDAO.js';
+import { mostarDados } from '../../Controle/ConvidadoControle.js';
 
 const SCANNER = new Html5QrcodeScanner(
   "leitor",
@@ -16,17 +16,18 @@ async function teveSucesso(resultado) {
   // Para o scanner
   await SCANNER.clear();
 
-  // 🔐 Aqui você ajusta conforme o formato real do QR
-  const cpf = String(resultado);
-  const senha = String(resultado);
-
+  //Aqui você ajusta conforme o formato real do QR
+  const texto = resultado;
+  const qrcode = texto.split(/\|/);
+  const nome = String(qrcode[0]);
+  const mesa = String(qrcode[1]);
   // Busca dados
-  const modulo = await mostarDados(senha, cpf);
-  const cliente = modulo[0];
+  const convidado = await mostarDados(nome,mesa);
+  
 
   // Preenche formulário
-  document.getElementById("nome").innerText = cliente.nome;
-  document.getElementById("mesa").innerText = cliente.senha;
+  document.getElementById("nome").innerText = convidado.nome;
+  document.getElementById("mesa").innerText = convidado.mesa;
 
   // 🔄 TROCA DE TELAS
   document.getElementById("scanner").style.display = "none";
