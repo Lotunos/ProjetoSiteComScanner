@@ -9,16 +9,21 @@
 <body>
     
     <form id="formulario" action="" method="get">
-        <h1>login</h1>
+        <h1>Recuperação de senha</h1>
         <div class="barraHorizontal"></div>
 
         <div class="campoInput">
-            <label for="cpf">Seu CPF:</label>
+            <label for="cpf">Confirme o CPF:</label>
             <input id="cpf" name="cpf" required>
         </div>
 
         <div class="campoInput">
-            <label for="senha">Sua senha:</label>
+            <label for="senha">Nova senha:</label>
+            <input type="password" id="senha" name="senha" required>
+        </div>
+
+        <div class="campoInput">
+            <label for="senha">Confirmar nova senha:</label>
             <input type="password" id="senha" name="senha" required>
         </div>
 
@@ -28,20 +33,6 @@
         </div>
 
         <button type="submit">Entrar</button>
-
-        <p>Esqueceu sua senha?
-            <a href="../TelaRecuperarSenha/RecuperarSenha.html">Clique aqui!</a>
-        </p>
     </form>
-    <script src="LoginScript.js"></script>
-    <script type="module">
-    import { buscarCliente } from '../DAO/ClienteDAO.js';
-    document.getElementById('formulario').addEventListener('submit', function(event) {
-        event.preventDefault();
-        const senha = document.getElementById('senha').value;
-        const cpf = document.getElementById('cpf').value;
-        buscarCliente(cpf, senha);
-    });
-    </script>
 </body>
 </html>
