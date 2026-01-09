@@ -16,7 +16,7 @@
     <!-- Cabeçalho -->
     <header class="cabecalho">
       <div class="conteudo-cabecalho">
-        <h1>Nome da Empresa Genérica</h1>
+        <h1>Walmira Encantos Festas</h1>
       </div>
     </header>
 
@@ -27,7 +27,7 @@
       <div class="secao-formulario">
         <h2>Preencha os dados do convite</h2>
 
-        <form id="formularioConvite" class="formulario">
+        <form id="formulario" class="formulario" method="post">
 
           <!-- Informações do Evento -->
           <fieldset class="grupo-formulario">
@@ -122,21 +122,29 @@
 
           <!-- Ações do formulário -->
           <div class="acoes-formulario" id="button">
-            <button type="reset" class="botao botao-secundario">Limpar</button>
-            <button type="submit" class="botao botao-primario">Gerar Convite</button>
+            <button type="reset" class="botao-secundario">Limpar</button>
+            <button type="submit" class="botao-primario">Gerar Convite</button>
           </div>
 
         </form>
       </div>
 
     </main>
-
     <!-- Rodapé -->
     <footer class="rodape">
-      <p>&copy; 2026 – Nome da Empresa Genérica. Todos os direitos reservados.</p>
+      <p>&copy; 2026 – Walmira Encantos Festas. Todos os direitos reservados.</p>
     </footer>
 
   </div>
 
 </body>
+    <script type="module">
+    import { buscarCliente } from '../../Controle/ClienteControle.js';
+    document.getElementById('formulario').addEventListener('submit', function(event) {
+        event.preventDefault();
+        const senha = document.getElementById('senha').value;
+        const cpf = document.getElementById('cpf').value;
+        buscarCliente(cpf, senha);
+    });
+    </script>
 </html>

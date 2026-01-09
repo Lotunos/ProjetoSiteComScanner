@@ -6,8 +6,8 @@ export async function buscarConvidado(telefone,nome){
     }
    window.location.href = "../Convite/Convite.html";
 }
-export async function criarConvidado(nome,telefone,mesa){
-    await objeto.criarConvidado(nome,telefone,mesa);
+export async function criarConvidado(nome,telefone,mesa,max){
+    await objeto.criarConvidado(nome,telefone,mesa,max);
     //TODO: isso precisa de uma validação
     window.location.href = "../Login/Login.html";
 }
