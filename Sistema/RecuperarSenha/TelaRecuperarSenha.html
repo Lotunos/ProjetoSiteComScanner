@@ -18,8 +18,8 @@
         </div>
 
         <div class="campoInput">
-            <label for="senha">Nova senha:</label>
-            <input type="password" id="senha" name="senha" required>
+            <label for="senha1">Nova senha:</label>
+            <input type="password" id="senha1" name="senha1" required>
         </div>
 
         <div class="campoInput">
@@ -32,7 +32,40 @@
             <label for="mostrarSenha">Exibir senha</label>
         </div>
 
-        <button type="submit">Entrar</button>
+        <button type="submit">Cadastrar nova senha</button>
+        <button onclick="window.location.href='../Login/Login.html'">Voltar</button>
     </form>
 </body>
+    <script type="module">
+    import { atualizarDados } from "../../Controle/ClienteControle.js";
+
+    document.getElementById("formulario").addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        const cpf = document.getElementById('cpf').value;
+        const senha1 = document.getElementById('senha1').value;
+        const senha2 = document.getElementById('senha').value;
+
+        if (senha1 !== senha2) {
+            alert("As senhas não coincidem!");
+            return;
+        }
+
+        atualizarDados(cpf, senha1);
+    });
+    const mostrarSenha = document.getElementById("mostrarSenha");
+    mostrarSenha.addEventListener("change", function () {
+        const senha1 = document.getElementById("senha1");
+        const senha2 = document.getElementById("senha");
+
+        if (this.checked) {
+            senha1.type = "text";
+            senha2.type = "text";
+        } else {
+            senha1.type = "password";
+            senha2.type = "password";
+        }
+    });
+</script>
+
 </html>
