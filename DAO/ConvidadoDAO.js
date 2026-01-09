@@ -1,16 +1,16 @@
 import { supaBase }  from "./DAO.js"
-export async function criarConvidado(nome,telefone,mesa){
+export async function criarConvidado(nome,telefone,mesa,max){
     const nomeString = String(nome);
     const telefoneString = String(telefone);
     const mesaInt = parseInt(mesa, 10);
-    const maxInt = 0;
+    const maxInt = parseInt(max, 10);
     await validarConvidado(telefoneString,nomeString);
     await supaBase.from("Convidado").neq("telefone",telefone).insert({nome:nomeString,telefone:telefoneString,mesa:mesaInt,maxInt});
     //TODO: verificar formas de validação                               
 }
 export async function buscarConvidado(telefone,nome){
     const {data,error} = await supaBase.from("Convidado")
-                                       .select("telefone")
+                                       .select("*")
                                        .eq("telefone",telefone)
                                        .eq("nome",nome);
     const convidado = data[0];
