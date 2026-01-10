@@ -17,6 +17,7 @@ export async function buscarConvidado(telefone,nome){
                                        .eq("telefone",telefone)
                                        .eq("nome",nome);
     const convidado = data[0];
+    console.log(convidado)
     return convidado;
 
 }
@@ -35,10 +36,12 @@ async function validarConvidado(telefone,nome){
     return false;
 }
 async function validarConvidadoFesta(telefone,nome){
+    const telefoneString = String(telefone);
+    const nomeString = String(nome);
     const {data,error} = await supaBase.from("Convidado")
-                                       .select("telefone")
-                                       .eq("telefone",telefone)
-                                       .eq("nome",nome);
+                                       .select("*")
+                                       .eq("telefone",telefoneString)
+                                       .eq("nome",nomeString);
     if(error){
         return false; //Verificar uma forma de retorno
     }
@@ -52,18 +55,22 @@ export async function atualizarDados(nome,telefone){
     const nomeString = String(nome);
     const telefoneString = String(telefone);
     const verificar = await validarConvidadoFesta(telefoneString,nomeString);
+    console.log(verificar);
     if(!verificar){
-        return;
+        return false;
     } 
     const atualizar = verificar[0];
-    const contagem = atualizar.contagem;
+    let contagem = atualizar.contagem;
     const max = atualizar.max;
     if(max<=contagem){
         alert("Quantidade máxima de convidados excedidos");
-        return null;
+        return false;
     }
+    if(contagem == null){
+        contagem == 0;
+    }
+    console.log(contagem);
     contagem = contagem +1;
-    const {data,error} = await supaBase.from("Convidado").update({contagem:contagem}).eq("cpf",telefoneString);
-    return data;
+    await supaBase.from("Convidado").update({contagem:contagem}).eq("telefone",telefoneString);
 }
 
