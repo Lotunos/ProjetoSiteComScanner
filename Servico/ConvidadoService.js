@@ -1,6 +1,7 @@
  import * as objeto from "../DAO/ConvidadoDAO.js";
  export async function criarConvidado(nome,telefone,mesa,max) {
-    await objeto.criarConvidado(nome,telefone,mesa,max);   
+    const verificar = await objeto.criarConvidado(nome,telefone,mesa,max);   
+    return verificar;
 }
 export async function buscarConvidado(telefone,nome){
     const convidado = await objeto.buscarConvidado(telefone,nome);
