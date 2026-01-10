@@ -1,3 +1,4 @@
+import { criarConvidado } from '../../Controle/ConvidadoControle.js';
 document.getElementById('formulario').addEventListener('submit', function(event) {
     event.preventDefault();
 
@@ -8,7 +9,12 @@ document.getElementById('formulario').addEventListener('submit', function(event)
     const nomeConvidado = document.getElementById('nomeConvidado').value;
     const telefoneConvidado = document.getElementById('telefoneConvidado').value;
     const numeroMesas = document.getElementById('numeroMesas').value;
-
+    const numeroAcompanhantes = document.getElementById('numeroAcompanhantes').value;
+    const ok = criarConvidado(nomeConvidado, telefoneConvidado, numeroMesas, numeroAcompanhantes);
+    if(!ok){
+        alert("Erro:"+ok)
+        return;
+    }
     //mudar o link conforme o local do projeto -> const urlBaseSite = "https://seu-site-aqui.com/Sistema/Convite/VisualizarConvite.html";
     const baseUrl = window.location.origin + window.location.pathname.replace('Convite.html', 'VisualizarConvite.html');
     

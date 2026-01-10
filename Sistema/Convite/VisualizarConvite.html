@@ -98,9 +98,9 @@
         }
 
         const qrData = JSON.stringify({
-            n: dados.nome,
-            e: dados.evento,
-            m: dados.mesa
+            Evento: dados.evento,
+            Nome: dados.nome,
+            Mesa: dados.mesa
         });
 
         const qrcode = new QRCode(document.getElementById("qrcode"), {
