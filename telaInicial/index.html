@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Walmira Encantos Festas - Crie e Gerencie Seus Eventos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- O container principal. -->
+    <div class="containerPrincipal">
+
+        <!-- O cabeçalho principal da página com navegação. -->
+        <header class="cabecalhoNavegacao">
+            <!-- Div que contém o logo e o título da empresa. -->
+            <div class="logoEmpresa">
+                <h1>Walmira Encantos Festas</h1>
+                <p>Sua plataforma de eventos</p>
+            </div>
+
+            <!-- Nav com links de navegação rápida. -->
+            <nav class="navegacaoPrincipal">
+                <a href="#sobre" class="linkNavegacao">Sobre</a>
+                <a href="#recursos" class="linkNavegacao">Recursos</a>
+                <a href="../Sistema/Login/Login.html" class="botao botaoPrimario">Começar Agora</a>
+            </nav>
+        </header>
+
+        <!-- A seção hero (chamada principal) da página. -->
+        <section class="secaoHero">
+            <!-- Conteúdo textual do hero. -->
+            <div class="conteudoHero">
+                <!-- Título principal da página. -->
+                <h1 class="tituloHero">Crie Eventos Incríveis em Minutos</h1>
+                
+                <!-- Subtítulo/descrição do hero. -->
+                <p class="subtituloHero">
+                    Gerencie convites, controle de presença e gere QR codes 
+                    para seus eventos com facilidade. Tudo em um único lugar.
+                </p>
+
+                <!-- Botões de ação do hero. -->
+                <div class="acoesHero">
+                    <a href="../Sistema/Cadastro/Cadastro.html" class="botao botaoPrimario botaoGrande">Criar Evento Agora</a>
+                    <button class="botao botaoSecundario botaoGrande">Ver Demo</button>
+                </div>
+            </div>
+
+            <!-- Carrossel de Imagens do Evento -->
+            <div class="imagemHero">
+                <div class="carrossel" id="carrossel">
+                    <!-- Imagens  -->
+                    <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=800&q=80" alt="Evento 1">
+                    <img src="https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?auto=format&fit=crop&w=800&q=80" alt="Evento 2">
+                    <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=800&q=80" alt="Evento 3">
+                </div>
+                
+                <div class="controlesCarrossel">
+                    <button class="btnCarrossel" id="prevBtn">&#10094;</button>
+                    <button class="btnCarrossel" id="nextBtn">&#10095;</button>
+                </div>
+
+                <div class="indicadoresCarrossel" id="indicadores">
+                    <span class="indicador ativo"></span>
+                    <span class="indicador"></span>
+                    <span class="indicador"></span>
+                </div>
+            </div>
+        </section>
+
+        <!-- A seção sobre a empresa. -->
+        <section id="sobre" class="secaoGeral">
+            <div class="conteudoSecao">
+                <!-- Título da seção. -->
+                <h2>Por Que Escolher nome generico?</h2>
+                <!-- Descrição da seção. -->
+                <p class="descricaoSecao">
+                    Nossa plataforma oferece uma solução completa para organizadores de eventos que buscam profissionalismo e agilidade. 
+                    Desde pequenos encontros até grandes conferências, garantimos que sua gestão seja impecável.
+                </p>
+            </div>
+        </section>
+
+        <!-- A seção de recursos principais. -->
+        <section id="recursos" class="secaoRecursos">
+            <!-- Título da seção. -->
+            <div class="conteudoSecao">
+                <h2>Recursos Principais</h2>
+                <p class="descricaoSecao">Tudo que você precisa para gerenciar seus eventos</p>
+            </div>
+
+            <!-- Grid com cards de recursos. -->
+            <div class="gridRecursos">
+                <!-- Card 1: QR Code Automático -->
+                <div class="cardRecurso">
+                    <!-- Ícone do recurso. -->
+                    <div class="iconeRecurso">🔲</div>
+                    <!-- Título do recurso. -->
+                    <h3>QR Code Automático</h3>
+                    <!-- Descrição do recurso. -->
+                    <p>
+                        Gere QR codes automaticamente para cada convidado, 
+                        facilitando o controle de presença.
+                    </p>
+                </div>
+
+                <!-- Card 2: Confirmação de Presença -->
+                <div class="cardRecurso">
+                    <div class="iconeRecurso">✅</div>
+                    <h3>Confirmação de Presença</h3>
+                    <p>
+                        Receba confirmações de presença dos convidados 
+                        e acompanhe as respostas em tempo real.
+                    </p>
+                </div>
+
+                <!-- Card 3: Envio Automático -->
+                <div class="cardRecurso">
+                    <div class="iconeRecurso">💌</div>
+                    <h3>Envio Automático</h3>
+                    <p>
+                        Envie convites automaticamente para todos os seus 
+                        convidados com um clique.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- A seção como funciona. -->
+        <section class="secaoGeral">
+            <!-- Título da seção. -->
+            <div class="conteudoSecao">
+                <h2>Como Funciona</h2>
+                <p class="descricaoSecao">Apenas 3 passos simples para criar seu evento</p>
+            </div>
+
+            <!-- Grid com os passos. -->
+            <div class="gridPassos">
+                <!-- Passo 1 -->
+                <div class="cartaoPasso">
+                    <!-- Número do passo. -->
+                    <div class="numeroPasso">1</div>
+                    <!-- Título do passo. -->
+                    <h3>Crie seu Evento</h3>
+                    <!-- Descrição do passo. -->
+                    <p>Preencha as informações básicas do seu evento como data, hora e local.</p>
+                </div>
+
+                <!-- Passo 2 -->
+                <div class="cartaoPasso">
+                    <div class="numeroPasso">2</div>
+                    <h3>Adicione Convidados</h3>
+                    <p>Importe ou adicione manualmente os contatos dos seus convidados.</p>
+                </div>
+
+                <!-- Passo 3 -->
+                <div class="cartaoPasso">
+                    <div class="numeroPasso">3</div>
+                    <h3>Envie Convites</h3>
+                    <p>Envie os convites com QR code e acompanhe as confirmações em tempo real.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- A seção chamada final. -->
+        <section class="secaoChamadaFinal">
+            <!-- Conteúdo da chamada final. -->
+            <div class="conteudoChamadaFinal">
+                <!-- Título da chamada. -->
+                <h2>Pronto para Criar Seu Evento?</h2>
+                <!-- Descrição da chamada. -->
+                <p>
+                    Comece agora mesmo e descubra como nossa plataforma pode facilitar 
+                    a organização dos seus eventos.
+                </p>
+                <!-- Botão de ação. -->
+                <a href="../Sistema/Cadastro/Cadastro.html" class="botao botaoSecundario botaoGrande">Começar</a>
+            </div>
+        </section>
+
+        <!-- O rodapé da página. -->
+        <footer class="rodapePrincipal">
+            <p>&copy; Walmira Encantos Festas</p>
+        </footer>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
