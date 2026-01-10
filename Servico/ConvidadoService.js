@@ -10,3 +10,11 @@ export async function buscarConvidado(telefone,nome){
     }
     return convidado;
 }
+export async function atualizarDados(nome,telefone) {
+    const convidado = await objeto.atualizarDados(nome,telefone);
+    if(!convidado || convidado == null){
+        return null; //TODO: verificar como passar este erro
+    }
+    return convidado;
+    
+}
