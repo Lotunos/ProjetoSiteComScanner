@@ -6,6 +6,8 @@
     <title>Seu Convite | Walmira Encantos Festas</title>
     <link rel="stylesheet" href="ConviteStyle.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
     <style>
         .convite-card {
             background: white;
@@ -46,13 +48,12 @@
     </style>
 </head>
 <body>
-    <div class="container">
+    <div id="container" class="container">
         <header class="cabecalho">
             <div class="conteudo-cabecalho">
                 <h1>Walmira Encantos Festas</h1>
             </div>
         </header>
-
         <main class="conteudo-principal">
             <div class="convite-card" id="area-convite">
                 <div class="info-convite">
@@ -62,10 +63,8 @@
                     <p><strong>Local:</strong> <span id="display-local">Local do Evento</span></p>
                     <p id="display-mesa-container"><strong>Mesa:</strong> <span id="display-mesa">--</span></p>
                 </div>
-                
                 <div id="qrcode"></div>
-                
-                <button onclick="baixarConvite()" class="botao-download">Baixar QR Code</button>
+                <button onclick="baixarConvite()" class="botao-download">Baixar Convite</button>
             </div>
         </main>
 
@@ -75,6 +74,7 @@
     </div>
 
     <script>
+    document.addEventListener('DOMContentLoaded', () => {
         const urlParams = new URLSearchParams(window.location.search);
         const dados = {
             nome: urlParams.get('nome') || 'Convidado',
@@ -85,25 +85,28 @@
             mesa: urlParams.get('mesa') || ''
         };
 
+        // Preencher campos
         document.getElementById('display-nome').textContent = dados.nome;
         document.getElementById('display-evento').textContent = dados.evento;
         document.getElementById('display-data').textContent = dados.data;
         document.getElementById('display-hora').textContent = dados.hora;
         document.getElementById('display-local').textContent = dados.local;
-        
+
         if (dados.mesa) {
             document.getElementById('display-mesa').textContent = dados.mesa;
         } else {
             document.getElementById('display-mesa-container').style.display = 'none';
         }
 
+        // Dados do QR
         const qrData = JSON.stringify({
             Evento: dados.evento,
             Nome: dados.nome,
             Mesa: dados.mesa
         });
 
-        const qrcode = new QRCode(document.getElementById("qrcode"), {
+        // Gerar QR
+        new QRCode(document.getElementById("qrcode"), {
             text: qrData,
             width: 200,
             height: 200,
@@ -112,21 +115,24 @@
             correctLevel : QRCode.CorrectLevel.H
         });
 
-        function baixarConvite() {
-            const img = document.querySelector('#qrcode img');
-            if (img) {
-                const link = document.createElement('a');
-                link.download = `Convite_${dados.nome}.png`;
-                link.href = img.src;
-                link.click();
-            } else {
-                const canvas = document.querySelector('#qrcode canvas');
-                const link = document.createElement('a');
-                link.download = `Convite_${dados.nome}.png`;
-                link.href = canvas.toDataURL("image/png");
-                link.click();
+        // Função pública chamada pelo botão
+        window.baixarConvite = async function baixarConvite() {
+            const el = document.getElementById('area-convite'); // captura apenas o cartão do convite
+            try {
+                const canvas = await html2canvas(el, { useCORS: true, scale: 2 });
+                const dataUrl = canvas.toDataURL('image/png');
+                const a = document.createElement('a');
+                a.href = dataUrl;
+                a.download = 'convite.png';
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+            } catch (err) {
+                console.error('Erro ao capturar:', err);
+                alert('Falha ao gerar imagem. Veja console.');
             }
-        }
+        };
+    });
     </script>
 </body>
 </html>
