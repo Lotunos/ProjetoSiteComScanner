@@ -4,7 +4,7 @@ export async function buscarConvidado(telefone,nome){
     if(convidado == null){
         return null;//TODO: tratar este null
     }
-   window.location.href = "../Convite/Convite.html";
+    return convidado;   
 }
 export async function criarConvidado(nome,telefone,mesa,max){
     if(!nome){
@@ -24,4 +24,11 @@ export async function criarConvidado(nome,telefone,mesa,max){
         return false;
     }
     await objeto.criarConvidado(nome,telefone,mesa,max);  
+}
+export async function atualizarDados(nome,telefone){
+    const convidado = await objeto.atualizarDados(nome,telefone);
+    if(convidado == null){
+        return null;//TODO: tratar este null
+    }
+    return convidado;   
 }

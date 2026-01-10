@@ -1,4 +1,5 @@
 import { mostarDados } from '../../Controle/ConvidadoControle.js';
+import { atualizarDados } from '../../Controle/ConvidadoControle.js';
 
 const SCANNER = new Html5QrcodeScanner(
   "leitor",
@@ -18,13 +19,19 @@ async function teveSucesso(resultado) {
 
   //Aqui você ajusta conforme o formato real do QR
   const texto = resultado;
-  const qrcode = texto.split(/\|/);
-  const nome = String(qrcode[0]);
-  const mesa = String(qrcode[1]);
+  const obj = JSON.parse(texto);
+  const nome = String(obj.nome);
+  const mesa = String(obj.mesa);
   // Busca dados
   const convidado = await mostarDados(nome,mesa);
-  
+  if(!convidado){
+      return;
+  }
 
+  const atualizar = await atualizarDados(convidado.nome,convidado.telefone);
+  if(!atualizar){
+    return;
+  }
   // Preenche formulário
   document.getElementById("nome").innerText = convidado.nome;
   document.getElementById("mesa").innerText = convidado.mesa;

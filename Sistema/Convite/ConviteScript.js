@@ -20,6 +20,8 @@ document.getElementById('formulario').addEventListener('submit', function(event)
     
     const params = new URLSearchParams({
         nome: nomeConvidado,
+        telefone:telefoneConvidado,
+        acompanhantes:numeroAcompanhantes,
         evento: nomeEvento,
         data: dataEvento,
         hora: horaEvento,
