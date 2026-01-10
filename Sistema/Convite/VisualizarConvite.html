@@ -16,7 +16,20 @@
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
             text-align: center;
             max-width: 400px;
-            margin: 2rem auto;
+            margin-top: 1rem auto;
+            margin-bottom: 0.5rem auto;
+            margin: auto;
+        }
+        .download {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            max-width: 400px;
+            margin-top: 0.5rem auto;
+            margin-bottom: 1rem auto;
+            margin: auto;
         }
         #qrcode {
             display: flex;
@@ -64,8 +77,11 @@
                     <p id="display-mesa-container"><strong>Mesa:</strong> <span id="display-mesa">--</span></p>
                 </div>
                 <div id="qrcode"></div>
-                <button onclick="baixarConvite()" class="botao-download">Baixar Convite</button>
+                
             </div>
+            <div class="download">
+                <button onclick="baixarConvite()" class="botao-download">Baixar Convite</button>
+            </div>   
         </main>
 
         <footer class="rodape">
