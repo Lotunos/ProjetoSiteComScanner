@@ -37,21 +37,43 @@
     </form>
 </body>
     <script type="module">
-    import { atualizarDados } from "../../Controle/ClienteControle.js";
-
-    document.getElementById("formulario").addEventListener('submit', function (event) {
+    import { atualizarDados } from '../../Controle/ClienteControle.js';
+    import { validarCPF } from '../../Suporte/Verificadores.js';
+    function validarSenha(verificarSenha) {
+    if (verificarSenha.length < 8) {
+        alert("A senha deve ter 8 caracteres.");
+        return false;
+    }
+    if (!/[A-Z]/.test(verificarSenha)) {
+        alert("A senha deve conter pelo menos uma letra maiúscula.");
+        return false;
+    }
+    if (!/[a-z]/.test(verificarSenha)) {
+        alert("A senha deve conter pelo menos uma letra minúscula.");
+        return false;
+    }
+    if (!/[0-9]/.test(verificarSenha)) {
+        alert("A senha deve conter pelo menos um número.");
+        return false;
+    }
+    if (!/[^A-Za-z0-9]/.test(verificarSenha)) {
+        alert("A senha deve conter pelo menos um símbolo especial (ex: @, #, !, %).");
+        return false;
+    }
+    return true; // passou em todos os critérios
+    }
+    document.getElementById('formulario').addEventListener('submit', function(event) {
         event.preventDefault();
-
+        const verificarSenha = document.getElementById('senha').value;
         const cpf = document.getElementById('cpf').value;
-        const senha1 = document.getElementById('senha1').value;
-        const senha2 = document.getElementById('senha').value;
-
-        if (senha1 !== senha2) {
-            alert("As senhas não coincidem!");
+        if(!validarCPF(cpf)){
+            alert("CPF inválido")
             return;
         }
-
-        atualizarDados(cpf, senha1);
+        if (!validarSenha(verificarSenha)) {
+                return;
+        }
+        atualizarDados(cpf, verificarSenha);
     });
     const mostrarSenha = document.getElementById("mostrarSenha");
     mostrarSenha.addEventListener("change", function () {
