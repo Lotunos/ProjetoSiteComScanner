@@ -16,7 +16,7 @@ export async function criarCliente(nome,cpf,senha){
 }
 export async function atualizarDados(cpf,senha){
     const verificar = await objeto.atualizarDados(cpf,senha);
-    if(verificar == null){
+    if(verificar != null){
         return null;
     }
     window.location.href = "../Login/Login.html"
