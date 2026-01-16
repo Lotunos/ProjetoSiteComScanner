@@ -1,6 +1,6 @@
 import { criarConvidado } from '../../Controle/ConvidadoControle.js';
 import { verificarTelefone } from '../../Suporte/verificadores.js'
-document.getElementById('formulario').addEventListe1ner('submit', function(event) {
+document.getElementById('formulario').addEventListener('submit', function(event) {
     event.preventDefault();
 
     const nomeEvento = document.getElementById('nomeEvento').value;
