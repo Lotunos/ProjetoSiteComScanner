@@ -51,10 +51,10 @@
         <button onclick="window.location.href='../Login/Login.html'">Ir para login</button>
 
     </form>
-    <script src="LoginScript.js"></script>
+    <script src="CadastroScript.js"></script>
     <script type="module">
     import { criarCliente } from '../../Controle/ClienteControle.js';
-    import { validarCPF } from '../../Suporte/Verificadores.js';
+    import { validarCPF } from '../../Suporte/verificadores.js';
     function validarSenha(verificarSenha) {
     if (verificarSenha.length < 8) {
         alert("A senha deve ter 8 caracteres.");
