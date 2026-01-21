@@ -82,6 +82,7 @@
         event.preventDefault();
         const verificarSenha = document.getElementById('senha').value;
         const cpf = document.getElementById('cpf').value;
+        const nome = document.getElementById('nome').value;
         if(!validarCPF(cpf)){
             alert("CPF inválido")
             return;
@@ -89,7 +90,7 @@
         if (!validarSenha(verificarSenha)) {
                 return;
         }
-        criarCliente(cpf, verificarSenha);
+        criarCliente(nome,cpf, verificarSenha);
     });
     </script>
 
