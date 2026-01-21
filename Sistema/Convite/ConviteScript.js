@@ -1,6 +1,6 @@
 import { criarConvidado } from '../../Controle/ConvidadoControle.js';
-import { verificarTelefone } from '../../Suporte/verificadores.js'
-document.getElementById('formulario').addEventListener('submit', function(event) {
+
+document.getElementById('formulario').addEventListener('submit', async function(event) {
     event.preventDefault();
 
     const nomeEvento = document.getElementById('nomeEvento').value;
@@ -11,33 +11,69 @@ document.getElementById('formulario').addEventListener('submit', function(event)
     const telefoneConvidado = document.getElementById('telefoneConvidado').value;
     const numeroMesas = document.getElementById('numeroMesas').value;
     const numeroAcompanhantes = document.getElementById('numeroAcompanhantes').value;
-    const verificarTelefone2 = verificarTelefone(telefoneConvidado);
-    if(!verificarTelefone2){
+
+    // --- Validações de Data ---
+    
+    // 1. Limitação de ano (Garantia via JS)
+    const partesData = dataEvento.split('-'); // [YYYY, MM, DD]
+    const anoInput = parseInt(partesData[0]);
+    
+    if (anoInput > 9999) {
+        alert("O ano deve ter no máximo 4 dígitos.");
         return;
     }
-    const ok = criarConvidado(nomeConvidado, telefoneConvidado, numeroMesas, numeroAcompanhantes);
-    if(!ok){
-        alert("Erro:"+ok)
+
+    // Criar data de hoje sem horas para comparação justa
+    const hoje = new Date();
+    hoje.setHours(0, 0, 0, 0);
+
+    // Criar objeto de data do evento tratando o fuso horário (input date retorna UTC)
+    // Usamos o formato YYYY, MM-1, DD para criar localmente
+    const dataEventoObj = new Date(partesData[0], partesData[1] - 1, partesData[2]);
+
+    // 2. Verificação de data retroativa
+    if (dataEventoObj < hoje) {
+        alert("A data do evento não pode ser anterior à data atual. Por favor, atualize a data.");
         return;
     }
-    
-    const baseUrl = window.location.origin + window.location.pathname.replace('Convite.html', 'VisualizarConvite.html');
-    
-    const params = new URLSearchParams({
-        nome: nomeConvidado,
-        telefone:telefoneConvidado,
-        acompanhantes:numeroAcompanhantes,
-        evento: nomeEvento,
-        data: dataEvento,
-        hora: horaEvento,
-        local: localEvento,
-        mesa: numeroMesas
-    });
 
-    const linkConvite = `${baseUrl}?${params.toString()}`;
-    
-    const mensagem = `Olá ${nomeConvidado}! Aqui está o seu convite para o evento ${nomeEvento}: ${linkConvite}`;
-    const whatsappUrl = `https://api.whatsapp.com/send?phone=55${telefoneConvidado.replace(/\D/g, '')}&text=${encodeURIComponent(mensagem)}`;
+    // 3. Verificação de prazo inferior a duas semanas (14 dias)
+    const limiteDuasSemanas = new Date(hoje);
+    limiteDuasSemanas.setDate(hoje.getDate() + 14);
 
-    window.open(whatsappUrl, '_blank');
+    if (dataEventoObj < limiteDuasSemanas) {
+        const confirmar = confirm("A data do evento é em menos de duas semanas. Você tem certeza que esta é a data correta e deseja prosseguir?");
+        if (!confirmar) {
+            return;
+        }
+    }
+
+    // --- Fim das Validações ---
+
+    try {
+        // Chamar a função de criação (que é async no Controle)
+        await criarConvidado(nomeConvidado, telefoneConvidado, numeroMesas, numeroAcompanhantes);
+        
+        const baseUrl = window.location.origin + window.location.pathname.replace('Convite.html', 'VisualizarConvite.html');
+        
+        const params = new URLSearchParams({
+            nome: nomeConvidado,
+            telefone: telefoneConvidado,
+            acompanhantes: numeroAcompanhantes,
+            evento: nomeEvento,
+            data: dataEvento,
+            hora: horaEvento,
+            local: localEvento,
+            mesa: numeroMesas
+        });
+
+        const linkConvite = `${baseUrl}?${params.toString()}`;
+        const mensagem = `Olá ${nomeConvidado}! Aqui está o seu convite para o evento ${nomeEvento}: ${linkConvite}`;
+        const whatsappUrl = `https://api.whatsapp.com/send?phone=55${telefoneConvidado.replace(/\D/g, '')}&text=${encodeURIComponent(mensagem)}`;
+
+        window.open(whatsappUrl, '_blank');
+    } catch (error) {
+        console.error("Erro ao criar convidado:", error);
+        alert("Ocorreu um erro ao processar o convite. Verifique os dados e tente novamente.");
+    }
 });
