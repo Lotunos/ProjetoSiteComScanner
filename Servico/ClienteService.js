@@ -10,7 +10,7 @@ export async function buscarCliente(cpf,senha){
 export async function criarCliente(nome,cpf,senha) {
     //TODO: camadas de verificação devem ser aplicadas aqui
     const verificar = await objeto.verificarCPF(cpf);
-    if(verificar != "ok"){
+    if(verificar == "ok"){
         alert("CPF já cadastrado");//TODO: Trocar este alert
         return null; 
     }
