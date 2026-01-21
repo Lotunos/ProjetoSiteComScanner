@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Administrativo - Seleção de Funcionalidades</title>
+    <!-- Utilizando os CSS principais do projeto -->
+    <link rel="stylesheet" href="../../StylePadrao.css">
+    <style>
+        /* Ajustes específicos para esta tela usando a temática do projeto */
+        .container-menu {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            width: 100%;
+            max-width: 800px;
+            margin: 20px;
+        }
+        .grid-opcoes {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        .card-opcao {
+            background-color: white;
+            padding: 30px;
+            border: 1px solid #e0c097;
+            border-radius: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 15px;
+            transition: transform 0.3s ease;
+        }
+        .card-opcao:hover {
+            transform: translateY(-5px);
+            border-color: #b48a60;
+        }
+        .icone {
+            font-size: 50px;
+            color: #b48a60;
+        }
+        .descricao {
+            font-size: 14px;
+            color: #4b4949e5;
+            margin-bottom: 10px;
+        }
+        @media (max-width: 600px) {
+            .grid-opcoes {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container-menu">
+        <form>
+            <h1>Painel Admin</h1>
+            <div class="barraHorizontal"></div>
+            
+            <p class="campoInput" style="text-align: center; font-size: 16px;">
+                Selecione a funcionalidade desejada:
+            </p>
+
+            <div class="grid-opcoes">
+                <!-- Opção Scanner -->
+                <div class="card-opcao">
+                    <div class="icone">🔍</div>
+                    <h3>Scanner</h3>
+                    <p class="descricao">Escanear QR Codes para controle de entrada.</p>
+                    <button type="button" onclick="window.location.href='../Scanner/PaginaDoScanner.html'">Acessar</button>
+                </div>
+
+                <!-- Opção Convite -->
+                <div class="card-opcao">
+                    <div class="icone">✉️</div>
+                    <h3>Convites</h3>
+                    <p class="descricao">Gerenciar e criar novos convites para o evento.</p>
+                    <button type="button" onclick="window.location.href='../Convite/Convite.html'">Acessar</button>
+                </div>
+            </div>
+
+            <div class="barraHorizontal" style="margin-top: 20px;"></div>
+            <a href="../Login/Login.html" style="text-align: center; margin-top: 10px;">Sair do Painel</a>
+        </form>
+    </div>
+</body>
+</html>
