@@ -4,7 +4,7 @@ export async function buscarCliente(cpf,senha){
     if(cliente == null){
         return null;//TODO: tratar este null
     }
-   window.location.href = "../Convite/Convite.html";
+   window.location.href = "../MenuAdmin/MenuAdmin.html";
 }
 export async function criarCliente(nome,cpf,senha){
     const verificar = await objeto.criarCliente(nome,cpf,senha);

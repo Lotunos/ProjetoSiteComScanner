@@ -1,23 +1,27 @@
-import * as objeto from "../Servico/ClienteService.js";
+import * as objeto from "../DAO/ClienteDAO.js";
 export async function buscarCliente(cpf,senha){
     const cliente = await objeto.buscarCliente(cpf,senha);
     if(cliente == null){
-        return null;//TODO: tratar este null
-    }
-   window.location.href = "../MenuAdmin/MenuAdmin.html";
-}
-export async function criarCliente(nome,cpf,senha){
-    const verificar = await objeto.criarCliente(nome,cpf,senha);
-    //TODO, isso precisa de uma validação
-    if(verificar == null){
+        alert("Cliente não encontrado"); //TODO: adicionar uma marcação diferente de um alert
         return null;
     }
-    window.location.href = "../Login/Login.html";
+    return cliente;
+}
+export async function criarCliente(nome,cpf,senha) {
+    //TODO: camadas de verificação devem ser aplicadas aqui
+    const verificar = await objeto.verificarCPF(cpf);
+    if(verificar == "ok"){
+        alert("CPF já cadastrado");//TODO: Trocar este alert
+        return null; 
+    }
+    return await objeto.criarCliente(nome,cpf,senha);
+    
 }
 export async function atualizarDados(cpf,senha){
-    const verificar = await objeto.atualizarDados(cpf,senha);
-    if(verificar != null){
+    const cliente = await objeto.atualizarDados(cpf,senha);
+    if(cliente == "ok"){
+        alert("CPF não encontrado");
         return null;
     }
-    window.location.href = "../Login/Login.html"
+    return cliente;
 }
