@@ -103,11 +103,12 @@
             convidado: urlParams.get('convidado'),
             telefone: urlParams.get('telefone')
         };
-
+        const [ano, mes, dia] = dados.data.split("-");
+        const dataFormatada = `${dia}/${mes}/${ano}`;
         // Preencher campos
         document.getElementById('display-nome').textContent = dados.nome;
         document.getElementById('display-evento').textContent = dados.evento;
-        document.getElementById('display-data').textContent = dados.data;
+        document.getElementById('display-data').textContent = dataFormatada;
         document.getElementById('display-hora').textContent = dados.hora;
         document.getElementById('display-local').textContent = dados.local;
         document.getElementById('display-convidado').textContent = dados.convidado;
