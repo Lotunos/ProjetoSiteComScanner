@@ -68,7 +68,7 @@ document.getElementById('formulario').addEventListener('submit', async function(
         });
 
         const linkConvite = `${baseUrl}?${params.toString()}`;
-        const mensagem = `Olá ${nomeConvidado}! Aqui está o seu convite para o evento ${nomeEvento}: ${linkConvite}`;
+        const mensagem = `Olá ${nomeConvidado}! Aqui está o seu convite para o evento ${nomeEvento}: \n \n- Observação: Este QR Code só poderá ser escaneado: ${numeroAcompanhantes} vezes. \n \n- Obrigado e boa festa! \n \n${linkConvite}`;
         const whatsappUrl = `https://api.whatsapp.com/send?phone=55${telefoneConvidado.replace(/\D/g, '')}&text=${encodeURIComponent(mensagem)}`;
 
         window.open(whatsappUrl, '_blank');
