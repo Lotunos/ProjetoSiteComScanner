@@ -9,7 +9,7 @@ export async function buscarCliente(cpf,senha){
 export async function criarCliente(nome,cpf,senha){
     const verificar = await objeto.criarCliente(nome,cpf,senha);
     //TODO, isso precisa de uma validação
-    if(verificar == null){
+    if(verificar != null){
         return null;
     }
     window.location.href = "../Login/Login.html";
