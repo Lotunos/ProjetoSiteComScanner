@@ -28,7 +28,7 @@ export async function atualizarDados(nome,telefone) {
     if(!telefone){
         return false;
     }
-    let nomeString = verificar.normalizar(nome); 
+    const nomeString = String(nome);
     const telefoneString = String(telefone);
     const verificar = await objeto.validarConvidadoFesta(telefoneString,nomeString);
     if(!verificar){
