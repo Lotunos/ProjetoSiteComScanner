@@ -27,7 +27,7 @@ try{
   // Busca dados
   convidado = await buscarConvidado(telefone,nome);
   if(!convidado){
-    alert("Erro em convidado" + convidado);
+    alert("Erro em convidado: " + convidado);
       return;
   }
   const atualizar = await atualizarDados(convidado.nome,convidado.telefone);

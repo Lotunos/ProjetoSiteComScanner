@@ -35,7 +35,8 @@ export function verificarTelefone(telefone) {
 }
 export function normalizar(nome){
     nome = String(nome);
-    nome = nome.normalize("NFD");
+    nome = nome.normalize("NFD")
+    nome = nome.replace(/[\u0300-\u036f]/g, "");;
     nome = nome.trim();
     return nome;
 }

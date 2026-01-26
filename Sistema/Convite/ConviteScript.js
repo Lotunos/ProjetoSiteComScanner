@@ -1,4 +1,5 @@
 import { criarConvidado } from '../../Controle/ConvidadoControle.js';
+import { normalizar } from '../../Suporte/verificadores.js';
 
 document.getElementById('formulario').addEventListener('submit', async function(event) {
     event.preventDefault();
@@ -52,13 +53,14 @@ document.getElementById('formulario').addEventListener('submit', async function(
 
     try {
         // Chamar a função de criação (que é async no Controle)
+        nomeConvidado = normalizar(nomeConvidado);
         const retorno = await criarConvidado(nomeConvidado, telefoneConvidado, numeroMesas, numeroAcompanhantes);
         if(!retorno){
             alert("Já existe um convidado com este telefone.");
             //return; TODO:Remover o comentario.
         }
         const baseUrl = window.location.origin + window.location.pathname.replace('Convite.html', 'VisualizarConvite.html');
-        nomeConvidado = nomeConvidado.normalize("NFD");
+        
         const params = new URLSearchParams({
             nome: nomeConvidado,
             telefone: telefoneConvidado,

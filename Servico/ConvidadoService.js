@@ -13,7 +13,7 @@
     
 }
 export async function buscarConvidado(telefone,nome){
-    let nomeString = verificar.normalizar(nome); 
+    const nomeString = String(nome); 
     const telefoneString = String(telefone);
     const convidado = await objeto.buscarConvidado(telefoneString,nomeString);
     if(!convidado || convidado == null){
