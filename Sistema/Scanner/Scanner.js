@@ -16,7 +16,8 @@ async function teveSucesso(resultado) {
 
   // Para o scanner
   await SCANNER.clear();
-
+  let convidado;
+try{
   //Aqui você ajusta conforme o formato real do QR
   const texto = resultado;
   const obj = JSON.parse(texto);
@@ -24,18 +25,27 @@ async function teveSucesso(resultado) {
   const telefone = String(obj.Telefone);
   console.log(texto+" "+obj+" "+nome+" "+telefone);
   // Busca dados
-  let convidado = await buscarConvidado(telefone,nome);
+  convidado = await buscarConvidado(telefone,nome);
   if(!convidado){
-    alert("Erro em convidado" + convidado)
+    alert("Erro em convidado" + convidado);
       return;
   }
-
   const atualizar = await atualizarDados(convidado.nome,convidado.telefone);
   console.log(atualizar);
   if(atualizar == false){
     convidado.nome = "xxx";
     convidado.mesa = "xxx";
   }
+}
+catch(erro){
+  alert("O qrcode não foi reconhecido: "+erro);
+  document.getElementById("nome").innerText = "INVÁLIDO";
+  document.getElementById("mesa").innerText = "INVÁLIDO";
+  document.getElementById("scanner").style.display = "none";
+  document.getElementById("formulario").style.display = "flex";
+  return;
+}
+
   // Preenche formulário
   document.getElementById("nome").innerText = convidado.nome;
   document.getElementById("mesa").innerText = convidado.mesa;
@@ -43,6 +53,7 @@ async function teveSucesso(resultado) {
   // 🔄 TROCA DE TELAS
   document.getElementById("scanner").style.display = "none";
   document.getElementById("formulario").style.display = "flex";
+
 }
 
 // CALLBACK DE ERRO
