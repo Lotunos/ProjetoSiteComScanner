@@ -1,10 +1,21 @@
  import * as objeto from "../DAO/ConvidadoDAO.js";
+ import * as verificar from "../Suporte/verificadores.js"
  export async function criarConvidado(nome,telefone,mesa,max) {
-    const verificar = await objeto.criarConvidado(nome,telefone,mesa,max);   
-    return verificar;
+    let nomeString = verificar.normalizar(nome); 
+    const telefoneString = String(telefone);
+    const validacao = await objeto.validarConvidado(telefoneString,nomeString);
+        if(!validacao){
+            return false;
+        }
+        console.log("Chegou aqui");
+    await objeto.criarConvidado(nome,telefone,mesa,max);
+    return true;
+    
 }
 export async function buscarConvidado(telefone,nome){
-    const convidado = await objeto.buscarConvidado(telefone,nome);
+    let nomeString = verificar.normalizar(nome); 
+    const telefoneString = String(telefone);
+    const convidado = await objeto.buscarConvidado(telefoneString,nomeString);
     if(!convidado || convidado == null){
         return null; //TODO: verificar como passar este erro
     }
@@ -17,6 +28,23 @@ export async function atualizarDados(nome,telefone) {
     if(!telefone){
         return false;
     }
-    const convidado = await objeto.atualizarDados(nome,telefone);
-    return convidado;   
+    let nomeString = verificar.normalizar(nome); 
+    const telefoneString = String(telefone);
+    const verificar = await objeto.validarConvidadoFesta(telefoneString,nomeString);
+    if(!verificar){
+        return false;
+    } 
+    const atualizar = verificar[0];
+    let contagem = atualizar.contagem;
+    const max = atualizar.max;
+    if(max<=contagem){
+        alert("Quantidade máxima de convidados excedidos");
+        return false;
+    }
+    if(contagem == null){
+        contagem == 0;
+    }
+    contagem = contagem +1;
+    await objeto.atualizarDados(contagem,telefoneString);
+    return true;  
 }
