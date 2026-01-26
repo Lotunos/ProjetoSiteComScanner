@@ -7,7 +7,7 @@ document.getElementById('formulario').addEventListener('submit', async function(
     const dataEvento = document.getElementById('dataEvento').value;
     const horaEvento = document.getElementById('horaEvento').value;
     const localEvento = document.getElementById('localEvento').value;
-    const nomeConvidado = document.getElementById('nomeConvidado').value;
+    let nomeConvidado = document.getElementById('nomeConvidado').value;
     const telefoneConvidado = document.getElementById('telefoneConvidado').value;
     const numeroMesas = document.getElementById('numeroMesas').value;
     const numeroAcompanhantes = document.getElementById('numeroAcompanhantes').value;
@@ -58,7 +58,7 @@ document.getElementById('formulario').addEventListener('submit', async function(
             //return; TODO:Remover o comentario.
         }
         const baseUrl = window.location.origin + window.location.pathname.replace('Convite.html', 'VisualizarConvite.html');
-        
+        nomeConvidado = nomeConvidado.normalize("NFD");
         const params = new URLSearchParams({
             nome: nomeConvidado,
             telefone: telefoneConvidado,
