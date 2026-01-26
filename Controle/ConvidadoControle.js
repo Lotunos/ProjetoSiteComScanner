@@ -23,7 +23,8 @@ export async function criarConvidado(nome,telefone,mesa,max){
         alert("Falta o campo 'Número de acompanhantes'");
         return false;
     }
-    await objeto.criarConvidado(nome,telefone,mesa,max);  
+    return await objeto.criarConvidado(nome,telefone,mesa,max);
+
 }
 export async function atualizarDados(nome,telefone){
     const convidado = await objeto.atualizarDados(nome,telefone);

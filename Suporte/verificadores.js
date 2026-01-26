@@ -33,4 +33,9 @@ export function verificarTelefone(telefone) {
   }
   return validar;
 }
-
+export function normalizar(nome){
+    nome = String(nome);
+    nome = nome.normalize("NFD");
+    nome = nome.trim();
+    return nome;
+}
