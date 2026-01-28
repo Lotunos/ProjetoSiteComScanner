@@ -16,7 +16,7 @@ export async function buscarConvidado(telefone,nome){
 
 }
 
-export async function atualizarDados(contagem,telefone){
+export async function atualizarContagem(contagem,telefone){
     await supaBase.from("Convidado").update({contagem:contagem}).eq("telefone",telefone);
 }
 export async function validarConvidado(telefone,nome){

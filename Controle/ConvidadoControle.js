@@ -26,8 +26,8 @@ export async function criarConvidado(nome,telefone,mesa,max){
     return await objeto.criarConvidado(nome,telefone,mesa,max);
 
 }
-export async function atualizarDados(nome,telefone){
-    const convidado = await objeto.atualizarDados(nome,telefone);
+export async function atualizarContagem(nome,telefone){
+    const convidado = await objeto.atualizarContagem(nome,telefone);
     if(convidado == false){
         return false;//TODO: tratar este null
     }

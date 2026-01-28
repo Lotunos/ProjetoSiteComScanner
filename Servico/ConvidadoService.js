@@ -45,6 +45,6 @@ export async function atualizarDados(nome,telefone) {
         contagem == 0;
     }
     contagem = contagem +1;
-    await objeto.atualizarDados(contagem,telefoneString);
+    await objeto.atualizarContagem(contagem,telefoneString);
     return true;  
 }
