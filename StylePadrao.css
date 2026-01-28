@@ -9,7 +9,7 @@ body {
     font-family: "Segoe UI"; /* Fonte da tela */
     color: var(--text-dark);
     display: flex; /* Utilizado para facilitar o alinhamento dos elementos */
-    height: full;
+    height: 100%;
     background:linear-gradient(135deg, #fdfdfd, #f7f7f7, #f5e6e0, #b87c2d);
     justify-content: center; /* Centraliza o container */
     align-items: center; /* Centraliza o container */
