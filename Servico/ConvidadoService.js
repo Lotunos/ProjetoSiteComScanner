@@ -21,7 +21,7 @@ export async function buscarConvidado(telefone,nome){
     }
     return convidado;
 }
-export async function atualizarDados(nome,telefone) {
+export async function atualizarContagem(nome,telefone) {
     if(!nome){
         return false;
     }
