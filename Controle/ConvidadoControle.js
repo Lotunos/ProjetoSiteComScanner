@@ -1,4 +1,5 @@
 import * as objeto from "../Servico/ConvidadoService.js";
+//Busca
 export async function buscarConvidado(telefone,nome){
     const convidado = await objeto.buscarConvidado(telefone,nome);
     if(convidado == null){
@@ -6,7 +7,8 @@ export async function buscarConvidado(telefone,nome){
     }
     return convidado;   
 }
-export async function criarConvidado(nome,telefone,mesa,max){
+//Cria
+export async function criarConvidado(nome,telefone,mesa,limite){
     if(!nome){
         alert("Falta o campo 'Nome do Formando'");
         return false;
@@ -19,17 +21,23 @@ export async function criarConvidado(nome,telefone,mesa,max){
         alert("Falta o campo 'Número da Mesa'");
         return false;
     }
-    if(!max){
+    if(!limite){
         alert("Falta o campo 'Número de acompanhantes'");
         return false;
     }
-    return await objeto.criarConvidado(nome,telefone,mesa,max);
+    return await objeto.criarConvidado(nome,telefone,mesa,limite);
 
 }
-export async function atualizarDados(nome,telefone){
-    const convidado = await objeto.atualizarDados(nome,telefone);
+//Atualiza a quantidade de vezes que o qrcode é lido
+export async function atualizarContagem(nome,telefone){
+    const convidado = await objeto.atualizarContagem(nome,telefone);
     if(convidado == false){
         return false;//TODO: tratar este null
     }
     return convidado;   
+}
+//Listar todos os convidados
+export async function listarConvidados(){
+    const data = await objeto.listarConvidados();
+    return data;
 }

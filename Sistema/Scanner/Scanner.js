@@ -30,7 +30,7 @@ async function teveSucesso(resultado) {
       return;
   }
 
-  const atualizar = await atualizarDados(convidado.nome,convidado.telefone);
+  const atualizar = await atualizarContagem(convidado.nome,convidado.telefone);
   console.log(atualizar);
   if(atualizar == false){
     convidado.nome = "xxx";

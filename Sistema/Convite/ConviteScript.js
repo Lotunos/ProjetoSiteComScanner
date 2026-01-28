@@ -1,4 +1,29 @@
 import { criarConvidado } from '../../Controle/ConvidadoControle.js';
+import {listarEvento}from "../../Controle/EventoControle.js";
+
+const lista = await listarEvento();
+
+const menu = document.getElementById("menuOptions");
+// Cria um botão para cada item da lista
+let pegoId = 0;
+let data = 0;
+lista.forEach((opcao, index) => {
+    const btn = document.createElement("button");
+    btn.textContent = opcao.nome;
+    btn.dataset.valor = index; // guarda um identificador único
+    btn.onclick = () => {
+        data = opcao.data;
+        const partesData = opcao.data.split('-');
+        const dataFormatada = `${partesData[2]}-${partesData[1]}-${partesData[0]}`;
+        document.getElementById("nomeEvento").value = opcao.nome;
+        document.getElementById("localEvento").value = opcao.local;
+        document.getElementById("dataEvento").value = dataFormatada;
+        document.getElementById("horaEvento").value = opcao.hora;
+        pegoId = opcao.id;
+        document.getElementById("menuToggle").checked = false;
+    };
+    menu.appendChild(btn);
+});
 
 document.getElementById('formulario').addEventListener('submit', async function(event) {
     event.preventDefault();
@@ -11,11 +36,10 @@ document.getElementById('formulario').addEventListener('submit', async function(
     const telefoneConvidado = document.getElementById('telefoneConvidado').value;
     const numeroMesas = document.getElementById('numeroMesas').value;
     const numeroAcompanhantes = document.getElementById('numeroAcompanhantes').value;
-
     // --- Validações de Data ---
     
     // 1. Limitação de ano (Garantia via JS)
-    const partesData = dataEvento.split('-'); // [YYYY, MM, DD]
+    const partesData = data.split('-'); // [YYYY, MM, DD]
     const anoInput = parseInt(partesData[0]);
     
     if (anoInput > 9999) {
@@ -32,12 +56,11 @@ document.getElementById('formulario').addEventListener('submit', async function(
     const dataEventoObj = new Date(partesData[0], partesData[1] - 1, partesData[2]);
 
     // 2. Verificação de data retroativa
+  
     if (dataEventoObj < hoje) {
         alert("A data do evento não pode ser anterior à data atual. Por favor, atualize a data.");
         return;
     }
-
-    // 3. Verificação de prazo inferior a duas semanas (14 dias)
     const limiteDuasSemanas = new Date(hoje);
     limiteDuasSemanas.setDate(hoje.getDate() + 14);
 
@@ -47,9 +70,6 @@ document.getElementById('formulario').addEventListener('submit', async function(
             return;
         }
     }
-
-    // --- Fim das Validações ---
-
     try {
         // Chamar a função de criação (que é async no Controle)
         const retorno = await criarConvidado(nomeConvidado, telefoneConvidado, numeroMesas, numeroAcompanhantes);

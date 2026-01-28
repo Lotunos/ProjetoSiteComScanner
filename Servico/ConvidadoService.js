@@ -1,17 +1,18 @@
  import * as objeto from "../DAO/ConvidadoDAO.js";
  import * as verificar from "../Suporte/verificadores.js"
- export async function criarConvidado(nome,telefone,mesa,max) {
+ //Criar
+ export async function criarConvidado(nome,telefone,mesa,limite) {
     let nomeString = verificar.normalizar(nome); 
     const telefoneString = String(telefone);
     const validacao = await objeto.validarConvidado(telefoneString,nomeString);
         if(!validacao){
             return false;
         }
-        console.log("Chegou aqui");
-    await objeto.criarConvidado(nome,telefone,mesa,max);
+    await objeto.criarConvidado(nome,telefone,mesa,limite);
     return true;
     
 }
+//Buscar
 export async function buscarConvidado(telefone,nome){
     let nomeString = verificar.normalizar(nome); 
     const telefoneString = String(telefone);
@@ -21,7 +22,13 @@ export async function buscarConvidado(telefone,nome){
     }
     return convidado;
 }
-export async function atualizarDados(nome,telefone) {
+//Listar todos os convidados
+export async function listarConvidados(){
+    const data = await objeto.listarConvidados();
+    return data;
+}
+//Atualiza a quantidade de vezes que o qrcode é lido
+export async function atualizarContagem(nome,telefone) {
     if(!nome){
         return false;
     }
@@ -45,6 +52,28 @@ export async function atualizarDados(nome,telefone) {
         contagem == 0;
     }
     contagem = contagem +1;
-    await objeto.atualizarDados(contagem,telefoneString);
+    await objeto.atualizarContagem(contagem,telefoneString);
+    return true;  
+}
+//Atualiza todo o convidado
+export async function atualizarConvidado(nome,telefone,mesa,limite) {
+    const nomeString = String(nome);
+    const telefoneString = String(telefone);
+    const verificar = await objeto.validarConvidadoFesta(telefoneString,nomeString);
+    if(!verificar){
+        return false;
+    } 
+    const atualizar = verificar[0];
+    let contagem = atualizar.contagem;
+    const max = atualizar.max;
+    if(max<=contagem){
+        alert("Quantidade máxima de convidados excedidos");
+        return false;
+    }
+    if(contagem == null){
+        contagem == 0;
+    }
+    contagem = contagem +1;
+    await objeto.atualizarContagem(contagem,telefoneString);
     return true;  
 }
