@@ -33,6 +33,12 @@
             gap: 15px;
             transition: transform 0.3s ease;
         }
+        .convite{
+            margin: 0 auto;
+            margin-top: 20px;
+            max-width: 400px;
+        }
+
         .card-opcao:hover {
             transform: translateY(-5px);
             border-color: #b48a60;
@@ -72,14 +78,21 @@
                     <button type="button" onclick="window.location.href='../Scanner/PaginaDoScanner.html'">Acessar</button>
                 </div>
 
-                <!-- Opção Convite -->
                 <div class="card-opcao">
+                    <div class="icone">🎉</div>
+                    <h3>Eventos</h3>
+                    <p class="descricao">Criar/ Verificar seus eventos.</p>
+                    <button type="button" onclick="window.location.href='../Evento/Evento.html'">Acessar</button>
+                </div>
+            </div>
+
+                <!-- Opção Convite -->
+                <div class="card-opcao convite">
                     <div class="icone">✉️</div>
                     <h3>Convites</h3>
                     <p class="descricao">Gerenciar e criar novos convites para o evento.</p>
                     <button type="button" onclick="window.location.href='../Convite/Convite.html'">Acessar</button>
                 </div>
-            </div>
 
             <div class="barraHorizontal" style="margin-top: 20px;"></div>
             <a href="../Login/Login.html" style="text-align: center; margin-top: 10px;">Sair do Painel</a>
