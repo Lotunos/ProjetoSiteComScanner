@@ -3,10 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Painel Administrativo | Gerador de Convites QR Code</title>
-  <link rel="stylesheet" href="ConviteStyle.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-
+  <title>Painel Administrativo | Atualizar Convidado</title>
+  <link rel="stylesheet" href="../Convite/ConviteStyle.css">
+  <link rel="stylesheet" href="AtualizarConvidado.css">
 </head>
 <body>
 
@@ -19,13 +18,12 @@
         <h1>Walmira Encantos Festas</h1>
       </div>
     </header>
-
     <!-- Conteúdo Principal -->
     <main class="conteudo-principal">
       <!-- Formulário -->
-       <form id="formulario">
       <div class="secao-formulario">
-        <h2>Preencha os dados do convidado</h2>
+        <h2>Atualize os dados do convidado</h2>
+        <!--Menu dropdown-->
         <div class="dropdown">
           <input type="checkbox" id="menuToggle">
           <label for="menuToggle" class="btn">Selecione o convidado</label>
@@ -33,33 +31,8 @@
           <!-- Botões serão criados dinamicamente -->
           </div>
         </div>
-        <fieldset class="grupo-formulario">
-            <legend>Informações do Evento</legend>
-
-            <div class="linha-formulario">
-              <div class="campo-formulario">
-                <label for="nomeEvento">Nome do Evento </label>
-                <input type="text" id="nomeEvento" name="nomeEvento" required readonly>
-              </div>
-
-              <div class="campo-formulario">
-                <label for="localEvento">Local</label>
-                <input type="text" id="localEvento" name="localEvento" readonly>
-              </div>
-            </div>
-
-            <div class="linha-formulario">
-              <div class="campo-formulario">
-                <label for="dataEvento">Data</label>
-                <input type="text" id="dataEvento" name="dataEvento" readonly>
-              </div>
-
-              <div class="campo-formulario">
-                <label for="horaEvento">Hora</label>
-                <input type="text" id="horaEvento" name="horaEvento" readonly>
-              </div>
-            </div>
-          </fieldset>
+        <h2> </h2><!--Ajustar isso com padding-->
+        <form id="formulario" class="formulario" method="get">
            <!-- Informações do Formando -->
           <fieldset class="grupo-formulario">
             <legend>Informações do Formando</legend>
@@ -103,9 +76,8 @@
     <footer class="rodape">
       <p>&copy; 2026 – Walmira Encantos Festas. Todos os direitos reservados.</p>
     </footer>
-
-  </div>
-
+ </div>
 </body>
-    <script type="module" src="ConviteScript.js"></script>
+<script type="module" src="AtualizarConvidado.js"></script>
+
 </html>

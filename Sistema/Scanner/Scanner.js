@@ -1,5 +1,5 @@
 import { buscarConvidado } from '../../Controle/ConvidadoControle.js';
-import { atualizarDados } from '../../Controle/ConvidadoControle.js';
+import { atualizarContagem } from '../../Controle/ConvidadoControle.js';
 
 const SCANNER = new Html5QrcodeScanner(
   "leitor",
@@ -30,7 +30,8 @@ try{
     alert("Erro em convidado" + convidado);
       return;
   }
-  const atualizar = await atualizarDados(convidado.nome,convidado.telefone);
+
+  const atualizar = await atualizarContagem(convidado.nome,convidado.telefone);
   console.log(atualizar);
   if(atualizar == false){
     convidado.nome = "xxx";
