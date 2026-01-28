@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar Evento</title>
+    <link rel="stylesheet" href="../Convite/ConviteStyle.css">
+</head>
+<body>
+    <div class="container">
+
+    <!-- Cabeçalho -->
+    <header class="cabecalho">
+      <div class="conteudo-cabecalho">
+        <h1>Walmira Encantos Festas</h1>
+      </div>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main class="conteudo-principal">
+     <!-- Formulário -->
+      <div class="secao-formulario">
+        <h2>Preencha os dados do convite</h2>
+
+        <form id="formulario" class="formulario" method="get">
+
+          <!-- Informações do Evento -->
+          <fieldset class="grupo-formulario">
+            <legend>Informações do Evento</legend>
+
+            <div class="linha-formulario">
+              <div class="campo-formulario">
+                <label for="nomeEvento">Nome do Evento *</label>
+                <input type="text" id="nomeEvento" name="nomeEvento" required>
+              </div>
+
+              <div class="campo-formulario">
+                <label for="dataEvento">Data *</label>
+                <input type="date" id="dataEvento" name="dataEvento" max="2100-12-31" required>
+              </div>
+            </div>
+
+            <div class="linha-formulario">
+              <div class="campo-formulario">
+                <label for="horaEvento">Horário *</label>
+                <input type="time" id="horaEvento" name="horaEvento" required>
+              </div>
+
+              <div class="campo-formulario">
+                <label for="localEvento">Local *</label>
+                <input type="text" id="localEvento" name="localEvento" required>
+              </div>
+            </div>
+
+            <div class="campo-formulario">
+              <label for="descricaoEvento">Descrição</label>
+              <textarea id="descricaoEvento" name="descricaoEvento" rows="3"
+                placeholder="Adicione detalhes sobre o evento"></textarea>
+            </div>
+          </fieldset>
+
+      
+
+          <!-- Informações Adicionais -->
+          <fieldset class="grupo-formulario">
+            <legend>Informações Adicionais</legend>
+
+            <div class="campo-formulario">
+              <label for="codigoVestimenta">Código de Vestimenta</label>
+              <select id="codigoVestimenta" name="codigoVestimenta">
+                <option value="">Selecione...</option>
+                <option value="casual">Casual</option>
+                <option value="smart-casual">Smart Casual</option>
+                <option value="formal">Formal</option>
+                <option value="black-tie">Black Tie</option>
+              </select>
+            </div>
+
+            <div class="campo-formulario">
+              <label for="prazoConfirmacao">Prazo para Confirmação</label>
+              <input type="date" id="prazoConfirmacao" name="prazoConfirmacao" max="2100-12-31">
+            </div>
+
+            <div class="campo-formulario">
+              <label for="nomeOrganizador">Organizador</label>
+              <input type="text" id="nomeOrganizador" name="nomeOrganizador">
+            </div>
+          </fieldset>
+          <div class="acoes-formulario" id="button">
+            <button type="reset" class="botao-secundario">Limpar</button>
+            <button type="submit" class="botao-primario">Gerar Convite</button>
+          </div>
+        </form>
+      </div>
+      
+    </main>
+        <footer class="rodape">
+      <p>&copy; 2026 – Walmira Encantos Festas. Todos os direitos reservados.</p>
+    </footer>
+  </div>
+</body>
+  <script type="module" src="Evento.js"></script>
+</html>

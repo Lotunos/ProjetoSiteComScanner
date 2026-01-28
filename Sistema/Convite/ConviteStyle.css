@@ -467,3 +467,50 @@ button {
     background-color: #4b5563;
   }
 }
+.dropdown {
+      position: relative;
+      display: inline-block;
+      padding-bottom: 25px;
+    }
+
+    .dropdown input {
+      display: none;
+    }
+
+    .dropdown label.btn {
+      background-color: #b48a60;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background: #b48a60;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+      border-radius: 5px;
+      margin-top: 5px;
+    }
+
+    .dropdown-content button {
+      display: block;
+      padding: 12px 16px;
+      border: none;
+      background: none;
+      text-align: left;
+      width: 100%;
+      cursor: pointer;
+    }
+
+    .dropdown-content button:hover {
+      background: #684f37;
+    }
+
+    /* Mostra o menu quando checkbox está marcado */
+    .dropdown input:checked ~ .dropdown-content {
+      display: block;
+    }
