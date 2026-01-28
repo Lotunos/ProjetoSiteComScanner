@@ -1,5 +1,6 @@
 import { criarConvidado } from '../../Controle/ConvidadoControle.js';
 import {listarEvento}from "../../Controle/EventoControle.js";
+import { normalizar } from '../../Suporte/verificadores.js';
 
 const lista = await listarEvento();
 
@@ -79,13 +80,14 @@ document.getElementById('formulario').addEventListener('submit', async function(
             //return; TODO:Remover o comentario.
         }
         const baseUrl = window.location.origin + window.location.pathname.replace('Convite.html', 'VisualizarConvite.html');
-        
+        const partesData = dataEvento.split('-');
+        const dataFormatada = `${partesData[2]}-${partesData[1]}-${partesData[0]}`;
         const params = new URLSearchParams({
             nome: nomeConvidado,
             telefone: telefoneConvidado,
             acompanhantes: numeroAcompanhantes,
             evento: nomeEvento,
-            data: dataEvento,
+            data: dataFormatada,
             hora: horaEvento,
             local: localEvento,
             mesa: numeroMesas

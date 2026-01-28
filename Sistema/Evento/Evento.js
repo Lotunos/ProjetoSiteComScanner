@@ -38,7 +38,8 @@ document.getElementById('formulario').addEventListener('submit', async function(
             return;
         }
     }
-    const retorno = await criarEvento(nomeEvento, localEvento, dataEvento, horaEvento); 
+    const dataFormatada = `${partesData[2]}-${partesData[1]}-${partesData[0]}`;
+    const retorno = await criarEvento(nomeEvento, localEvento, dataFormatada, horaEvento); 
     if(!retorno){   
         alert("Erro: "+retorno);
         return;
