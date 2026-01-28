@@ -14,11 +14,9 @@ lista.forEach((opcao, index) => {
     btn.dataset.valor = index; // guarda um identificador único
     btn.onclick = () => {
         data = opcao.data;
-        const partesData = opcao.data.split('-');
-        const dataFormatada = `${partesData[2]}-${partesData[1]}-${partesData[0]}`;
         document.getElementById("nomeEvento").value = opcao.nome;
         document.getElementById("localEvento").value = opcao.local;
-        document.getElementById("dataEvento").value = dataFormatada;
+        document.getElementById("dataEvento").value = opcao.data;
         document.getElementById("horaEvento").value = opcao.hora;
         pegoId = opcao.id;
         document.getElementById("menuToggle").checked = false;
