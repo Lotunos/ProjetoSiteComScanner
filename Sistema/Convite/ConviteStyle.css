@@ -478,8 +478,8 @@ button {
     }
 
     .dropdown label.btn {
-      background-color: #b48a60;
-      color: white;
+      background-color: white;
+      color: black;
       padding: 10px 20px;
       border-radius: 5px;
       cursor: pointer;
@@ -489,7 +489,7 @@ button {
     .dropdown-content {
       display: none;
       position: absolute;
-      background: #b48a60;
+      background: white;
       min-width: 160px;
       box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
       border-radius: 5px;
@@ -504,10 +504,7 @@ button {
       text-align: left;
       width: 100%;
       cursor: pointer;
-    }
-
-    .dropdown-content button:hover {
-      background: #684f37;
+      color:rgb(87, 83, 83)
     }
 
     /* Mostra o menu quando checkbox está marcado */
