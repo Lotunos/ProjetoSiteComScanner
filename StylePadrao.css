@@ -5,6 +5,11 @@
     box-sizing: border-box; /* Modifica o tamanho dos elementos dentro da "caixa" */
 }
 
+html, body {
+    height: 100%;
+}
+
+
 body {
     font-family: "Segoe UI"; /* Fonte da tela */
     color: var(--text-dark);
