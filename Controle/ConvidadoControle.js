@@ -1,8 +1,8 @@
 import * as objeto from "../Servico/ConvidadoService.js";
 export async function buscarConvidado(telefone,nome){
     const convidado = await objeto.buscarConvidado(telefone,nome);
-    if(convidado == null){
-        return null;//TODO: tratar este null
+    if(convidado == false){
+        return false;//TODO: tratar este null
     }
     return convidado;   
 }

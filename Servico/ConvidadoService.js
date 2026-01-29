@@ -7,7 +7,6 @@
         if(!validacao){
             return false;
         }
-        console.log("Chegou aqui");
     await objeto.criarConvidado(nome,telefone,mesa,limite);
     return true;
     
@@ -16,12 +15,12 @@ export async function buscarConvidado(telefone,nome){
     const nomeString = String(nome); 
     const telefoneString = String(telefone);
     const convidado = await objeto.buscarConvidado(telefoneString,nomeString);
-    if(!convidado || convidado == null){
-        return null; //TODO: verificar como passar este erro
+    if(!convidado){
+        return false; //TODO: verificar como passar este erro
     }
     return convidado;
 }
-export async function atualizarDados(nome,telefone) {
+export async function atualizarContagem(nome,telefone) {
     if(!nome){
         return false;
     }
@@ -45,6 +44,6 @@ export async function atualizarDados(nome,telefone) {
         contagem == 0;
     }
     contagem = contagem +1;
-    await objeto.atualizarContagem(contagem,telefoneString);
-    return true;  
+    const convidado = await objeto.atualizarContagem(contagem,telefoneString);
+    return convidado;  
 }
