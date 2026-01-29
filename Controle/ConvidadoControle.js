@@ -6,7 +6,7 @@ export async function buscarConvidado(telefone,nome){
     }
     return convidado;   
 }
-export async function criarConvidado(nome,telefone,mesa,max){
+export async function criarConvidado(nome,telefone,mesa,limite){
     if(!nome){
         alert("Falta o campo 'Nome do Formando'");
         return false;
@@ -19,11 +19,11 @@ export async function criarConvidado(nome,telefone,mesa,max){
         alert("Falta o campo 'Número da Mesa'");
         return false;
     }
-    if(!max){
+    if(!limite){
         alert("Falta o campo 'Número de acompanhantes'");
         return false;
     }
-    return await objeto.criarConvidado(nome,telefone,mesa,max);
+    return await objeto.criarConvidado(nome,telefone,mesa,limite);
 
 }
 export async function atualizarContagem(nome,telefone){

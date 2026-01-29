@@ -1,6 +1,6 @@
  import * as objeto from "../DAO/ConvidadoDAO.js";
  import * as verificar from "../Suporte/verificadores.js"
- export async function criarConvidado(nome,telefone,mesa,max) {
+ export async function criarConvidado(nome,telefone,mesa,limite) {
     let nomeString = verificar.normalizar(nome); 
     const telefoneString = String(telefone);
     const validacao = await objeto.validarConvidado(telefoneString,nomeString);
@@ -8,7 +8,7 @@
             return false;
         }
         console.log("Chegou aqui");
-    await objeto.criarConvidado(nome,telefone,mesa,max);
+    await objeto.criarConvidado(nome,telefone,mesa,limite);
     return true;
     
 }
@@ -36,8 +36,8 @@ export async function atualizarDados(nome,telefone) {
     } 
     const atualizar = verificar[0];
     let contagem = atualizar.contagem;
-    const max = atualizar.max;
-    if(max<=contagem){
+    const limite = atualizar.limite;
+    if(limite<=contagem){
         alert("Quantidade máxima de convidados excedidos");
         return false;
     }
