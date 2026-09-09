@@ -11,19 +11,25 @@ html {
 }
 
 body {
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Outfit', sans-serif;
     /* Padronizado com StylePadrao.css */
-    background: linear-gradient(135deg, #fdfdfd, #f7f7f7, #f5e6e0, #b87c2d);
+    background: linear-gradient(135deg, #ffffff, #fdfbfb, #fbe9e7, #ffccbc);
     color: #4b4949e5;
     line-height: 1.6;
     min-height: 100vh;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-weight: 600;
     line-height: 1.2;
     margin-bottom: 0.5rem;
-    color: #b48a60; /* Padronizado com StylePadrao.css */
+    color: #FF5722;
+    /* Padronizado com StylePadrao.css */
 }
 
 h1 {
@@ -39,7 +45,8 @@ h3 {
 }
 
 p {
-    color: #4b4949e5; /* Padronizado com StylePadrao.css */
+    color: #4b4949e5;
+    /* Padronizado com StylePadrao.css */
 }
 
 /* CONTAINER E LAYOUT */
@@ -48,6 +55,12 @@ p {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+}
+
+#logoimagem {
+    height: 80px;
+    width: auto;
+    object-fit: contain;
 }
 
 /* BOTÕES */
@@ -64,16 +77,17 @@ p {
     align-items: center;
     gap: 0.5rem;
     text-decoration: none;
-    font-family: 'Quicksand', sans-serif;
+    font-family: 'Outfit', sans-serif;
 }
 
 .botaoPrimario {
-    background-color: #b48a60; /* Padronizado com StylePadrao.css */
+    background-color: #FF5722;
+    /* Padronizado com StylePadrao.css */
     color: #ffffff;
 }
 
 .botaoPrimario:hover {
-    background-color: #a37a50;
+    background-color: #D84315;
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
     transform: translateY(-2px);
 }
@@ -84,12 +98,12 @@ p {
 
 .botaoSecundario {
     background-color: #ffffff;
-    color: #b48a60;
-    border: 1px solid #b48a60;
+    color: #FF5722;
+    border: 1px solid #FF5722;
 }
 
 .botaoSecundario:hover {
-    background-color: #f5e6e0;
+    background-color: #FBE9E7;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
 
@@ -103,42 +117,43 @@ p {
 
 .cabecalhoNavegacao {
     background-color: white;
-    border-bottom: 1px solid #e0c097;
+    border-bottom: 1px solid #FFCCBC;
     padding: 1rem 2rem;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 .logoEmpresa h1 {
     font-size: 1.75rem;
     margin: 0;
-    color: #b48a60;
+    color: #FF5722;
 }
 
 .logoEmpresa p {
     font-size: 0.85rem;
-    color: #b48a60;
+    color: #FF5722;
     margin: 0;
     opacity: 0.8;
 }
 
 .navegacaoPrincipal {
     display: flex;
+    justify-content: right;
+    padding-left: 70%;
     gap: 1.5rem;
     align-items: center;
 }
 
 .linkNavegacao {
-    color: #b48a60;
+    color: #FF5722;
     text-decoration: none;
     font-weight: 500;
     transition: all 0.3s ease;
 }
 
 .linkNavegacao:hover {
-    color: #a37a50;
+    color: #D84315;
     text-decoration: underline;
 }
 
@@ -150,7 +165,9 @@ p {
     gap: 3rem;
     align-items: center;
     padding: 4rem 2rem;
-    background: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
 }
 
 .conteudoHero {
@@ -162,7 +179,7 @@ p {
 .tituloHero {
     font-size: 3rem;
     font-weight: 700;
-    color: #b48a60;
+    color: #FF5722;
 }
 
 .acoesHero {
@@ -185,7 +202,7 @@ p {
     margin: 0 auto;
     overflow: hidden;
     border-radius: 20px;
-    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
     border: 5px solid white;
 }
 
@@ -214,7 +231,7 @@ p {
 }
 
 .btnCarrossel {
-    background: rgba(180, 138, 96, 0.7);
+    background: rgba(255, 87, 34, 0.7);
     color: white;
     border: none;
     width: 40px;
@@ -230,7 +247,7 @@ p {
 }
 
 .btnCarrossel:hover {
-    background: rgba(180, 138, 96, 1);
+    background: rgba(255, 87, 34, 1);
 }
 
 .indicadoresCarrossel {
@@ -246,7 +263,9 @@ p {
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     cursor: pointer;
 }
 
@@ -272,7 +291,7 @@ p {
 
 .conteudoSecao h2 {
     font-size: 2.25rem;
-    color: #b48a60;
+    color: #FF5722;
 }
 
 .descricaoSecao {
@@ -285,7 +304,9 @@ p {
 
 .secaoRecursos {
     padding: 3rem 2rem;
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     margin-bottom: 3rem;
 }
 
@@ -306,7 +327,8 @@ p {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    border: 1px solid #e0c097;
+    border: 1px solid rgba(255, 204, 188, 0.5);
+    box-shadow: 0 8px 32px 0 rgba(255, 87, 34, 0.05);
 }
 
 .cardRecurso:hover {
@@ -332,7 +354,7 @@ p {
     background: white;
     padding: 2rem;
     text-align: center;
-    border: 2px solid #e0c097;
+    border: 2px solid #FFCCBC;
     transition: all 0.3s ease;
     display: flex;
     flex-direction: column;
@@ -340,14 +362,14 @@ p {
 }
 
 .cartaoPasso:hover {
-    border-color: #b48a60;
+    border-color: #FF5722;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
 
 .numeroPasso {
     width: 60px;
     height: 60px;
-    background: #b48a60;
+    background: #FF5722;
     border-radius: 12px;
     color: white;
     display: flex;
@@ -361,7 +383,7 @@ p {
 /* SEÇÃO CHAMADA FINAL (CTA) */
 
 .secaoChamadaFinal {
-    background: #b48a60;
+    background: #FF5722;
     color: white;
     padding: 4rem 2rem;
     margin-bottom: 3rem;
@@ -379,7 +401,7 @@ p {
 /* RODAPÉ */
 
 .rodapePrincipal {
-    background-color: #b48a60;
+    background-color: #FF5722;
     color: white;
     text-align: center;
     padding: 2rem 1rem;
@@ -413,16 +435,19 @@ p {
         font-size: 2.25rem;
     }
 
-    .gridRecursos, .gridPassos {
+    .gridRecursos,
+    .gridPassos {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media (max-width: 768px) {
-    .gridRecursos, .gridPassos {
+
+    .gridRecursos,
+    .gridPassos {
         grid-template-columns: 1fr;
     }
-    
+
     .acoesHero {
         flex-direction: column;
     }

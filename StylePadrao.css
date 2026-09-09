@@ -11,11 +11,11 @@ html, body {
 
 
 body {
-    font-family: "Segoe UI"; /* Fonte da tela */
+    font-family: 'Outfit', sans-serif; /* Fonte da tela */
     color: var(--text-dark);
     display: flex; /* Utilizado para facilitar o alinhamento dos elementos */
     height: 100%;
-    background:linear-gradient(135deg, #fdfdfd, #f7f7f7, #f5e6e0, #b87c2d);
+    background:linear-gradient(135deg, #ffffff, #fdfbfb, #fbe9e7, #ffccbc);
     justify-content: center; /* Centraliza o container */
     align-items: center; /* Centraliza o container */
 }
@@ -23,7 +23,8 @@ body {
 form{
     background-color: white;
     padding: 50px;
-    border: 1px solid #e0c097;
+    border: 1px solid rgba(255, 204, 188, 0.5);
+    box-shadow: 0 8px 32px 0 rgba(255, 87, 34, 0.05);
     border-radius: 30px; /* Ajusta a curvatura da borda */
     
 
@@ -34,7 +35,7 @@ form{
 
 h1 {
 
-    color: #b48a60;
+    color: #FF5722;
 
     display: flex;
     justify-content: center;
@@ -44,7 +45,7 @@ h1 {
 
 button{
 
-    background-color: #b48a60; /* Cor dourada */
+    background-color: #FF5722; /* Cor dourada */
     color: #ffffff; /* Texto branco */
     border: none; /* Sem borda */
     padding: 12px; /* Espaçamento interno */
@@ -53,7 +54,7 @@ button{
     font-size: 15px; /* Tamanho da fonte */
     cursor: pointer; /* Cursor de clique */
     transition: background 0.3s ease; /* Transição suave ao passar o mouse */
-    font-family: 'Quicksand', sans-serif;
+    font-family: 'Outfit', sans-serif;
 
 }
 
@@ -65,14 +66,14 @@ input{
 }
 
 a {
-  color: #b48a60; /* Link em dourado */
+  color: #FF5722; /* Link em dourado */
   text-decoration: none; /* Remove sublinhado */
-  font-family: 'Quicksand', sans-serif;
+  font-family: 'Outfit', sans-serif;
 }
 
 .barraHorizontal {
     
-    background-color: #b48a60;
+    background-color: #FF5722;
     height: 5px;
     width: 100%;
 }
