@@ -1,9 +1,32 @@
+
 services:
-  postgres:
-    image: 'postgres:latest'
+  postgres-db:
+    image: postgres:15-alpine
+    container_name: app_postgres
+    restart: always
     environment:
-      - 'POSTGRES_DB=mydatabase'
-      - 'POSTGRES_PASSWORD=secret'
-      - 'POSTGRES_USER=myuser'
+      POSTGRES_DB: app_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
     ports:
-      - '5432'
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  # Descomente abaixo se for rodar a aplicação Spring Boot no Docker junto com o banco
+  # app:
+  #   build: .
+  #   container_name: spring_app
+  #   ports:
+  #     - "8080:8080"
+  #   environment:
+  #     - DB_HOST=postgres-db
+  #     - DB_PORT=5432
+  #     - DB_NAME=app_db
+  #     - DB_USER=postgres
+  #     - DB_PASS=postgres
+  #   depends_on:
+  #     - postgres-db
+
+volumes:
+  postgres_data:
