@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5dda542c-11a1-4647-80d8-ed17d88b115c" name="Changes" comment="" />
+    <list default="true" id="5dda542c-11a1-4647-80d8-ed17d88b115c" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/evento/evento/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/evento/evento/pom.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,9 +23,72 @@
       </MavenGeneralSettings>
     </option>
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 3
-}]]></component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
+  <component name="NextEditCompletionFeaturesState">
+    <decayedCancelled>
+      <entry key="MS100" value="1.0000020548241462" />
+      <entry key="MS500" value="1.2680409202217284" />
+      <entry key="S2" value="6.743281232151971" />
+      <entry key="S5" value="19.54925769088988" />
+      <entry key="S10" value="39.758956267436794" />
+      <entry key="S30" value="93.02352264390062" />
+      <entry key="S60" value="124.30952873874465" />
+      <entry key="M2" value="145.58808221874574" />
+      <entry key="M5" value="160.73702110335827" />
+      <entry key="M10" value="166.24447574934644" />
+      <entry key="M15" value="168.13482063357472" />
+      <entry key="M30" value="170.0531755032452" />
+      <entry key="H1" value="171.02300001125445" />
+      <entry key="H2" value="171.5105994135759" />
+      <entry key="H4" value="171.75507409993497" />
+      <entry key="D1" value="171.95914764334577" />
+      <entry key="W1" value="171.99416318021412" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="0.0" />
+      <entry key="S2" value="0.0" />
+      <entry key="S5" value="0.0" />
+      <entry key="S10" value="0.0" />
+      <entry key="S30" value="0.0" />
+      <entry key="S60" value="0.0" />
+      <entry key="M2" value="0.0" />
+      <entry key="M5" value="0.0" />
+      <entry key="M10" value="0.0" />
+      <entry key="M15" value="0.0" />
+      <entry key="M30" value="0.0" />
+      <entry key="H1" value="0.0" />
+      <entry key="H2" value="0.0" />
+      <entry key="H4" value="0.0" />
+      <entry key="D1" value="0.0" />
+      <entry key="W1" value="0.0" />
+    </decayedSelected>
+    <decayedShown>
+      <entry key="MS100" value="0.9330348644874863" />
+      <entry key="MS500" value="1.2499220878202837" />
+      <entry key="S2" value="6.716582023210994" />
+      <entry key="S5" value="19.517533976748723" />
+      <entry key="S10" value="39.72378220516912" />
+      <entry key="S30" value="92.98883400493371" />
+      <entry key="S60" value="124.28413569669826" />
+      <entry key="M2" value="145.57246189435506" />
+      <entry key="M5" value="160.72990975764176" />
+      <entry key="M10" value="166.24076031075788" />
+      <entry key="M15" value="168.13230689408329" />
+      <entry key="M30" value="170.05189991381684" />
+      <entry key="H1" value="171.02235747385905" />
+      <entry key="H2" value="171.51027695127507" />
+      <entry key="H4" value="171.75491256938707" />
+      <entry key="D1" value="171.9591206799199" />
+      <entry key="W1" value="171.99415932727476" />
+    </decayedShown>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
   <component name="ProjectId" id="3K0h60EZP5iXmf6dcBpeXo9aTgq" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -31,16 +97,28 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.MCP Project settings loaded": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
     "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/jose-/OneDrive/Desktop/Coisas/Site/ProjetoSiteComScanner"
+    "last_opened_file_path": "C:/Users/jose-/OneDrive/Documents/GitHub/ProjetoSiteComScanner",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "ml.llm.LLMThirdPartyAiProvidersConfigurable"
   }
 }]]></component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-30f59d01ecdd-2fc7cc6b9a17-intellij.indexing.shared.core-IU-253.30387.90" />
+        <option value="bundled-jdk-30f59d01ecdd-a203e0a19954-intellij.indexing.shared.core-IU-262.10968.63" />
+        <option value="bundled-js-predefined-d6986cc7102b-4abd2a77f808-JavaScript-IU-262.10968.63" />
       </set>
     </attachedChunks>
   </component>
@@ -53,5 +131,23 @@
       <updated>1790700213658</updated>
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
