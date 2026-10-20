@@ -35,6 +35,12 @@ public class Usuario implements UserDetails {
     @Enumerated(EnumType.ORDINAL)
     private Roles roles = Roles.Desativado;
 
+    public Usuario(String login, String senha, String email){
+        this.login = login;
+        this.senha = senha;
+        this.email = email;
+    }
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return List.of();
