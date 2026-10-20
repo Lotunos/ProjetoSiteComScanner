@@ -26,13 +26,13 @@ public class Usuario implements UserDetails {
     private UUID id;
     @Column(unique = true, length = 24)
     private String login;
-    @Column(unique = true, length = 12)
+    @Column(unique = true, length = 60)
     private String senha;
     @Column(unique = true, length = 100)
     private String email;
-    @Enumerated(EnumType.ORDINAL)
+    @Enumerated(EnumType.STRING)
     private Status status = Status.Desativado;
-    @Enumerated(EnumType.ORDINAL)
+    @Enumerated(EnumType.STRING)
     private Roles roles = Roles.Desativado;
 
     public Usuario(String login, String senha, String email){

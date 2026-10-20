@@ -46,7 +46,7 @@ public class AuthorizationService implements UserDetailsService {
     @Transactional
     public void registro(UsuarioRegistroDTO dto) {
         if (repository.findByLogin(dto.login()) != null) {
-            throw new ExceptionBadRequest("Usuário já cadastrado");
+            throw new ExceptionBadRequest("Já existe um usuário com este login");
         }
         String senha = new BCryptPasswordEncoder().encode(dto.senha());
         Usuario usuario = new Usuario(dto.login(),senha,dto.email());

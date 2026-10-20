@@ -28,6 +28,11 @@ public class SecurityConfiguration {
                         SessionCreationPolicy.STATELESS
                 ))
                 .authorizeHttpRequests(authorize-> authorize
+                        .requestMatchers(
+                                "/v3/api-docs/**",
+                                "/swagger-ui/**",
+                                "/swagger-ui.html"
+                        ).permitAll()
                         .requestMatchers(HttpMethod.POST,"/auth/login").permitAll()
                         .requestMatchers(HttpMethod.POST,"/auth/registro").permitAll()
                         .anyRequest().authenticated())
