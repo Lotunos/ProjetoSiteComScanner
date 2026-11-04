@@ -6,4 +6,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.UUID;
 
 public interface ConvidadoRepository extends JpaRepository<Convidado, UUID>{
+    Convidado findByTelefone(int telefone);
+    Convidado deleteByTelefone(int telefone);
 }

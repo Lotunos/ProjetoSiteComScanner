@@ -3,7 +3,6 @@ package Gerenciador.Model;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.util.List;
 import java.util.UUID;
 
 @Entity
@@ -18,11 +17,11 @@ public class Convidado {
     @GeneratedValue(strategy = GenerationType.UUID)
     @EqualsAndHashCode.Include
     private UUID idConvidado;
-    @Column(length = 13)
+    @Column(length = 11)
     private int telefone;
     private int mesa;
     private int quantidade;
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_evento", nullable = false)
-    private Evento evento;
+    private int evento;
 }
