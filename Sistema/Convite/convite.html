@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Convite — Centerário</title>
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="convite.css">
+  <!-- Biblioteca externa para QR Code -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script src="convite.js" defer></script>
+</head>
+<body class="convite-page">
+  <main class="convite-card">
+    <h1 id="evento">Carregando...</h1>
+    <p><strong>Convidado:</strong> <span id="convidado">--</span></p>
+    <p><strong>Mesa:</strong> <span id="mesa">--</span></p>
+    <p><strong>Qtd. Máxima:</strong> <span id="max">--</span></p>
+
+    <div id="qrcode"></div>
+
+    <div class="convite-acoes">
+      <button class="button button--primary" id="btn-download" type="button">Baixar QR Code</button>
+      <button class="button button--whatsapp" id="btn-whatsapp" type="button">Enviar WhatsApp</button>
+    </div>
+  </main>
+</body>
+</html>

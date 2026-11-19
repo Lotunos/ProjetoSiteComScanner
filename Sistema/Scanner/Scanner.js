@@ -45,7 +45,16 @@ async function startCamera() {
         if (scanHandled) return;
         scanHandled = true;
         await stopCamera();
-        status.textContent = `QR Code lido: ${text}`;
+        try {
+          const parsed = JSON.parse(text);
+          const nome = parsed.Nome || parsed.convidado || parsed.nome || 'Convidado';
+          const mesa = parsed.Mesa || parsed.mesa || '--';
+          const max = parsed.Max || parsed.max || '1';
+          const evento = parsed.Evento || parsed.evento || '';
+          status.innerHTML = `<strong>✅ Entrada Identificada!</strong><br>Convidado: <strong>${nome}</strong> | Mesa: <strong>${mesa}</strong> | Acessos autorizados: <strong>${max}</strong><br><small style="color:var(--color-muted);">${evento}</small>`;
+        } catch {
+          status.textContent = `QR Code lido: ${text}`;
+        }
       }
     );
 

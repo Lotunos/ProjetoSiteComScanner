@@ -1,0 +1,369 @@
+.convite-page {
+  min-height: 100vh;
+  background: var(--color-paper);
+}
+
+.convite-header {
+  border-bottom: 1px solid #f1e8e1;
+  background: #fff;
+}
+
+.convite-header__inner {
+  display: flex;
+  width: min(1160px, calc(100% - 48px));
+  min-height: 78px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-inline: auto;
+}
+
+.convite-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--color-orange);
+  font-family: var(--font-heading);
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: -0.7px;
+}
+
+.convite-brand img {
+  width: 39px;
+  height: 39px;
+  object-fit: contain;
+}
+
+.convite-back {
+  color: #65584f;
+  font-size: 13px;
+  font-weight: 700;
+  transition: color 160ms ease;
+}
+
+.convite-back:hover {
+  color: var(--color-orange-dark);
+}
+
+.convite-main {
+  width: min(1160px, calc(100% - 48px));
+  margin: 0 auto;
+  padding-block: 50px 70px;
+}
+
+/* =========================================
+   CARTÃO DO CONVITE
+   ========================================= */
+
+.convite-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+}
+
+.convite-card {
+  width: min(100%, 460px);
+  border: 1px solid #ebdcd1;
+  border-radius: 26px;
+  background: #fff;
+  box-shadow: 0 16px 40px rgb(60 38 24 / 7%);
+  overflow: hidden;
+  text-align: center;
+}
+
+.convite-card__header {
+  padding: 34px 28px 24px;
+  background: linear-gradient(180deg, #fff3ec 0%, #fff 100%);
+  border-bottom: 1px dashed #eddcd0;
+}
+
+.convite-card__badge {
+  display: inline-block;
+  padding: 5px 14px;
+  border-radius: 20px;
+  background: #ffe3d3;
+  color: var(--color-orange-dark);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.convite-card__evento {
+  margin: 0 0 6px;
+  font-family: var(--font-heading);
+  font-size: clamp(24px, 3.5vw, 30px);
+  font-weight: 800;
+  color: var(--color-ink);
+  letter-spacing: -0.8px;
+  line-height: 1.25;
+}
+
+.convite-card__subtitle {
+  margin: 0;
+  color: var(--color-muted);
+  font-size: 13px;
+}
+
+.convite-card__body {
+  padding: 24px 28px 28px;
+}
+
+.convite-info-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.convite-info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 12px 8px;
+  background: #fbf6f2;
+  border: 1px solid #f2e7df;
+  border-radius: 12px;
+}
+
+.info-label {
+  font-size: 11px;
+  color: var(--color-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+}
+
+.info-value {
+  font-size: 13px;
+  color: var(--color-ink);
+  font-weight: 700;
+  word-break: break-word;
+}
+
+.convite-qr-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.qr-box {
+  display: inline-flex;
+  padding: 14px;
+  background: #fff;
+  border: 2px solid #f3e5db;
+  border-radius: 18px;
+  box-shadow: 0 8px 22px rgb(60 38 24 / 5%);
+}
+
+.qr-box canvas {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.qr-caption {
+  max-width: 300px;
+  margin: 0;
+  color: var(--color-muted);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.convite-card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 14px 20px;
+  background: #fbf7f4;
+  border-top: 1px solid #f3eae3;
+  color: var(--color-muted);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.convite-footer-logo {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+}
+
+/* =========================================
+   AÇÕES (DOWNLOAD & WHATSAPP)
+   ========================================= */
+
+.convite-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+  width: min(100%, 460px);
+}
+
+.convite-actions .button {
+  flex: 1 1 200px;
+}
+
+.button--download {
+  background: var(--color-orange);
+  box-shadow: 0 9px 20px rgb(239 97 61 / 18%);
+}
+
+.button--download:hover {
+  background: var(--color-orange-dark);
+}
+
+.button--whatsapp {
+  background: #25d366;
+  color: #fff;
+  box-shadow: 0 9px 20px rgb(37 211 102 / 20%);
+}
+
+.button--whatsapp:hover {
+  background: #1ebc59;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgb(37 211 102 / 26%);
+}
+
+.btn-icon {
+  font-size: 18px;
+}
+
+.convite-links-aux {
+  margin-top: -6px;
+}
+
+.btn-link {
+  background: none;
+  border: none;
+  color: var(--color-muted);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 6px 12px;
+  transition: color 160ms ease;
+}
+
+.btn-link:hover {
+  color: var(--color-orange-dark);
+}
+
+/* =========================================
+   FORMULÁRIO MANUAL
+   ========================================= */
+
+.convite-form-section {
+  display: flex;
+  justify-content: center;
+}
+
+.form-container {
+  width: min(100%, 480px);
+  padding: 38px clamp(22px, 5vw, 36px);
+  background: #fff;
+  border: 1px solid #ebdcd1;
+  border-radius: 22px;
+  box-shadow: 0 14px 34px rgb(60 38 24 / 5%);
+}
+
+.form-header {
+  margin-bottom: 26px;
+}
+
+.form-header h1 {
+  margin: 0 0 6px;
+  font-family: var(--font-heading);
+  font-size: clamp(28px, 4vw, 34px);
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.form-header h1 span {
+  color: var(--color-orange);
+}
+
+.form-header p:last-child {
+  margin: 0;
+  color: var(--color-muted);
+  font-size: 14px;
+}
+
+.convite-form {
+  display: grid;
+  gap: 18px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.form-field {
+  display: grid;
+  gap: 8px;
+}
+
+.form-field label {
+  color: #443b36;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.form-field input {
+  width: 100%;
+  min-height: 48px;
+  padding: 0 14px;
+  border: 1px solid #e8dfd9;
+  border-radius: 10px;
+  background: #fff;
+  color: var(--color-ink);
+  font: inherit;
+  font-size: 14px;
+  transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.form-field input:focus {
+  border-color: var(--color-orange);
+  outline: none;
+  box-shadow: 0 0 0 4px rgb(239 97 61 / 12%);
+}
+
+.convite-page-footer {
+  padding: 24px;
+  text-align: center;
+  color: var(--color-muted);
+  font-size: 12px;
+  border-top: 1px solid #f1e8e1;
+  background: #fff;
+}
+
+.convite-page-footer p {
+  margin: 0;
+}
+
+@media (max-width: 600px) {
+  .convite-info-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .convite-actions {
+    flex-direction: column;
+  }
+
+  .convite-actions .button {
+    width: 100%;
+  }
+}
