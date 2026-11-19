@@ -12,6 +12,6 @@ async function CarregarComponente(idElemento, caminhoComponente) {
 
 }
 document.addEventListener("DOMContentLoaded", function() {
-    CarregarComponente("header", "Componente/Header/header.html");
-    CarregarComponente("footer", "Componente/Footer/footer.html");
+    CarregarComponente("header", "Componente/Header/Header.html");
+    CarregarComponente("footer", "Componente/Footer/Footer.html");
 });
