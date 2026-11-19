@@ -1,98 +1,105 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página de cadastro</title>
-    <link rel="stylesheet" href="../../StylePadrao.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#fffaf6">
+  <meta name="description" content="Crie sua conta na Centerário e gerencie seus eventos com praticidade.">
+  <title>Cadastrar — Centerário</title>
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="cadastro.css">
+  <script src="cadastro.js" defer></script>
 </head>
-<body>
-    
-    <form id="formulario" action="" method="post">
-        <h1>Faça seu cadastro</h1>
-        <div class="barraHorizontal"></div>
-
-        <div class="campoInput">
-            <label for="nome">Nome: </label>
-            <input type="text" id="nome" name="nome" required>
+<body class="login-page">
+  <main class="login-layout">
+    <section class="login-welcome" aria-labelledby="welcome-title">
+      <a class="login-brand" href="../../index.html" aria-label="Voltar para a página inicial da Centerário">
+        <img src="../../img/logo/logo_centenario_hd_transparente.png" alt="">
+        <span>Centerário</span>
+      </a>
+      <div class="login-welcome__content">
+        <p class="eyebrow">Comece sua jornada</p>
+        <h1 id="welcome-title">Crie sua conta e organize momentos <span>inesquecíveis.</span></h1>
+        <p>Cadastre-se para gerenciar convites, acompanhar confirmações de presença e emitir QR codes exclusivos para cada convidado.</p>
+      </div>
+      <div class="login-decoration" aria-hidden="true">
+        <span class="login-decoration__star login-decoration__star--one">✳</span>
+        <span class="login-decoration__star login-decoration__star--two">✦</span>
+        <div class="login-decoration__card">
+          <span class="login-decoration__icon">♡</span>
+          <span><strong>Grandes celebrações</strong><br>começam no cadastro.</span>
         </div>
+      </div>
+      <a class="login-back-link" href="../../index.html">← Voltar ao site</a>
+    </section>
 
-        <div class="campoInput">
-            <label for="cpf">CPF: </label>
-            <input type="text" id="cpf" name="cpf" required>
-        </div>
+    <section class="login-panel" aria-labelledby="cadastro-title">
+      <div class="login-form-wrap cadastro-form-wrap">
+        <p class="login-kicker">Cadastro de usuário</p>
+        <h2 id="cadastro-title">Faça seu cadastro</h2>
+        <p class="login-intro">Preencha seus dados para criar sua conta na Centerário.</p>
 
-        <div class="campoInput">
-            <label for="telefone">Telefone: </label>
-            <input type="text" id="telefone" name="telefone">
-        </div>
+        <form class="login-form" id="formulario" novalidate>
+          <div class="form-field">
+            <label for="nome">Nome completo *</label>
+            <input id="nome" name="nome" type="text" autocomplete="name" placeholder="Digite seu nome completo" required>
+          </div>
 
-        <div class="campoInput">
-            <label for="email">E-mail:</label>
-            <input type="email" id="email" name="email" required>
-        </div>
+          <div class="form-row">
+            <div class="form-field">
+              <label for="cpf">CPF *</label>
+              <input id="cpf" name="cpf" type="text" inputmode="numeric" autocomplete="username" placeholder="000.000.000-00" maxlength="14" required>
+            </div>
 
-        <div class="campoInput">
-            <label for="senha">Senha:</label>
-            <input type="password" id="senha" name="senha" required>
-        </div>
+            <div class="form-field">
+              <label for="telefone">Telefone</label>
+              <input id="telefone" name="telefone" type="tel" inputmode="tel" autocomplete="tel" placeholder="(00) 00000-0000" maxlength="15">
+            </div>
+          </div>
 
-        <div class="campoInput">
-            <label for="ConfSenha">Confirmar senha:</label>
-            <input type="password" id="ConfSenha" name="ConfSenha" required>
-        </div>
+          <div class="form-field">
+            <label for="email">E-mail *</label>
+            <input id="email" name="email" type="email" autocomplete="email" placeholder="voce@exemplo.com" required>
+          </div>
 
-        <div class="exibirSenha">
-            <input type="checkbox" id="mostrarSenha">
-            <label for="mostrarSenha">Exibir senha</label>
-        </div>
+          <div class="form-row">
+            <div class="form-field">
+              <label for="senha">Senha *</label>
+              <input id="senha" name="senha" type="password" autocomplete="new-password" placeholder="Mínimo 8 caracteres" required>
+            </div>
 
-        <button type="submit">Cadastrar usuário</button>
-        <button onclick="window.location.href='../Login/Login.html'">Ir para login</button>
+            <div class="form-field">
+              <label for="ConfSenha">Confirmar senha *</label>
+              <input id="ConfSenha" name="ConfSenha" type="password" autocomplete="new-password" placeholder="Repita sua senha" required>
+            </div>
+          </div>
 
-    </form>
-    <script src="CadastroScript.js"></script>
-    <script type="module">
-    import { criarCliente } from '../../Controle/ClienteControle.js';
-    import { validarCPF } from '../../Suporte/verificadores.js';
-    function validarSenha(verificarSenha) {
-    if (verificarSenha.length < 8) {
-        alert("A senha deve ter 8 caracteres.");
-        return false;
-    }
-    if (!/[A-Z]/.test(verificarSenha)) {
-        alert("A senha deve conter pelo menos uma letra maiúscula.");
-        return false;
-    }
-    if (!/[a-z]/.test(verificarSenha)) {
-        alert("A senha deve conter pelo menos uma letra minúscula.");
-        return false;
-    }
-    if (!/[0-9]/.test(verificarSenha)) {
-        alert("A senha deve conter pelo menos um número.");
-        return false;
-    }
-    if (!/[^A-Za-z0-9]/.test(verificarSenha)) {
-        alert("A senha deve conter pelo menos um símbolo especial (ex: @, #, !, %).");
-        return false;
-    }
-    return true; // passou em todos os critérios
-    }
-    document.getElementById('formulario').addEventListener('submit', function(event) {
-        event.preventDefault();
-        const verificarSenha = document.getElementById('senha').value;
-        const cpf = document.getElementById('cpf').value;
-        const nome = document.getElementById('nome').value;
-        if(!validarCPF(cpf)){
-            alert("CPF inválido")
-            return;
-        }
-        if (!validarSenha(verificarSenha)) {
-                return;
-        }
-        criarCliente(nome,cpf, verificarSenha);
-    });
-    </script>
+          <div class="form-options">
+            <label class="checkbox-label" for="mostrarSenha">
+              <input type="checkbox" id="mostrarSenha">
+              <span>Exibir senhas</span>
+            </label>
+          </div>
 
+          <div class="password-requirements" id="requisitos-senha">
+            <p class="req-title">Requisitos da senha:</p>
+            <ul>
+              <li id="req-length">Mínimo de 8 caracteres</li>
+              <li id="req-upper">Pelo menos uma letra maiúscula</li>
+              <li id="req-lower">Pelo menos uma letra minúscula</li>
+              <li id="req-number">Pelo menos um número</li>
+              <li id="req-symbol">Pelo menos um símbolo especial (@, #, !, %, etc.)</li>
+            </ul>
+          </div>
+
+          <p class="form-message" id="mensagem-status" role="alert" style="display: none;"></p>
+
+          <button class="button button--primary login-submit" type="submit">Cadastrar usuário <span aria-hidden="true">→</span></button>
+        </form>
+
+        <p class="login-signup">Já tem uma conta? <a href="../Login/login.html">Entrar</a></p>
+      </div>
+    </section>
+  </main>
 </body>
 </html>

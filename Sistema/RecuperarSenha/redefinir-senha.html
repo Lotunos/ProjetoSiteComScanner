@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#fffaf6">
+  <meta name="description" content="Use o código enviado por e-mail para cadastrar uma nova senha na Centerário.">
+  <title>Trocar senha — Centerário</title>
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="recuperar-senha.css">
+</head>
+<body class="login-page">
+  <main class="login-layout">
+    <section class="login-welcome" aria-labelledby="welcome-title">
+      <a class="login-brand" href="../../index.html" aria-label="Voltar para a página inicial da Centerário">
+        <img src="../../img/logo/logo_centenario_hd_transparente.png" alt="">
+        <span>Centerário</span>
+      </a>
+      <div class="login-welcome__content">
+        <p class="eyebrow">Link de recuperação</p>
+        <h1 id="welcome-title">Escolha uma senha nova para voltar a <span>celebrar.</span></h1>
+        <p>Confirme o código recebido por e-mail e os dados da sua conta para continuar.</p>
+      </div>
+      <div class="login-decoration" aria-hidden="true">
+        <span class="login-decoration__star login-decoration__star--one">✳</span>
+        <span class="login-decoration__star login-decoration__star--two">✦</span>
+        <div class="login-decoration__card">
+          <span class="login-decoration__icon">♡</span>
+          <span><strong>Momentos inesquecíveis</strong><br>começam com cuidado.</span>
+        </div>
+      </div>
+      <a class="login-back-link" href="../Login/login.html">← Voltar para entrar</a>
+    </section>
+
+    <section class="login-panel" aria-labelledby="recovery-title">
+      <div class="login-form-wrap">
+        <p class="login-kicker">Recuperação de acesso</p>
+        <h2 id="recovery-title">Cadastrar nova senha</h2>
+        <p class="login-intro">Informe o código de 6 dígitos recebido por e-mail, seu CPF e a nova senha.</p>
+
+        <form class="login-form">
+          <div class="form-field">
+            <label for="token">Código de verificação</label>
+            <input id="token" name="token" type="text" inputmode="numeric" autocomplete="one-time-code" placeholder="Digite os 6 dígitos" pattern="[0-9]{6}" minlength="6" maxlength="6" aria-describedby="token-hint" required>
+            <span class="form-field__hint" id="token-hint">O código foi enviado no link de recuperação por e-mail.</span>
+          </div>
+
+          <div class="form-field">
+            <label for="cpf">CPF</label>
+            <input id="cpf" name="cpf" type="text" inputmode="numeric" autocomplete="username" placeholder="000.000.000-00" required>
+          </div>
+
+          <div class="form-field">
+            <label for="new-password">Nova senha</label>
+            <input id="new-password" name="new-password" type="password" autocomplete="new-password" placeholder="Mínimo de 8 caracteres" minlength="8" required>
+          </div>
+
+          <div class="form-field">
+            <label for="confirm-password">Confirmar nova senha</label>
+            <input id="confirm-password" name="confirm-password" type="password" autocomplete="new-password" placeholder="Digite novamente sua senha" minlength="8" required>
+          </div>
+
+          <button class="button button--primary login-submit" type="button" aria-describedby="recovery-note">Salvar nova senha <span aria-hidden="true">→</span></button>
+          <p class="login-note" id="recovery-note">A validação do código e a troca da senha dependem do serviço de autenticação.</p>
+        </form>
+
+        <p class="login-signup"><a href="../Login/login.html">Voltar para o login</a></p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

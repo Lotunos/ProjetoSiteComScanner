@@ -1,18 +1,31 @@
 
 services:
   postgres-db:
-    image: postgres:15-alpine
-    container_name: app_postgres
+    image: postgres:16-alpine
+    container_name: banco
     restart: always
     environment:
-      POSTGRES_DB: app_db
+      POSTGRES_DB: db
       POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
+      POSTGRES_PASSWORD: 1234
+      PGDATA: /var/lib/postgresql/data/pgdata
     ports:
       - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
-
+    networks:
+      - net_banco
+    healthcheck:
+      test: ["CMD-SHELL","pg_isready -U postgres -d db"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+volumes:
+  postgres_data:
+    driver: local
+networks:
+  net_banco:
+    driver: bridge
   # Descomente abaixo se for rodar a aplicação Spring Boot no Docker junto com o banco
   # app:
   #   build: .
@@ -28,5 +41,3 @@ services:
   #   depends_on:
   #     - postgres-db
 
-volumes:
-  postgres_data:

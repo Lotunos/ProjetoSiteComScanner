@@ -1,0 +1,96 @@
+.site-header {
+  position: relative;
+  z-index: 1;
+  background: var(--color-paper);
+}
+
+.header-content,
+.site-nav,
+.brand {
+  display: flex;
+  align-items: center;
+}
+
+.header-content {
+  min-height: 88px;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+.brand {
+  flex: 0 0 auto;
+  gap: 10px;
+}
+
+.brand__logo {
+  width: 43px;
+  height: 43px;
+  object-fit: contain;
+}
+
+.brand__copy {
+  display: grid;
+  gap: 1px;
+}
+
+.brand__name {
+  color: var(--color-orange);
+  font-family: var(--font-heading);
+  font-size: 19px;
+  font-weight: 800;
+  letter-spacing: -0.8px;
+  line-height: 1.15;
+}
+
+.brand__tagline {
+  color: var(--color-muted);
+  font-size: 11px;
+}
+
+.site-nav {
+  gap: 34px;
+}
+
+.site-nav__link {
+  color: #514842;
+  font-size: 14px;
+  font-weight: 600;
+  transition: color 160ms ease;
+}
+
+.site-nav__link:hover {
+  color: var(--color-orange-dark);
+}
+
+.site-nav__link:focus-visible,
+.brand:focus-visible {
+  outline: 3px solid #f3a18a;
+  outline-offset: 4px;
+}
+
+@media (max-width: 680px) {
+  .header-content {
+    min-height: 75px;
+  }
+
+  .brand__logo {
+    width: 36px;
+    height: 36px;
+  }
+
+  .brand__name {
+    font-size: 16px;
+  }
+
+  .brand__tagline {
+    font-size: 9px;
+  }
+
+  .site-nav {
+    gap: 15px;
+  }
+
+  .site-nav__link {
+    display: none;
+  }
+}

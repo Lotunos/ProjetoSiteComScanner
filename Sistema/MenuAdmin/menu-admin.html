@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#fffaf6">
+  <meta name="description" content="Acesse as ferramentas administrativas da Centerário.">
+  <title>Painel administrativo — Centerário</title>
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="menu-admin.css">
+</head>
+<body class="admin-page">
+  <header class="admin-header">
+    <div class="admin-header__inner">
+      <a class="admin-brand" href="../../index.html" aria-label="Centerário, página inicial">
+        <img src="../../img/logo/logo_centenario_hd_transparente.png" alt="">
+        <span>Centerário</span>
+      </a>
+      <span class="admin-header__label">Painel administrativo</span>
+      <a class="admin-header__exit" href="../Login/login.html">Sair do painel</a>
+    </div>
+  </header>
+
+  <main class="admin-main">
+    <div class="admin-intro">
+      <p class="eyebrow">Tudo organizado em um só lugar</p>
+      <h1>Painel Admin</h1>
+      <p>Selecione a área que deseja acessar.</p>
+    </div>
+
+    <section class="admin-grid" aria-label="Áreas administrativas">
+      <article class="admin-card">
+        <div class="admin-card__icon admin-card__icon--orange" aria-hidden="true">⌕</div>
+        <div class="admin-card__content">
+          <h2>Scanner</h2>
+          <p>Escaneie QR Codes para controlar a entrada dos convidados.</p>
+        </div>
+        <a class="button button--primary admin-card__action" href="../Scanner/scanner.html">Acessar <span aria-hidden="true">→</span></a>
+      </article>
+
+      <article class="admin-card">
+        <div class="admin-card__icon admin-card__icon--yellow" aria-hidden="true">✦</div>
+        <div class="admin-card__content">
+          <h2>Eventos</h2>
+          <p>Crie e consulte os eventos que você está organizando.</p>
+        </div>
+        <a class="button button--primary admin-card__action" href="https://lotunos.github.io/ProjetoSiteComScanner/Sistema/Evento/Evento.html">Acessar <span aria-hidden="true">→</span></a>
+      </article>
+
+      <article class="admin-card">
+        <div class="admin-card__icon admin-card__icon--pink" aria-hidden="true">✉</div>
+        <div class="admin-card__content">
+          <h2>Convites</h2>
+          <p>Gerencie seus convites e prepare novos envios para os convidados.</p>
+        </div>
+        <a class="button button--primary admin-card__action" href="https://lotunos.github.io/ProjetoSiteComScanner/Sistema/Convite/Convite.html">Acessar <span aria-hidden="true">→</span></a>
+      </article>
+
+      <article class="admin-card">
+        <div class="admin-card__icon admin-card__icon--green" aria-hidden="true">R$</div>
+        <div class="admin-card__content">
+          <h2>Financeiro</h2>
+          <p>Acompanhe receitas, despesas e o saldo dos seus eventos.</p>
+        </div>
+        <a class="button button--primary admin-card__action" href="../Financeiro/financeiro.html">Acessar <span aria-hidden="true">→</span></a>
+      </article>
+    </section>
+  </main>
+
+  <footer class="admin-footer">
+    <p>© 2026 Centerário · Feito para celebrar os momentos que importam.</p>
+  </footer>
+</body>
+</html>

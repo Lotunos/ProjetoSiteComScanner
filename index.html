@@ -1,197 +1,136 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Centenário Eventos</title>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="img/logo/logo_centenario_transparente.png" type="image/png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#fffaf6">
+  <meta name="description" content="Organize eventos, gerencie convites e acompanhe confirmações de presença com a Centerário.">
+  <title>Centerário — eventos memoráveis, sem complicação</title>
+  <link rel="stylesheet" href="index.css">
+  <script src="CarregarComponente.js" defer></script>
 </head>
-
 <body>
+  <header id="header"></header>
 
-    <!-- O container principal. -->
-    <div class="containerPrincipal">
+  <main>
+    <section class="hero container" aria-labelledby="hero-title">
+      <div class="hero__content">
+        <p class="eyebrow"><span class="eyebrow__dot"></span> Seu evento começa aqui</p>
+        <h1 class="hero__title" id="hero-title">Momentos especiais merecem uma <span>organização impecável.</span></h1>
+        <p class="hero__description">Gerencie convites, confirmações de presença e QR codes em um só lugar. Mais praticidade para você e uma experiência inesquecível para seus convidados.</p>
+        <div class="hero__actions">
+          <a class="button button--primary" href="Sistema/Cadastro/cadastro.html">Criar meu evento <span aria-hidden="true">→</span></a>
+          <a class="text-link" href="#como-funciona">Descubra como funciona <span aria-hidden="true">↓</span></a>
+        </div>
+        <div class="hero-proof">
+          <div class="hero-proof__avatars" aria-hidden="true">
+            <span>♡</span><span>✦</span><span>✓</span>
+          </div>
+          <p>Seu evento, do convite ao <strong>grande dia.</strong></p>
+        </div>
+      </div>
 
-        <!-- O cabeçalho principal da página com navegação. -->
-        <header class="cabecalhoNavegacao">
-            <!-- Div que contém o logo e o título da empresa. -->
-            <div class="logoEmpresa">
-                <img src="img/logo/logo_centenario_hd_transparente.png" alt="Logo Centenário" id="logoimagem">
-            </div>
-            <div class="logoEmpresa">
-                <h1>Centerário</h1>
-                <p>Sua empresa de eventos</p>
-            </div>
+      <div class="event-gallery" aria-label="Fotos de celebrações">
+        <div class="event-gallery__glow"></div>
+        <figure class="event-photo event-photo--main">
+          <img src="img/img1.jpeg" alt="Decoração de um evento especial">
+        </figure>
+        <figure class="event-photo event-photo--top">
+          <img src="img/img2.jpeg" alt="Celebração entre amigos e familiares">
+        </figure>
+        <figure class="event-photo event-photo--bottom">
+          <img src="img/img3.jpeg" alt="Detalhes de uma festa memorável">
+        </figure>
+        <div class="gallery-note">
+          <span class="gallery-note__icon" aria-hidden="true">✦</span>
+          <span><strong>Grandes momentos</strong><br>começam nos detalhes</span>
+        </div>
+      </div>
+    </section>
 
-            <!-- Nav com links de navegação rápida. -->
-            <nav class="navegacaoPrincipal">
-                <a href="#sobre" class="linkNavegacao">Sobre</a>
-                <a href="#recursos" class="linkNavegacao">Recursos</a>
-                <a href="./Sistema/Login/Login.html" class="botao botaoPrimario">Começar Agora</a>
-            </nav>
-        </header>
+    <section class="intro-section" id="sobre" aria-labelledby="about-title">
+      <div class="container intro-section__content">
+        <p class="eyebrow eyebrow--center">Feito para celebrar</p>
+        <h2 class="section-title" id="about-title">Você cuida da celebração.<br><span>A gente cuida do resto.</span></h2>
+        <p class="section-description">Nossa plataforma oferece tudo o que organizadores precisam para planejar eventos com profissionalismo e agilidade — de encontros intimistas a grandes comemorações.</p>
+      </div>
+    </section>
 
-        <!-- A seção hero (chamada principal) da página. -->
-        <section class="secaoHero">
-            <!-- Conteúdo textual do hero. -->
-            <div class="conteudoHero">
-                <!-- Título principal da página. -->
-                <h1 class="tituloHero">Realizamos eventos memoráveis para você e seus convidados</h1>
+    <section class="features-section section-space" id="recursos" aria-labelledby="features-title">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Tudo em um só lugar</p>
+            <h2 class="section-title" id="features-title">Organizar ficou <span>mais fácil.</span></h2>
+          </div>
+          <p class="section-heading__aside">Ferramentas simples e inteligentes para você aproveitar cada etapa.</p>
+        </div>
 
-                <!-- Subtítulo/descrição do hero. -->
-                <p class="subtituloHero">
-                    Gerenciamos convites, controle de presença e gere QR codes
-                    para seus eventos com facilidade. Tudo em um único lugar.
-                </p>
+        <div class="feature-grid">
+          <article class="feature-card">
+            <div class="feature-card__icon feature-card__icon--peach" aria-hidden="true">▦</div>
+            <span class="feature-card__number">01</span>
+            <h3>QR Code automático</h3>
+            <p>Um código exclusivo para cada convidado. Check-in rápido e sem listas intermináveis.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-card__icon feature-card__icon--yellow" aria-hidden="true">✓</div>
+            <span class="feature-card__number">02</span>
+            <h3>Confirmação de presença</h3>
+            <p>Acompanhe as respostas em tempo real e tenha tudo sob controle antes do grande dia.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-card__icon feature-card__icon--pink" aria-hidden="true">♡</div>
+            <span class="feature-card__number">03</span>
+            <h3>Convites sem esforço</h3>
+            <p>Envie os convites para sua lista de convidados com praticidade e um toque especial.</p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-                <!-- Botões de ação do hero. -->
-                <div class="acoesHero">
-                    <a href="./Sistema/Cadastro/Cadastro.html" class="botao botaoPrimario botaoGrande">Criar Evento
-                        Agora</a>
-                </div>
-            </div>
+    <section class="steps-section section-space" id="como-funciona" aria-labelledby="steps-title">
+      <div class="container">
+        <div class="section-heading section-heading--center">
+          <p class="eyebrow eyebrow--center">Simples assim</p>
+          <h2 class="section-title" id="steps-title">Do planejamento à festa,<br><span>em três passos.</span></h2>
+          <p class="section-description">Tudo organizado para você aproveitar o que realmente importa.</p>
+        </div>
 
-            <!-- Carrossel de Imagens do Evento -->
-            <div class="imagemHero">
-                <div class="carrossel" id="carrossel">
-                    <!-- Imagens  -->
-                    <img src="img/img 01.jpeg" alt="Evento 1">
-                    <img src="img/img 02.jpeg" alt="Evento 2">
-                    <img src="img/img 03.jpeg" alt="Evento 3">
-                </div>
+        <div class="steps-grid">
+          <article class="step-card">
+            <span class="step-card__number">1</span>
+            <h3>Crie seu evento</h3>
+            <p>Conte para a gente o essencial: data, horário e local da sua comemoração.</p>
+          </article>
+          <article class="step-card">
+            <span class="step-card__number">2</span>
+            <h3>Convide com carinho</h3>
+            <p>Adicione seus convidados e prepare tudo para compartilhar o convite.</p>
+          </article>
+          <article class="step-card">
+            <span class="step-card__number">3</span>
+            <h3>Aproveite cada momento</h3>
+            <p>Acompanhe as confirmações e receba seus convidados com tranquilidade.</p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-                <div class="controlesCarrossel">
-                    <button class="btnCarrossel" id="prevBtn">&#10094;</button>
-                    <button class="btnCarrossel" id="nextBtn">&#10095;</button>
-                </div>
+    <section class="cta-section container" aria-labelledby="cta-title">
+      <div class="cta-card">
+        <span class="cta-card__spark cta-card__spark--one" aria-hidden="true">✳</span>
+        <span class="cta-card__spark cta-card__spark--two" aria-hidden="true">✦</span>
+        <div class="cta-card__content">
+          <p class="eyebrow eyebrow--light">O próximo grande momento é seu</p>
+          <h2 id="cta-title">Vamos fazer acontecer?</h2>
+          <p>Comece a planejar um evento que seus convidados vão lembrar com carinho.</p>
+          <a class="button button--light" href="Sistema/Cadastro/cadastro.html">Criar meu evento <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
 
-                <div class="indicadoresCarrossel" id="indicadores">
-                    <span class="indicador ativo"></span>
-                    <span class="indicador"></span>
-                    <span class="indicador"></span>
-                </div>
-            </div>
-        </section>
-
-        <!-- A seção sobre a empresa. -->
-        <section id="sobre" class="secaoGeral">
-            <div class="conteudoSecao">
-                <!-- Título da seção. -->
-                <h2>Por Que Escolher Centerário?</h2>
-                <!-- Descrição da seção. -->
-                <p class="descricaoSecao">
-                    Nossa plataforma oferece uma solução completa para organizadores de eventos que buscam
-                    profissionalismo e agilidade.
-                    Desde pequenos encontros até grandes conferências, garantimos que sua gestão seja impecável.
-                </p>
-            </div>
-        </section>
-
-        <!-- A seção de recursos principais. -->
-        <section id="recursos" class="secaoRecursos">
-            <!-- Título da seção. -->
-            <div class="conteudoSecao">
-                <h2>Recursos Principais</h2>
-                <p class="descricaoSecao">Tudo que você precisa para gerenciar seus eventos</p>
-            </div>
-
-            <!-- Grid com cards de recursos. -->
-            <div class="gridRecursos">
-                <!-- Card 1: QR Code Automático -->
-                <div class="cardRecurso">
-                    <!-- Ícone do recurso. -->
-                    <div class="iconeRecurso">🔲</div>
-                    <!-- Título do recurso. -->
-                    <h3>QR Code Automático</h3>
-                    <!-- Descrição do recurso. -->
-                    <p>
-                        Gere QR codes automaticamente para cada convidado,
-                        facilitando o controle de presença.
-                    </p>
-                </div>
-
-                <!-- Card 2: Confirmação de Presença -->
-                <div class="cardRecurso">
-                    <div class="iconeRecurso">✅</div>
-                    <h3>Confirmação de Presença</h3>
-                    <p>
-                        Receba confirmações de presença dos convidados
-                        e acompanhe as respostas em tempo real.
-                    </p>
-                </div>
-
-                <!-- Card 3: Envio Automático -->
-                <div class="cardRecurso">
-                    <div class="iconeRecurso">💌</div>
-                    <h3>Envio Automático</h3>
-                    <p>
-                        Envie convites automaticamente para todos os seus
-                        convidados com um clique.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- A seção como funciona. -->
-        <section class="secaoGeral">
-            <!-- Título da seção. -->
-            <div class="conteudoSecao">
-                <h2>Como Funciona</h2>
-                <p class="descricaoSecao">Apenas 3 passos simples para criar seu evento</p>
-            </div>
-
-            <!-- Grid com os passos. -->
-            <div class="gridPassos">
-                <!-- Passo 1 -->
-                <div class="cartaoPasso">
-                    <!-- Número do passo. -->
-                    <div class="numeroPasso">1</div>
-                    <!-- Título do passo. -->
-                    <h3>Crie seu Evento</h3>
-                    <!-- Descrição do passo. -->
-                    <p>Preencha as informações básicas do seu evento como data, hora e local.</p>
-                </div>
-
-                <!-- Passo 2 -->
-                <div class="cartaoPasso">
-                    <div class="numeroPasso">2</div>
-                    <h3>Adicione Convidados</h3>
-                    <p>Importe ou adicione manualmente os contatos dos seus convidados.</p>
-                </div>
-
-                <!-- Passo 3 -->
-                <div class="cartaoPasso">
-                    <div class="numeroPasso">3</div>
-                    <h3>Envie Convites</h3>
-                    <p>Envie os convites com QR code e acompanhe as confirmações em tempo real.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- A seção chamada final. -->
-        <section class="secaoChamadaFinal">
-            <!-- Conteúdo da chamada final. -->
-            <div class="conteudoChamadaFinal">
-                <!-- Título da chamada. -->
-                <h2>Pronto para Criar Seu Evento?</h2>
-                <!-- Descrição da chamada. -->
-                <p>
-                    Comece agora mesmo e descubra como nossa plataforma pode facilitar
-                    a organização dos seus eventos.
-                </p>
-                <!-- Botão de ação. -->
-                <a href="./Sistema/Cadastro/Cadastro.html" class="botao botaoSecundario botaoGrande">Começar</a>
-            </div>
-        </section>
-        <!-- O rodapé da página. -->
-        <footer class="rodapePrincipal">
-            <p>&copy; Centerário</p>
-        </footer>
-    </div>
-    <script src="script.js"></script>
+  <footer id="footer"></footer>
 </body>
-
 </html>

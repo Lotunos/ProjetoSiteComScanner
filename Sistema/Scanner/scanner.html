@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#fffaf6">
+  <meta name="description" content="Leia QR Codes dos convites para consultar os dados do evento.">
+  <title>Scanner QR Code — Centerário</title>
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="scanner.css">
+  <script src="https://unpkg.com/html5-qrcode@2.3.8/html5-qrcode.min.js" defer></script>
+  <script src="scanner.js" defer></script>
+</head>
+<body class="scanner-page">
+  <header class="scanner-header">
+    <a class="scanner-brand" href="../../index.html" aria-label="Centerário, página inicial">
+      <img src="../../img/logo/logo_centenario_hd_transparente.png" alt="">
+      <span>Centerário</span>
+    </a>
+    <a class="scanner-back" href="../MenuAdmin/menu-admin.html"><span aria-hidden="true">←</span> Voltar ao painel</a>
+  </header>
+
+  <main class="scanner-main">
+    <div class="scanner-heading">
+      <p class="eyebrow">Controle de entrada</p>
+      <h1>Scanner <span>QR Code</span></h1>
+      <p>Aponte a câmera para o QR Code do convidado.</p>
+    </div>
+
+    <section class="scanner-card" aria-label="Leitor de QR Code">
+      <div class="scanner-view" id="scanner-view">
+        <div id="qr-reader" aria-label="Leitor de QR Code"></div>
+        <div class="scanner-placeholder" id="scanner-placeholder">
+          <span class="scanner-placeholder__icon" aria-hidden="true">▦</span>
+          <strong>A câmera aparecerá aqui</strong>
+          <span>Permita o acesso à câmera para escanear um convite.</span>
+        </div>
+        <span class="scanner-frame scanner-frame--top-left" aria-hidden="true"></span>
+        <span class="scanner-frame scanner-frame--top-right" aria-hidden="true"></span>
+        <span class="scanner-frame scanner-frame--bottom-left" aria-hidden="true"></span>
+        <span class="scanner-frame scanner-frame--bottom-right" aria-hidden="true"></span>
+      </div>
+
+      <div class="scanner-controls">
+        <button class="button button--primary" id="start-camera" type="button">Ativar câmera <span aria-hidden="true">⌕</span></button>
+        <button class="button button--secondary" id="stop-camera" type="button" disabled>Parar câmera</button>
+      </div>
+
+      <p class="scanner-status" id="scanner-status" role="status" aria-live="polite">
+        Aguardando início da leitura.
+      </p>
+    </section>
+
+  </main>
+
+  <footer class="scanner-footer">
+    <p>Os dados do QR Code são lidos localmente neste navegador.</p>
+  </footer>
+</body>
+</html>

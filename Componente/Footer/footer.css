@@ -1,0 +1,52 @@
+.site-footer {
+  border-top: 1px solid #f1eae5;
+  background: #fff;
+}
+
+.site-footer__content {
+  display: flex;
+  min-height: 90px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.brand--footer .brand__logo {
+  width: 36px;
+  height: 36px;
+}
+
+.brand--footer .brand__name {
+  font-size: 16px;
+}
+
+.brand--footer .brand__tagline {
+  font-size: 10px;
+}
+
+.site-footer__content > p,
+.site-footer__copyright {
+  margin: 0;
+  color: var(--color-muted);
+  font-size: 12px;
+}
+
+@media (max-width: 680px) {
+  .site-footer__content {
+    min-height: 0;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-block: 22px;
+  }
+
+  .site-footer__content > p {
+    order: 1;
+    width: 100%;
+  }
+}
+
+@media (max-width: 380px) {
+  .site-footer__copyright {
+    font-size: 10px;
+  }
+}

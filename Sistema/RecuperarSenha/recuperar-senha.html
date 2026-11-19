@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#fffaf6">
+  <meta name="description" content="Solicite por e-mail o link para recuperar sua senha da Centerário.">
+  <title>Recuperar senha — Centerário</title>
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="recuperar-senha.css">
+</head>
+<body class="login-page">
+  <main class="login-layout">
+    <section class="login-welcome" aria-labelledby="welcome-title">
+      <a class="login-brand" href="../../index.html" aria-label="Voltar para a página inicial da Centerário">
+        <img src="../../img/logo/logo_centenario_hd_transparente.png" alt="">
+        <span>Centerário</span>
+      </a>
+      <div class="login-welcome__content">
+        <p class="eyebrow">Estamos aqui para ajudar</p>
+        <h1 id="welcome-title">Volte a organizar momentos <span>especiais.</span></h1>
+        <p>Informe seu e-mail e enviaremos um link para continuar a recuperação.</p>
+      </div>
+      <div class="login-decoration" aria-hidden="true">
+        <span class="login-decoration__star login-decoration__star--one">✳</span>
+        <span class="login-decoration__star login-decoration__star--two">✦</span>
+        <div class="login-decoration__card">
+          <span class="login-decoration__icon">♡</span>
+          <span><strong>Momentos inesquecíveis</strong><br>começam com cuidado.</span>
+        </div>
+      </div>
+      <a class="login-back-link" href="../Login/login.html">← Voltar para entrar</a>
+    </section>
+
+    <section class="login-panel" aria-labelledby="recovery-title">
+      <div class="login-form-wrap">
+        <p class="login-kicker">Recuperação de acesso</p>
+        <h2 id="recovery-title">Esqueceu sua senha?</h2>
+        <p class="login-intro">Informe o e-mail cadastrado. Enviaremos um link para criar uma nova senha.</p>
+
+        <form class="login-form">
+          <div class="form-field">
+            <label for="email">E-mail</label>
+            <input id="email" name="email" type="email" autocomplete="email" placeholder="voce@exemplo.com" required>
+          </div>
+
+          <button class="button button--primary login-submit" type="button" aria-describedby="recovery-note">Enviar link de recuperação <span aria-hidden="true">→</span></button>
+          <p class="login-note" id="recovery-note">O envio do e-mail será habilitado quando o serviço de autenticação estiver conectado.</p>
+        </form>
+
+        <p class="login-signup"><a href="../Login/login.html">Voltar para o login</a></p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

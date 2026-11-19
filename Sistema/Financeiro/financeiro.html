@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#fffaf6">
+  <meta name="description" content="Acompanhe receitas, despesas e saldo dos seus eventos.">
+  <title>Financeiro — Centerário</title>
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="financeiro.css">
+</head>
+<body class="admin-page">
+  <header class="admin-header">
+    <div class="admin-header__inner">
+      <a class="admin-brand" href="../../index.html" aria-label="Centerário, página inicial">
+        <img src="../../img/logo/logo_centenario_hd_transparente.png" alt="">
+        <span>Centerário</span>
+      </a>
+      <span class="admin-header__label">Painel administrativo</span>
+      <a class="admin-header__exit" href="../Login/login.html">Sair do painel</a>
+    </div>
+  </header>
+
+  <main class="admin-main">
+    <a class="admin-back" href="../MenuAdmin/menu-admin.html"><span aria-hidden="true">←</span> Voltar ao painel</a>
+
+    <div class="finance-heading">
+      <div class="admin-intro">
+        <p class="eyebrow">Visão geral</p>
+        <h1>Área <span>Financeira</span></h1>
+        <p>Resumo das movimentações dos seus eventos.</p>
+      </div>
+    </div>
+
+    <section class="finance-grid" aria-label="Resumo financeiro">
+      <article class="finance-card">
+        <p class="finance-card__label"><span class="finance-card__dot finance-card__dot--green"></span>Receitas</p>
+        <strong class="finance-card__value">R$ 0,00</strong>
+        <span class="finance-card__caption">Nenhuma receita registrada</span>
+      </article>
+      <article class="finance-card">
+        <p class="finance-card__label"><span class="finance-card__dot finance-card__dot--red"></span>Despesas</p>
+        <strong class="finance-card__value">R$ 0,00</strong>
+        <span class="finance-card__caption">Nenhuma despesa registrada</span>
+      </article>
+      <article class="finance-card">
+        <p class="finance-card__label"><span class="finance-card__dot"></span>Saldo</p>
+        <strong class="finance-card__value">R$ 0,00</strong>
+        <span class="finance-card__caption">Sem movimentações financeiras</span>
+      </article>
+    </section>
+
+    <section class="transactions" aria-labelledby="transactions-title">
+      <div class="transactions__header">
+        <h2 id="transactions-title">Lançamentos financeiros</h2>
+        <span class="transactions__status">Sem lançamentos</span>
+      </div>
+      <div class="transactions__table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Data</th>
+              <th scope="col">Descrição</th>
+              <th scope="col">Evento</th>
+              <th scope="col">Tipo</th>
+              <th scope="col">Valor</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td colspan="5">Nenhuma movimentação financeira cadastrada.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <p class="finance-note">Os valores e lançamentos serão exibidos aqui quando o módulo financeiro estiver conectado ao armazenamento de dados.</p>
+  </main>
+
+  <footer class="admin-footer">
+    <p>© 2026 Centerário · Feito para celebrar os momentos que importam.</p>
+  </footer>
+</body>
+</html>

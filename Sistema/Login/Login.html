@@ -1,83 +1,64 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página de login</title>
-    <link rel="stylesheet" href="../../StylePadrao.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#fffaf6">
+  <meta name="description" content="Acesse sua conta Centerário e organize seus eventos.">
+  <title>Entrar — Centerário</title>
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="login.css">
 </head>
-<body>
-    
-    <form id="formulario" action="" method="get">
-        <h1>login</h1>
-        <div class="barraHorizontal"></div>
-
-        <div class="campoInput">
-            <label for="cpf">Seu CPF:</label>
-            <input id="cpf" name="cpf" required>
+<body class="login-page">
+  <main class="login-layout">
+    <section class="login-welcome" aria-labelledby="welcome-title">
+      <a class="login-brand" href="../../index.html" aria-label="Voltar para a página inicial da Centerário">
+        <img src="../../img/logo/logo_centenario_hd_transparente.png" alt="">
+        <span>Centerário</span>
+      </a>
+      <div class="login-welcome__content">
+        <p class="eyebrow">Que bom ter você de volta</p>
+        <h1 id="welcome-title">Cada grande evento começa com um <span>bom planejamento.</span></h1>
+        <p>Entre na sua conta e continue preparando momentos especiais.</p>
+      </div>
+      <div class="login-decoration" aria-hidden="true">
+        <span class="login-decoration__star login-decoration__star--one">✳</span>
+        <span class="login-decoration__star login-decoration__star--two">✦</span>
+        <div class="login-decoration__card">
+          <span class="login-decoration__icon">♡</span>
+          <span><strong>Momentos inesquecíveis</strong><br>começam com cuidado.</span>
         </div>
+      </div>
+      <a class="login-back-link" href="../../index.html">← Voltar ao site</a>
+    </section>
 
-        <div class="campoInput">
-            <label for="senha">Sua senha:</label>
-            <input type="password" id="senha" name="senha" required>
-        </div>
+    <section class="login-panel" aria-labelledby="login-title">
+      <div class="login-form-wrap">
+        <p class="login-kicker">Sua área Centerário</p>
+        <h2 id="login-title">Acesse sua conta</h2>
+        <p class="login-intro">Informe seus dados para continuar.</p>
 
-        <div class="exibirSenha">
-            <input type="checkbox" id="mostrarSenha">
-            <label for="mostrarSenha">Exibir senha</label>
-        </div>
+        <form class="login-form">
+          <div class="form-field">
+            <label for="cpf">CPF</label>
+            <input id="cpf" name="cpf" type="text" inputmode="numeric" autocomplete="username" placeholder="000.000.000-00" aria-describedby="login-note">
+          </div>
 
-        <button type="submit">Entrar</button>
+          <div class="form-field">
+            <div class="form-field__heading">
+              <label for="password">Senha</label>
+              <a href="../RecuperarSenha/recuperar-senha.html">Esqueceu a senha?</a>
+            </div>
+            <input id="password" name="password" type="password" autocomplete="current-password" placeholder="Digite sua senha">
+          </div>
 
-        <p>Criar conta
-            <a href="../../Sistema/Cadastro/Cadastro.html">Clique aqui!</a>
-        </p>
+          <button class="button button--primary login-submit" type="button" aria-describedby="login-note">Entrar <span aria-hidden="true">→</span></button>
+          <p class="login-note" id="login-note">O acesso à conta será habilitado quando a autenticação for conectada.</p>
+        </form>
 
-
-        <p>Esqueceu sua senha?
-            <a href="../../Sistema/RecuperarSenha/TelaRecuperarSenha.html">Clique aqui!</a>
-        </p>
-    </form>
-    <script src="Loginscript.js"></script>
-    <script type="module">
-    import { buscarCliente } from '../../Controle/ClienteControle.js';
-    import { validarCPF } from '../../Suporte/verificadores.js';
-    function validarSenha(verificarSenha) {
-    if (verificarSenha.length < 8) {
-        alert("A senha deve ter 8 caracteres.");
-        return false;
-    }
-    if (!/[A-Z]/.test(verificarSenha)) {
-        alert("A senha deve conter pelo menos uma letra maiúscula.");
-        return false;
-    }
-    if (!/[a-z]/.test(verificarSenha)) {
-        alert("A senha deve conter pelo menos uma letra minúscula.");
-        return false;
-    }
-    if (!/[0-9]/.test(verificarSenha)) {
-        alert("A senha deve conter pelo menos um número.");
-        return false;
-    }
-    if (!/[^A-Za-z0-9]/.test(verificarSenha)) {
-        alert("A senha deve conter pelo menos um símbolo especial (ex: @, #, !, %).");
-        return false;
-    }
-    return true; // passou em todos os critérios
-    }
-    document.getElementById('formulario').addEventListener('submit', function(event) {
-        event.preventDefault();
-        const verificarSenha = document.getElementById('senha').value;
-        const cpf = document.getElementById('cpf').value;
-        if(!validarCPF(cpf)){
-            alert("CPF inválido")
-            return;
-        }
-        if (!validarSenha(verificarSenha)) {
-                return;
-        }
-        buscarCliente(cpf, verificarSenha);
-    });
-    </script>
+        <p class="login-signup">Ainda não tem uma conta? <a href="../Cadastro/cadastro.html">Criar conta</a></p>
+      </div>
+    </section>
+  </main>
 </body>
 </html>
